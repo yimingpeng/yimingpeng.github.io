@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yiming&#39;s Homepage on Yiming&#39;s Homepage</title>
+    <link>yimingpeng.github.io/</link>
+    <description>Recent content in Yiming&#39;s Homepage on Yiming&#39;s Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +1300</lastBuildDate>
+    <atom:link href="yimingpeng.github.io/" rel="self" type="application/rss+xml" />
+    
+  </channel>
+</rss>
