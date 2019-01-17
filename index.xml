@@ -10,5 +10,68 @@
     <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +1300</lastBuildDate>
     <atom:link href="yimingpeng.github.io/" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Proximal Evolutionary Strategies: Achieving State-of-the-art Deep Reinforcement Learning through Evolutionary Policy Optimization</title>
+      <link>yimingpeng.github.io/publication/journal-paper-1/</link>
+      <pubDate>Thu, 17 Jan 2019 14:19:16 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/journal-paper-1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NEAT for Large-Scale Reinforcement Learning through Evolutionary Feature Learning and Policy Gradient Search</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-6/</link>
+      <pubDate>Wed, 17 Jan 2018 15:30:31 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Sandpile Model for Reliable Actor-Critic Reinforcement Learning</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-5/</link>
+      <pubDate>Tue, 17 Jan 2017 15:26:49 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Effective Policy Gradient Search for Reinforcement Learning through NEAT based Feature Extraction</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-4/</link>
+      <pubDate>Tue, 17 Jan 2017 15:22:33 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automated State Feature Learning for Actor-Critic Reinforcement Learning through NEAT</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-3/</link>
+      <pubDate>Tue, 17 Jan 2017 15:16:41 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Generalized Compatible Function Approximation for Policy Gradient Search</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-2/</link>
+      <pubDate>Sun, 17 Jan 2016 15:08:07 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chunk incremental IDR/QR LDA learning</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-1/</link>
+      <pubDate>Thu, 17 Jan 2013 14:33:45 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-1/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

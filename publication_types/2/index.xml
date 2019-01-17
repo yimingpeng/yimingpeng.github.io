@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 on Yiming&#39;s Homepage</title>
+    <link>yimingpeng.github.io/publication_types/2/</link>
+    <description>Recent content in 2 on Yiming&#39;s Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Wed, 17 Jan 2018 15:30:31 +1300</lastBuildDate>
+    
+	<atom:link href="yimingpeng.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NEAT for Large-Scale Reinforcement Learning through Evolutionary Feature Learning and Policy Gradient Search</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-6/</link>
+      <pubDate>Wed, 17 Jan 2018 15:30:31 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-6/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

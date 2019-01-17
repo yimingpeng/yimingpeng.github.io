@@ -1,34 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Yiming&#39;s Homepage</title>
-    <link>yimingpeng.github.io/publication/</link>
-    <description>Recent content in Publications on Yiming&#39;s Homepage</description>
+    <title>1 on Yiming&#39;s Homepage</title>
+    <link>yimingpeng.github.io/publication_types/1/</link>
+    <description>Recent content in 1 on Yiming&#39;s Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +1300</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jan 2017 15:26:49 +1300</lastBuildDate>
     
-	<atom:link href="yimingpeng.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="yimingpeng.github.io/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Proximal Evolutionary Strategies: Achieving State-of-the-art Deep Reinforcement Learning through Evolutionary Policy Optimization</title>
-      <link>yimingpeng.github.io/publication/journal-paper-1/</link>
-      <pubDate>Thu, 17 Jan 2019 14:19:16 +1300</pubDate>
-      
-      <guid>yimingpeng.github.io/publication/journal-paper-1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NEAT for Large-Scale Reinforcement Learning through Evolutionary Feature Learning and Policy Gradient Search</title>
-      <link>yimingpeng.github.io/publication/conference/c-paper-6/</link>
-      <pubDate>Wed, 17 Jan 2018 15:30:31 +1300</pubDate>
-      
-      <guid>yimingpeng.github.io/publication/conference/c-paper-6/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>A Sandpile Model for Reliable Actor-Critic Reinforcement Learning</title>
@@ -45,15 +27,6 @@
       <pubDate>Tue, 17 Jan 2017 15:22:33 +1300</pubDate>
       
       <guid>yimingpeng.github.io/publication/conference/c-paper-4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Automated State Feature Learning for Actor-Critic Reinforcement Learning through NEAT</title>
-      <link>yimingpeng.github.io/publication/conference/c-paper-3/</link>
-      <pubDate>Tue, 17 Jan 2017 15:16:41 +1300</pubDate>
-      
-      <guid>yimingpeng.github.io/publication/conference/c-paper-3/</guid>
       <description></description>
     </item>
     
