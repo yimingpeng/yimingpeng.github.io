@@ -15,10 +15,10 @@
   
     
   
-  <meta name="description" content="NeuroEvolution of Augmenting Topology (NEAT) is one of the most successful algorithms for solving traditional reinforcement learning (RL) tasks such as pole-balancing. However, the algorithm faces serious challenges while tackling problems with large state spaces, particularly the Atari game playing tasks. This is due to the major flaw that NEAT aims at evolving a single neural network (NN) that must be able to simultaneously extract high-level state features and select action outputs. However such complicated NNs cannot be easily evolved directly through NEAT. To address this issue, we propose a new reinforcement learning scheme based on NEAT with two key technical advancements: (1) a new three-stage learning scheme is introduced to clearly separate feature learning and policy learning to allow effective knowledge sharing and learning across multiple agents; (2) various policy gradient search algorithms can be seamlessly integrated with NEAT for training policy networks with deep structures to achieve effective and sample efficient RL. Experiments on several Atari games confirm that our new learning scheme can be more effective and has higher sample efficiency than NEAT and three state-of-the-art algorithms from the most recent RL literature.">
+  <meta name="description" content="Recent advancement on reinforcement learning (RL) algorithms shows that effective learning of parametric action- selection policies can often be achieved through direct optimization of a performance lower bound subject to pre-defined policy behavioral constraints. Driven by this understanding, this paper seeks to develop new policy search techniques where RL is achieved through maximizing a performance lower bound obtained originally based on an Expectation-Maximization method. For reliable RL, our new learning techniques must also simultaneously guarantee constrained policy behavioral changes measured through KL divergence. Two separate approaches will be pursued to tackle our constrained policy optimization problems, resulting in two new RL algorithms. The first algorithm utilizes a conjugate gradient technique and a Bayesian learning method for approximate optimization. The second algorithm focuses on minimizing a loss function derived from solving the Lagrangian for constrained policy search. Both algorithms have been experimentally examined on several benchmark problems provided by OpenAI GYM. The experiment results clearly demonstrate that our algorithms can be highly effective in comparison to several well-known RL algorithms.">
 
   
-  <link rel="alternate" hreflang="en-us" href="yimingpeng.github.io/publication/conference/c-paper-6/">
+  <link rel="alternate" hreflang="en-us" href="yimingpeng.github.io/publication/conference/c-paper-9/">
 
   
 
@@ -92,7 +92,7 @@
   <link rel="icon" type="image/png" href="/yimingpeng.github.io/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/yimingpeng.github.io/img/icon-192.png">
 
-  <link rel="canonical" href="yimingpeng.github.io/publication/conference/c-paper-6/">
+  <link rel="canonical" href="yimingpeng.github.io/publication/conference/c-paper-9/">
 
   
   
@@ -107,21 +107,21 @@
   <meta property="twitter:creator" content="@yimingpeng1982">
   
   <meta property="og:site_name" content="Yiming&#39;s Homepage">
-  <meta property="og:url" content="yimingpeng.github.io/publication/conference/c-paper-6/">
-  <meta property="og:title" content="NEAT for Large-Scale Reinforcement Learning through Evolutionary Feature Learning and Policy Gradient Search | Yiming&#39;s Homepage">
-  <meta property="og:description" content="NeuroEvolution of Augmenting Topology (NEAT) is one of the most successful algorithms for solving traditional reinforcement learning (RL) tasks such as pole-balancing. However, the algorithm faces serious challenges while tackling problems with large state spaces, particularly the Atari game playing tasks. This is due to the major flaw that NEAT aims at evolving a single neural network (NN) that must be able to simultaneously extract high-level state features and select action outputs. However such complicated NNs cannot be easily evolved directly through NEAT. To address this issue, we propose a new reinforcement learning scheme based on NEAT with two key technical advancements: (1) a new three-stage learning scheme is introduced to clearly separate feature learning and policy learning to allow effective knowledge sharing and learning across multiple agents; (2) various policy gradient search algorithms can be seamlessly integrated with NEAT for training policy networks with deep structures to achieve effective and sample efficient RL. Experiments on several Atari games confirm that our new learning scheme can be more effective and has higher sample efficiency than NEAT and three state-of-the-art algorithms from the most recent RL literature."><meta property="og:image" content="yimingpeng.github.io/img/yiming.jpg">
+  <meta property="og:url" content="yimingpeng.github.io/publication/conference/c-paper-9/">
+  <meta property="og:title" content="Constrained Expectation-Maximization Methods for Effective Reinforcement Learning | Yiming&#39;s Homepage">
+  <meta property="og:description" content="Recent advancement on reinforcement learning (RL) algorithms shows that effective learning of parametric action- selection policies can often be achieved through direct optimization of a performance lower bound subject to pre-defined policy behavioral constraints. Driven by this understanding, this paper seeks to develop new policy search techniques where RL is achieved through maximizing a performance lower bound obtained originally based on an Expectation-Maximization method. For reliable RL, our new learning techniques must also simultaneously guarantee constrained policy behavioral changes measured through KL divergence. Two separate approaches will be pursued to tackle our constrained policy optimization problems, resulting in two new RL algorithms. The first algorithm utilizes a conjugate gradient technique and a Bayesian learning method for approximate optimization. The second algorithm focuses on minimizing a loss function derived from solving the Lagrangian for constrained policy search. Both algorithms have been experimentally examined on several benchmark problems provided by OpenAI GYM. The experiment results clearly demonstrate that our algorithms can be highly effective in comparison to several well-known RL algorithms."><meta property="og:image" content="yimingpeng.github.io/img/yiming.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2018-01-17T15:30:31&#43;13:00">
+  <meta property="article:published_time" content="2018-01-17T16:03:26&#43;13:00">
   
-  <meta property="article:modified_time" content="2018-01-17T15:30:31&#43;13:00">
-  
-
+  <meta property="article:modified_time" content="2018-01-17T16:03:26&#43;13:00">
   
 
   
 
-  <title>NEAT for Large-Scale Reinforcement Learning through Evolutionary Feature Learning and Policy Gradient Search | Yiming&#39;s Homepage</title>
+  
+
+  <title>Constrained Expectation-Maximization Methods for Effective Reinforcement Learning | Yiming&#39;s Homepage</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -355,7 +355,7 @@
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">NEAT for Large-Scale Reinforcement Learning through Evolutionary Feature Learning and Policy Gradient Search</h1>
+  <h1 itemprop="name">Constrained Expectation-Maximization Methods for Effective Reinforcement Learning</h1>
 
   
 
@@ -369,13 +369,10 @@
   
   <div>
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name"><b>Yiming Peng</b></span>
-    </span>, 
-    <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">Gang Chen</span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <span itemprop="name">Harman Singh</span>
+      <span itemprop="name"><b>Yiming Peng</b></span>
     </span>, 
     <span itemscope itemprop="author" itemtype="http://schema.org/Person">
       <span itemprop="name">Mengjie Zhang</span>
@@ -386,8 +383,8 @@
 
   <span class="article-date">
     
-    <meta content="2018-01-17 15:30:31 &#43;1300 NZDT" itemprop="datePublished">
-    <time datetime="2018-01-17 15:30:31 &#43;1300 NZDT" itemprop="dateModified">
+    <meta content="2018-01-17 16:03:26 &#43;1300 NZDT" itemprop="datePublished">
+    <time datetime="2018-01-17 16:03:26 &#43;1300 NZDT" itemprop="dateModified">
       Jan 17, 2018
     </time>
   </span>
@@ -408,35 +405,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=NEAT%20for%20Large-Scale%20Reinforcement%20Learning%20through%20Evolutionary%20Feature%20Learning%20and%20Policy%20Gradient%20Search&amp;url=yimingpeng.github.io%2fpublication%2fconference%2fc-paper-6%2f"
+         href="https://twitter.com/intent/tweet?text=Constrained%20Expectation-Maximization%20Methods%20for%20Effective%20Reinforcement%20Learning&amp;url=yimingpeng.github.io%2fpublication%2fconference%2fc-paper-9%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=yimingpeng.github.io%2fpublication%2fconference%2fc-paper-6%2f"
+         href="https://www.facebook.com/sharer.php?u=yimingpeng.github.io%2fpublication%2fconference%2fc-paper-9%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=yimingpeng.github.io%2fpublication%2fconference%2fc-paper-6%2f&amp;title=NEAT%20for%20Large-Scale%20Reinforcement%20Learning%20through%20Evolutionary%20Feature%20Learning%20and%20Policy%20Gradient%20Search"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=yimingpeng.github.io%2fpublication%2fconference%2fc-paper-9%2f&amp;title=Constrained%20Expectation-Maximization%20Methods%20for%20Effective%20Reinforcement%20Learning"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=yimingpeng.github.io%2fpublication%2fconference%2fc-paper-6%2f&amp;title=NEAT%20for%20Large-Scale%20Reinforcement%20Learning%20through%20Evolutionary%20Feature%20Learning%20and%20Policy%20Gradient%20Search"
+         href="http://service.weibo.com/share/share.php?url=yimingpeng.github.io%2fpublication%2fconference%2fc-paper-9%2f&amp;title=Constrained%20Expectation-Maximization%20Methods%20for%20Effective%20Reinforcement%20Learning"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=NEAT%20for%20Large-Scale%20Reinforcement%20Learning%20through%20Evolutionary%20Feature%20Learning%20and%20Policy%20Gradient%20Search&amp;body=yimingpeng.github.io%2fpublication%2fconference%2fc-paper-6%2f">
+         href="mailto:?subject=Constrained%20Expectation-Maximization%20Methods%20for%20Effective%20Reinforcement%20Learning&amp;body=yimingpeng.github.io%2fpublication%2fconference%2fc-paper-9%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -480,7 +477,7 @@
   
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="/yimingpeng.github.io/publication/conference/c-paper-6/c-paper-6.pdf" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="/yimingpeng.github.io/publication/conference/c-paper-9/c-paper-9.pdf" target="_blank" rel="noopener">
   PDF
 </a>
 
@@ -490,17 +487,6 @@
 
 
 
-  
-    
-  
-
-  
-    
-  
-
-  
-    
-  
 
 
 
@@ -509,8 +495,7 @@
 
 
 
-
-<a class="btn btn-outline-primary my-1 mr-1" href="https://doi.org/https://doi.org/10.1145/3205455.3205536" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://doi.org/https://ieeexplore.ieee.org/document/8488990" target="_blank" rel="noopener">
   DOI
 </a>
 
@@ -528,7 +513,7 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">NeuroEvolution of Augmenting Topology (NEAT) is one of the most successful algorithms for solving traditional reinforcement learning (RL) tasks such as pole-balancing. However, the algorithm faces serious challenges while tackling problems with large state spaces, particularly the Atari game playing tasks. This is due to the major flaw that NEAT aims at evolving a single neural network (NN) that must be able to simultaneously extract high-level state features and select action outputs. However such complicated NNs cannot be easily evolved directly through NEAT. To address this issue, we propose a new reinforcement learning scheme based on NEAT with two key technical advancements: (1) a new three-stage learning scheme is introduced to clearly separate feature learning and policy learning to allow effective knowledge sharing and learning across multiple agents; (2) various policy gradient search algorithms can be seamlessly integrated with NEAT for training policy networks with deep structures to achieve effective and sample efficient RL. Experiments on several Atari games confirm that our new learning scheme can be more effective and has higher sample efficiency than NEAT and three state-of-the-art algorithms from the most recent RL literature.</p>
+    <p class="pub-abstract" itemprop="text">Recent advancement on reinforcement learning (RL) algorithms shows that effective learning of parametric action- selection policies can often be achieved through direct optimization of a performance lower bound subject to pre-defined policy behavioral constraints. Driven by this understanding, this paper seeks to develop new policy search techniques where RL is achieved through maximizing a performance lower bound obtained originally based on an Expectation-Maximization method. For reliable RL, our new learning techniques must also simultaneously guarantee constrained policy behavioral changes measured through KL divergence. Two separate approaches will be pursued to tackle our constrained policy optimization problems, resulting in two new RL algorithms. The first algorithm utilizes a conjugate gradient technique and a Bayesian learning method for approximate optimization. The second algorithm focuses on minimizing a loss function derived from solving the Lagrangian for constrained policy search. Both algorithms have been experimentally examined on several benchmark problems provided by OpenAI GYM. The experiment results clearly demonstrate that our algorithms can be highly effective in comparison to several well-known RL algorithms.</p>
     
 
     
@@ -539,8 +524,8 @@
           <div class="col-12 col-md-3 pub-row-heading">Type</div>
           <div class="col-12 col-md-9">
             
-            <a href="yimingpeng.github.io/publication/#2">
-              Journal article
+            <a href="yimingpeng.github.io/publication/#1">
+              Conference paper
             </a>
             
           </div>

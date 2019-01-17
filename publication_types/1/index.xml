@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Tue, 17 Jan 2017 15:26:49 +1300</lastBuildDate>
+    <lastBuildDate>Sat, 17 Nov 2018 16:06:59 +1300</lastBuildDate>
     
 	<atom:link href="yimingpeng.github.io/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Effective Exploration for Deep Reinforcement Learning via Bootstrapped Q-Ensembles with Tsallis Entropy Regularization</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-10/</link>
+      <pubDate>Sat, 17 Nov 2018 16:06:59 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An Adaptive Clipping Approach for Proximal Policy Optimization</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-11/</link>
+      <pubDate>Tue, 17 Apr 2018 16:11:07 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Constrained Expectation-Maximization Methods for Effective Reinforcement Learning</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-9/</link>
+      <pubDate>Wed, 17 Jan 2018 16:03:26 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evolving Transferable Artificial Neural Networks for Gameplay Tasks via NEAT with Phased Searching</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-8/</link>
+      <pubDate>Tue, 17 Jan 2017 15:58:30 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-8/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A Sandpile Model for Reliable Actor-Critic Reinforcement Learning</title>
@@ -40,11 +76,29 @@
     </item>
     
     <item>
+      <title>A Federated Online Network Traffic Analysis Engine for Cybersecurity.</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-12/</link>
+      <pubDate>Sat, 17 Jan 2015 16:16:08 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-12/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Chunk incremental IDR/QR LDA learning</title>
       <link>yimingpeng.github.io/publication/conference/c-paper-1/</link>
       <pubDate>Thu, 17 Jan 2013 14:33:45 +1300</pubDate>
       
       <guid>yimingpeng.github.io/publication/conference/c-paper-1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploring Crude Oil Impacts to Oil Stocks through Graphical Computational Correlation Analysis</title>
+      <link>yimingpeng.github.io/publication/conference/c-paper-7/</link>
+      <pubDate>Tue, 17 Jan 2012 15:53:08 +1300</pubDate>
+      
+      <guid>yimingpeng.github.io/publication/conference/c-paper-7/</guid>
       <description></description>
     </item>
     

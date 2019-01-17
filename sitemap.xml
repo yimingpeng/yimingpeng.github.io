@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>yimingpeng.github.io/project/pes-project/</loc>
+      <lastmod>2019-01-17T15:50:28+13:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>yimingpeng.github.io/publication/journal/j-paper-1/</loc>
       <lastmod>2019-01-17T14:19:16+13:00</lastmod>
     </url>
@@ -12,8 +20,40 @@
     
     <url>
     
+      <loc>yimingpeng.github.io/publication/conference/c-paper-10/</loc>
+      <lastmod>2018-11-17T16:06:59+13:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>yimingpeng.github.io/publication/conference/c-paper-11/</loc>
+      <lastmod>2018-04-17T16:11:07+13:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>yimingpeng.github.io/publication/conference/c-paper-9/</loc>
+      <lastmod>2018-01-17T16:03:26+13:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>yimingpeng.github.io/publication/conference/c-paper-6/</loc>
       <lastmod>2018-01-17T15:30:31+13:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>yimingpeng.github.io/publication/conference/c-paper-8/</loc>
+      <lastmod>2017-01-17T15:58:30+13:00</lastmod>
     </url>
     
   
@@ -68,8 +108,24 @@
     
     <url>
     
+      <loc>yimingpeng.github.io/publication/conference/c-paper-12/</loc>
+      <lastmod>2015-01-17T16:16:08+13:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>yimingpeng.github.io/publication/conference/c-paper-1/</loc>
       <lastmod>2013-01-17T14:33:45+13:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>yimingpeng.github.io/publication/conference/c-paper-7/</loc>
+      <lastmod>2012-01-17T15:53:08+13:00</lastmod>
     </url>
     
   
@@ -86,7 +142,7 @@
     <url>
     
       <loc>yimingpeng.github.io/publication_types/1/</loc>
-      <lastmod>2017-01-17T15:26:49+13:00</lastmod>
+      <lastmod>2018-11-17T16:06:59+13:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -113,6 +169,15 @@
     <url>
     
       <loc>yimingpeng.github.io/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>yimingpeng.github.io/project/</loc>
+      <lastmod>2019-01-17T15:50:28+13:00</lastmod>
       <priority>0</priority>
     </url>
     
