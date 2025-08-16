@@ -1,0 +1,68 @@
+/* Global Styles for Yiming Peng Portfolio */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+	line-height: 1.6;
+	color: #cdd6f4;
+	background: #1e1e2e;
+	overflow-x: hidden;
+}
+
+/* Simple blink animation */
+@keyframes blink {
+	0%, 50% { opacity: 1; }
+	51%, 100% { opacity: 0; }
+}
+
+.terminal-cursor::after {
+	content: '█';
+	animation: blink 1s infinite;
+	color: #89b4fa;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+/* Section Styles */
+.section {
+	padding: 4rem 0;
+}
+
+.section-title {
+	text-align: center;
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 3rem;
+	color: #89b4fa;
+}
+
+.section-title::before {
+	content: '$ ';
+	color: #89b4fa;
+}
+
+.section-subtitle {
+	text-align: center;
+	font-size: 1.2rem;
+	color: #a6adc8;
+	margin-bottom: 4rem;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.container {
+		padding: 0 1rem;
+	}
+}

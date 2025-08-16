@@ -1,0 +1,103 @@
+/* Hero Section Styles */
+
+.hero {
+	background: linear-gradient(135deg, #181825 0%, #1e1e2e 50%, #181825 100%);
+	color: #cdd6f4;
+	padding: 8rem 0 4rem;
+	margin-top: 80px;
+	position: relative;
+}
+
+.hero-content {
+	display: grid;
+	grid-template-columns: 1fr 300px;
+	gap: 4rem;
+	align-items: center;
+}
+
+.hero-text h1 {
+	font-size: 3.5rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+	line-height: 1.2;
+}
+
+.hero-text .subtitle {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+	opacity: 0.9;
+}
+
+.hero-text .company {
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
+	opacity: 0.8;
+}
+
+.hero-text .bio {
+	font-size: 1.1rem;
+	line-height: 1.8;
+	margin-bottom: 2rem;
+	opacity: 0.9;
+}
+
+.hero-image {
+	text-align: center;
+}
+
+.profile-img {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	border: 6px solid rgba(255,255,255,0.2);
+	object-fit: cover;
+}
+
+.social-links {
+	display: flex;
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.social-links a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	background: rgba(137, 180, 250, 0.1);
+	border: 2px solid rgba(137, 180, 250, 0.3);
+	border-radius: 8px;
+	color: #89b4fa;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	font-size: 1.2rem;
+}
+
+.social-links a:hover {
+	background: rgba(137, 180, 250, 0.15);
+	border-color: #89b4fa;
+}
+
+.social-links a {
+	position: relative;
+	overflow: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.hero-content {
+		grid-template-columns: 1fr;
+		text-align: center;
+		gap: 2rem;
+	}
+	
+	.hero-text h1 {
+		font-size: 2.5rem;
+	}
+	
+	.profile-img {
+		width: 200px;
+		height: 200px;
+	}
+}
