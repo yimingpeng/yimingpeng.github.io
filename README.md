@@ -52,19 +52,19 @@ You might have seen my old home page built about 7 years ago, which is clearly m
 
 ## Deployment
 
-This site is configured to deploy automatically to GitHub Pages using GitHub Actions when changes are pushed to the main branch.
+This site is configured to deploy automatically to GitHub Pages using GitHub Actions when changes are pushed to the master branch.
 
 ### GitHub Pages Setup
 
 1. **Repository Settings**: In your GitHub repository, go to Settings → Pages
-2. **Source**: Select "GitHub Actions" as the source
-3. **Branch**: The workflow will automatically deploy from the `main` branch
+2. **Source**: Select "GitHub Actions" as the source (NOT "Deploy from a branch")
+3. **Branch**: The workflow will automatically deploy from the `master` branch
 4. **URL**: Your site will be available at `https://yimingpeng.github.io`
 
 ### Automatic Deployment
 
 The site will automatically build and deploy when you:
-- Push changes to the `main` branch
+- Push changes to the `master` branch
 - The GitHub Actions workflow (`.github/workflows/deploy.yml`) will handle the build and deployment process
 
 ### Manual Deployment
