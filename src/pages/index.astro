@@ -1,0 +1,175 @@
+---
+// Personal portfolio page for Yiming
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Yiming - Senior Software Engineer</title>
+		<meta name="description" content="Personal portfolio of Yiming, Senior Software Engineer at WetaFx Ltd" />
+		<style>
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 2rem;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				min-height: 100vh;
+				color: #333;
+			}
+			
+			.container {
+				background: white;
+				border-radius: 12px;
+				padding: 3rem;
+				box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+			}
+			
+			.header {
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+			
+			.name {
+				font-size: 3rem;
+				font-weight: 700;
+				margin: 0;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+			
+			.title {
+				font-size: 1.5rem;
+				color: #666;
+				margin: 0.5rem 0;
+			}
+			
+			.company {
+				font-size: 1.2rem;
+				color: #888;
+				margin: 0;
+			}
+			
+			.intro {
+				font-size: 1.1rem;
+				line-height: 1.8;
+				margin: 2rem 0;
+				text-align: center;
+			}
+			
+			.linkedin-link {
+				color: #0077b5;
+				text-decoration: none;
+				font-weight: 600;
+			}
+			
+			.linkedin-link:hover {
+				text-decoration: underline;
+			}
+			
+			.tech-stack {
+				margin-top: 3rem;
+			}
+			
+			.tech-stack h2 {
+				color: #333;
+				border-bottom: 2px solid #667eea;
+				padding-bottom: 0.5rem;
+			}
+			
+			.tech-list {
+				list-style: none;
+				padding: 0;
+			}
+			
+			.tech-list li {
+				background: #f8f9fa;
+				margin: 0.5rem 0;
+				padding: 1rem;
+				border-radius: 8px;
+				border-left: 4px solid #667eea;
+			}
+			
+			.tech-list a {
+				color: #667eea;
+				text-decoration: none;
+				font-weight: 600;
+			}
+			
+			.tech-list a:hover {
+				text-decoration: underline;
+			}
+			
+			.status {
+				background: #e8f5e8;
+				border: 1px solid #4caf50;
+				border-radius: 8px;
+				padding: 1rem;
+				margin: 2rem 0;
+				text-align: center;
+				color: #2e7d32;
+			}
+			
+			@media (max-width: 600px) {
+				body {
+					padding: 1rem;
+				}
+				
+				.container {
+					padding: 2rem;
+				}
+				
+				.name {
+					font-size: 2rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header class="header">
+				<h1 class="name">Yiming</h1>
+				<p class="title">Senior Software Engineer</p>
+				<p class="company">WetaFx Ltd</p>
+			</header>
+			
+			<main>
+				<div class="intro">
+					<p>Hello, welcome to my home page!</p>
+					<p>
+						I am <a href="https://www.linkedin.com/in/yiming-nz/" class="linkedin-link" target="_blank" rel="noopener noreferrer">Yiming</a>, 
+						currently working as a senior software engineer at WetaFx Ltd.
+					</p>
+					<p>
+						You might have seen my old home page built about 7 years ago, which is clearly much outdated, 
+						so I am currently working on rebuilding this new page.
+					</p>
+				</div>
+				
+				<div class="status">
+					🚧 This website is currently under construction using modern web technologies!
+				</div>
+				
+				<section class="tech-stack">
+					<h2>New Tech Stack</h2>
+					<ul class="tech-list">
+						<li>
+							<strong><a href="https://astro.new/latest/" target="_blank" rel="noopener noreferrer">Astro.new</a></strong>
+							- Modern static site generator for fast, content-focused websites
+						</li>
+						<li>
+							<strong>GitHub Actions</strong>
+							- Automated deployment and CI/CD pipeline
+						</li>
+					</ul>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>
