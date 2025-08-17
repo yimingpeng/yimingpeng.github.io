@@ -3,8 +3,10 @@
 /* Skills Section */
 .skills-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	gap: 2rem;
+	max-width: 1400px;
+	margin: 0 auto;
 }
 
 .skill-card {
@@ -38,6 +40,8 @@
 .skill-card p {
 	color: #a6adc8;
 	line-height: 1.6;
+	font-size: 0.95rem;
+	text-align: left;
 }
 
 /* Experience Section */
@@ -245,6 +249,7 @@
 	.skills-grid {
 		grid-template-columns: 1fr;
 		gap: 1.5rem;
+		max-width: none;
 	}
 	
 	.skill-card {
@@ -257,6 +262,11 @@
 	
 	.skill-card h3 {
 		font-size: 1.3rem;
+		margin-bottom: 0.75rem;
+	}
+	
+	.skill-card p {
+		font-size: 0.9rem;
 	}
 	
 	.experience-timeline::before {
@@ -332,6 +342,11 @@
 	
 	.skill-card h3 {
 		font-size: 1.2rem;
+		margin-bottom: 0.5rem;
+	}
+	
+	.skill-card p {
+		font-size: 0.85rem;
 	}
 	
 	.experience-item {
