@@ -112,7 +112,7 @@
 	height: 50px;
 	background: rgba(137, 180, 250, 0.1);
 	border: 2px solid rgba(137, 180, 250, 0.3);
-	border-radius: 8px;
+	border-radius: 12px;
 	color: #89b4fa;
 	text-decoration: none;
 	transition: all 0.3s ease;
