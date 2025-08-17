@@ -6,12 +6,25 @@
 	box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+	max-width: 100%;
+}
+
+html {
+	overflow-x: hidden;
+	width: 100%;
+}
+
 body {
 	font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
 	line-height: 1.6;
 	color: #cdd6f4;
 	background: #1e1e2e;
 	overflow-x: hidden;
+	width: 100%;
+	min-height: 100vh;
 }
 
 /* Simple blink animation */
@@ -31,11 +44,14 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 2rem;
+	width: 100%;
 }
 
 /* Section Styles */
 .section {
 	padding: 4rem 0;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 .section-title {
@@ -121,6 +137,8 @@ body {
 @media (max-width: 768px) {
 	.container {
 		padding: 0 1rem;
+		width: 100%;
+		max-width: 100%;
 	}
 	
 	.section {
@@ -146,6 +164,8 @@ body {
 @media (max-width: 480px) {
 	.container {
 		padding: 0 0.75rem;
+		width: 100%;
+		max-width: 100%;
 	}
 	
 	.section {
