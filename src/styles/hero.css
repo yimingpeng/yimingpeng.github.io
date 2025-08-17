@@ -22,16 +22,50 @@
 	line-height: 1.2;
 }
 
+/* Terminal command styling */
+.hero-text h1 {
+	color: #a6e3a1; /* Green for whoami command */
+}
+
+.hero-text h1 .terminal-cursor {
+	color: #f9e2af; /* Yellow for name */
+	font-weight: 600;
+	display: block;
+	margin-top: 0.5rem;
+}
+
 .hero-text .subtitle {
 	font-size: 1.5rem;
 	margin-bottom: 0.5rem;
 	opacity: 0.9;
 }
 
+/* Style the cat role.txt command and role output */
+.hero-text .subtitle {
+	color: #a6e3a1; /* Green for cat role.txt command */
+	font-weight: 500;
+	line-height: 1.4;
+}
+
+/* Enhanced terminal styling */
+.hero-text h1::before {
+	content: '$ ';
+	color: #89b4fa; /* Blue prompt symbol */
+	font-weight: 400;
+}
+
+.hero-text .subtitle::before {
+	content: '$ ';
+	color: #89b4fa; /* Blue prompt symbol */
+	font-weight: 400;
+}
+
 .hero-text .company {
 	font-size: 1.2rem;
 	margin-bottom: 2rem;
-	opacity: 0.8;
+	color: #cba6f7; /* Purple for company name */
+	font-weight: 600;
+	opacity: 0.9;
 }
 
 .hero-text .bio {
@@ -59,6 +93,10 @@
 	margin-top: 2rem;
 }
 
+.social-links .tooltip {
+	display: inline-block;
+}
+
 .social-links a {
 	display: inline-flex;
 	align-items: center;
@@ -72,6 +110,8 @@
 	text-decoration: none;
 	transition: all 0.3s ease;
 	font-size: 1.2rem;
+	position: relative;
+	overflow: visible;
 }
 
 .social-links a:hover {
@@ -79,13 +119,13 @@
 	border-color: #89b4fa;
 }
 
-.social-links a {
-	position: relative;
-	overflow: visible;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
+	.hero {
+		padding: 6rem 0 3rem;
+		margin-top: 60px;
+	}
+	
 	.hero-content {
 		grid-template-columns: 1fr;
 		text-align: center;
@@ -96,8 +136,59 @@
 		font-size: 2.5rem;
 	}
 	
+	.hero-text .subtitle {
+		font-size: 1.2rem;
+	}
+	
+	.hero-text .company {
+		font-size: 1.1rem;
+	}
+	
+	.hero-text .bio {
+		font-size: 1rem;
+	}
+	
 	.profile-img {
 		width: 200px;
 		height: 200px;
+	}
+	
+	.social-links {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 480px) {
+	.hero {
+		padding: 5rem 0 2rem;
+		margin-top: 50px;
+	}
+	
+	.hero-text h1 {
+		font-size: 2rem;
+	}
+	
+	.hero-text .subtitle {
+		font-size: 1.1rem;
+	}
+	
+	.hero-text .company {
+		font-size: 1rem;
+	}
+	
+	.hero-text .bio {
+		font-size: 0.95rem;
+	}
+	
+	.profile-img {
+		width: 180px;
+		height: 180px;
+	}
+	
+	.social-links a {
+		width: 45px;
+		height: 45px;
+		font-size: 1.1rem;
 	}
 }

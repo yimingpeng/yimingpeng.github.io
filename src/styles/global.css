@@ -21,9 +21,10 @@ body {
 }
 
 .terminal-cursor::after {
-	content: '█';
+	content: '|';
 	animation: blink 1s infinite;
 	color: #89b4fa;
+	font-weight: 300;
 }
 
 .container {
@@ -60,9 +61,110 @@ body {
 	margin-right: auto;
 }
 
+/* Custom Tooltip Styles */
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltip-text {
+	visibility: hidden;
+	width: 200px;
+	background-color: #1e1e2e;
+	color: #cdd6f4;
+	text-align: center;
+	border-radius: 6px;
+	padding: 8px 12px;
+	position: absolute;
+	z-index: 1000;
+	top: 125%;
+	left: 50%;
+	margin-left: -100px;
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+	font-size: 0.85rem;
+	font-weight: 500;
+	border: 1px solid #89b4fa;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	pointer-events: none;
+}
+
+.tooltip .tooltip-text::after {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent #89b4fa transparent;
+}
+
+.tooltip:hover .tooltip-text {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* For contact section tooltips (appear above) */
+.tooltip.tooltip-top .tooltip-text {
+	bottom: auto;
+	top: 125%;
+}
+
+.tooltip.tooltip-top .tooltip-text::after {
+	top: auto;
+	bottom: 100%;
+	border-color: transparent transparent #89b4fa transparent;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
 	.container {
 		padding: 0 1rem;
+	}
+	
+	.section {
+		padding: 3rem 0;
+	}
+	
+	.section-title {
+		font-size: 2rem;
+	}
+	
+	.section-subtitle {
+		font-size: 1.1rem;
+		margin-bottom: 3rem;
+	}
+	
+	.tooltip .tooltip-text {
+		width: 160px;
+		margin-left: -80px;
+		font-size: 0.8rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0 0.75rem;
+	}
+	
+	.section {
+		padding: 2.5rem 0;
+	}
+	
+	.section-title {
+		font-size: 1.8rem;
+	}
+	
+	.section-subtitle {
+		font-size: 1rem;
+		margin-bottom: 2.5rem;
+	}
+	
+	.tooltip .tooltip-text {
+		width: 140px;
+		margin-left: -70px;
+		font-size: 0.75rem;
+		padding: 6px 10px;
 	}
 }
