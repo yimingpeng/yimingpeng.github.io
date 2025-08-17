@@ -244,6 +244,19 @@
 @media (max-width: 768px) {
 	.skills-grid {
 		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+	
+	.skill-card {
+		padding: 1.5rem;
+	}
+	
+	.skill-icon {
+		font-size: 2.5rem;
+	}
+	
+	.skill-card h3 {
+		font-size: 1.3rem;
 	}
 	
 	.experience-timeline::before {
@@ -255,18 +268,104 @@
 		left: 0 !important;
 		padding-left: 3rem !important;
 		padding-right: 0 !important;
+		margin-bottom: 2rem;
 	}
 	
 	.experience-item::before {
 		left: 10px !important;
 	}
 	
+	.experience-card {
+		padding: 1.5rem;
+	}
+	
+	.experience-title {
+		font-size: 1.2rem;
+	}
+	
 	.education-grid {
 		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+	
+	.education-card {
+		padding: 1.5rem;
+	}
+	
+	.education-degree {
+		font-size: 1.2rem;
+	}
+	
+	.interests-list {
+		gap: 0.75rem;
+	}
+	
+	.interest-tag {
+		padding: 0.6rem 1.2rem;
+		font-size: 0.9rem;
 	}
 	
 	.contact-links {
 		flex-direction: column;
 		gap: 1rem;
+		align-items: center;
+	}
+	
+	.contact-links a {
+		justify-content: center;
+		min-width: 200px;
+	}
+}
+
+@media (max-width: 480px) {
+	.skills-grid {
+		gap: 1rem;
+	}
+	
+	.skill-card {
+		padding: 1.25rem;
+	}
+	
+	.skill-icon {
+		font-size: 2rem;
+	}
+	
+	.skill-card h3 {
+		font-size: 1.2rem;
+	}
+	
+	.experience-item {
+		padding-left: 2.5rem !important;
+		margin-bottom: 1.5rem;
+	}
+	
+	.experience-card {
+		padding: 1.25rem;
+	}
+	
+	.experience-title {
+		font-size: 1.1rem;
+	}
+	
+	.education-card {
+		padding: 1.25rem;
+	}
+	
+	.education-degree {
+		font-size: 1.1rem;
+	}
+	
+	.interests-list {
+		gap: 0.5rem;
+	}
+	
+	.interest-tag {
+		padding: 0.5rem 1rem;
+		font-size: 0.85rem;
+	}
+	
+	.contact-links a {
+		min-width: 180px;
+		font-size: 0.9rem;
 	}
 }

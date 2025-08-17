@@ -199,12 +199,23 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+	.main {
+		padding: 1.5rem 0 3rem;
+	}
+	
 	.page-title {
 		font-size: 2rem;
+		margin-bottom: 0.75rem;
+	}
+	
+	.page-subtitle {
+		font-size: 1.1rem;
+		margin-bottom: 3rem;
 	}
 	
 	.category-nav {
 		gap: 0.5rem;
+		margin-bottom: 2.5rem;
 	}
 	
 	.category-btn {
@@ -216,11 +227,89 @@ body {
 		padding: 1.5rem;
 	}
 	
+	.publication-title {
+		font-size: 1.2rem;
+	}
+	
 	.publication-links {
 		gap: 0.5rem;
 	}
 	
+	.publication-link {
+		padding: 0.4rem 0.8rem;
+		font-size: 0.85rem;
+	}
+	
+	.stats-section {
+		padding: 2rem 0;
+		margin: 3rem 0;
+	}
+	
 	.stats-grid {
 		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+	
+	.stat-number {
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.main {
+		padding: 1rem 0 2rem;
+	}
+	
+	.page-title {
+		font-size: 1.75rem;
+	}
+	
+	.page-subtitle {
+		font-size: 1rem;
+		margin-bottom: 2.5rem;
+	}
+	
+	.category-nav {
+		gap: 0.25rem;
+		margin-bottom: 2rem;
+	}
+	
+	.category-btn {
+		padding: 0.4rem 0.8rem;
+		font-size: 0.85rem;
+	}
+	
+	.publication-card {
+		padding: 1.25rem;
+	}
+	
+	.publication-title {
+		font-size: 1.1rem;
+	}
+	
+	.publication-authors {
+		font-size: 0.9rem;
+	}
+	
+	.publication-venue {
+		font-size: 0.9rem;
+	}
+	
+	.publication-abstract {
+		font-size: 0.9rem;
+	}
+	
+	.publication-link {
+		padding: 0.35rem 0.7rem;
+		font-size: 0.8rem;
+	}
+	
+	.stats-grid {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	
+	.stat-number {
+		font-size: 1.75rem;
 	}
 }
