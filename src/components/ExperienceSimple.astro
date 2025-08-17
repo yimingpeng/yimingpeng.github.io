@@ -1,0 +1,129 @@
+---
+// Simplified Working Experience section component (terminal style)
+---
+
+<section class="section" id="experience">
+	<div class="container">
+		<h2 class="terminal-command">$ Yiming.experience</h2>
+		<div class="terminal-output">
+			<div class="experience-list">
+				<div class="experience-item">
+					<span class="experience-role">"Senior Software Engineer - Data at Unity & Wētā Digital (Wētā FX) 1y+"</span>
+				</div>
+				<div class="experience-item">
+					<span class="experience-role">"Data Architect at MBIE 1y"</span>
+				</div>
+				<div class="experience-item">
+					<span class="experience-role">"Principal Data and Integration Architect at IHC New Zealand 1y"</span>
+				</div>
+				<div class="experience-item">
+					<span class="experience-role">"Senior Data Engineer at Chorus New Zealand Ltd 1.5y"</span>
+				</div>
+				<div class="experience-item">
+					<span class="experience-role">"Data Engineer at KPMG New Zealand 8m"</span>
+				</div>
+				<div class="experience-item">
+					<span class="experience-role">"Research Scientist at Victoria University of Wellington 3.5y"</span>
+				</div>
+				<div class="experience-item">
+					<span class="experience-role">"Research and Teaching Assistant at Unitec Institute of Technology 4y"</span>
+				</div>
+			</div>
+			<div class="experience-link">
+				<a href="/experience" class="terminal-link">View detailed experience →</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+.terminal-command {
+	color: #a6e3a1;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 1.5rem;
+	font-weight: 500;
+	margin-bottom: 1.5rem;
+}
+
+.terminal-command::before {
+	content: '';
+	margin-right: 0;
+}
+
+.terminal-output {
+	margin-left: 0;
+}
+
+.experience-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.experience-item {
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.experience-role {
+	color: #cdd6f4;
+	display: block;
+	padding: 0.25rem 0;
+}
+
+.experience-item::before {
+	content: '"';
+	color: #f9e2af;
+	margin-right: 0;
+}
+
+.experience-item::after {
+	content: '",';
+	color: #f9e2af;
+}
+
+.experience-item:last-of-type::after {
+	content: '"';
+}
+
+.experience-link {
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid rgba(205, 214, 244, 0.1);
+}
+
+.terminal-link {
+	color: #89b4fa;
+	text-decoration: none;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 0.9rem;
+	transition: color 0.3s ease;
+}
+
+.terminal-link:hover {
+	color: #a6e3a1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.terminal-command {
+		font-size: 1.3rem;
+	}
+	
+	.experience-role {
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.terminal-command {
+		font-size: 1.1rem;
+	}
+	
+	.experience-role {
+		font-size: 0.85rem;
+	}
+}
+</style>

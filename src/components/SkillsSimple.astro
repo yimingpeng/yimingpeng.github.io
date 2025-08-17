@@ -1,0 +1,136 @@
+---
+// Simplified Skills section component (terminal style)
+---
+
+<section class="section" id="skills">
+	<div class="container">
+		<h2 class="terminal-command">$ Yiming.skills</h2>
+		<div class="terminal-output">
+			<div class="skills-array">
+				<div class="skill-category">
+					<span class="skill-item">"Python, SQL, Java, JavaScript, R, MATLAB ..."</span>
+				</div>
+				<div class="skill-category">
+					<span class="skill-item">"Data Engineering, ETL/ELT, DataOps, MLOps ..."</span>
+				</div>
+				<div class="skill-category">
+					<span class="skill-item">"AWS, Azure, GCP, Snowflake, PostgreSQL ..."</span>
+				</div>
+				<div class="skill-category">
+					<span class="skill-item">"Airflow, DBT, Docker, Kubernetes, Tableau ..."</span>
+				</div>
+				<div class="skill-category">
+					<span class="skill-item">"Machine Learning, Deep Learning, AI Research ..."</span>
+				</div>
+			</div>
+		</div>
+		
+		<h2 class="terminal-command">$ Yiming.expertise</h2>
+		<div class="terminal-output">
+			<div class="expertise-array">
+				<div class="expertise-category">
+					<span class="expertise-item">"Data Architecture & Engineering"</span>
+				</div>
+				<div class="expertise-category">
+					<span class="expertise-item">"Software Development & System Design"</span>
+				</div>
+				<div class="expertise-category">
+					<span class="expertise-item">"Machine Learning & AI Research"</span>
+				</div>
+				<div class="expertise-category">
+					<span class="expertise-item">"Team Leadership & Project Management"</span>
+				</div>
+				<div class="expertise-category">
+					<span class="expertise-item">"Problem Solving & Critical Thinking"</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+.terminal-command {
+	color: #a6e3a1;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 1.5rem;
+	font-weight: 500;
+	margin-bottom: 1.5rem;
+	margin-top: 2rem;
+}
+
+.terminal-command:first-child {
+	margin-top: 0;
+}
+
+.terminal-command::before {
+	content: '';
+	margin-right: 0;
+}
+
+.terminal-output {
+	margin-left: 0;
+	margin-bottom: 2rem;
+}
+
+.skills-array,
+.expertise-array {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.skill-category,
+.expertise-category {
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.skill-item,
+.expertise-item {
+	color: #cdd6f4;
+	display: block;
+	padding: 0.25rem 0;
+}
+
+.skill-category::before,
+.expertise-category::before {
+	content: '"';
+	color: #f9e2af;
+	margin-right: 0;
+}
+
+.skill-category::after,
+.expertise-category::after {
+	content: '",';
+	color: #f9e2af;
+}
+
+.skill-category:last-child::after,
+.expertise-category:last-child::after {
+	content: '"';
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.terminal-command {
+		font-size: 1.3rem;
+	}
+	
+	.skill-item,
+	.expertise-item {
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.terminal-command {
+		font-size: 1.1rem;
+	}
+	
+	.skill-item,
+	.expertise-item {
+		font-size: 0.85rem;
+	}
+}
+</style>

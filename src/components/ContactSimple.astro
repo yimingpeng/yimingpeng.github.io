@@ -1,0 +1,133 @@
+---
+// Simplified Contact section component (terminal style)
+---
+
+<section class="section contact" id="contact">
+	<div class="container">
+		<div class="contact-content">
+			<h2 class="terminal-command">$ Yiming.contact</h2>
+			<div class="terminal-output">
+				<div class="contact-info">
+					<div class="contact-item">
+						<span class="contact-label">"email":</span> 
+						<a href="mailto:yimingpengjojo@gmail.com" class="contact-value">"yimingpengjojo@gmail.com"</a>
+					</div>
+					<div class="contact-item">
+						<span class="contact-label">"linkedin":</span> 
+						<a href="https://www.linkedin.com/in/yiming-nz/" target="_blank" class="contact-value">"linkedin.com/in/yiming-nz"</a>
+					</div>
+					<div class="contact-item">
+						<span class="contact-label">"github":</span> 
+						<a href="https://github.com/yimingpeng" target="_blank" class="contact-value">"github.com/yimingpeng"</a>
+					</div>
+					<div class="contact-item">
+						<span class="contact-label">"resume":</span> 
+						<a href="/yiming_cv.pdf" target="_blank" class="contact-value">"download_cv.pdf"</a>
+					</div>
+				</div>
+			</div>
+			<div class="terminal-cursor-line">
+				<span class="terminal-prompt">$ </span><span class="cursor">|</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+.terminal-command {
+	color: #a6e3a1;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 1.5rem;
+	font-weight: 500;
+	margin-bottom: 1.5rem;
+}
+
+.terminal-command::before {
+	content: '';
+	margin-right: 0;
+}
+
+.terminal-output {
+	margin-left: 0;
+	margin-bottom: 2rem;
+}
+
+.contact-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.contact-item {
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 1rem;
+	line-height: 1.6;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.contact-label {
+	color: #89b4fa;
+	min-width: 80px;
+}
+
+.contact-value {
+	color: #f9e2af;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.contact-value:hover {
+	color: #a6e3a1;
+}
+
+.terminal-cursor-line {
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 1rem;
+	color: #cdd6f4;
+	margin-top: 2rem;
+}
+
+.terminal-prompt {
+	color: #89b4fa;
+}
+
+.cursor {
+	color: #f9e2af;
+	animation: blink 1s infinite;
+}
+
+@keyframes blink {
+	0%, 50% { opacity: 1; }
+	51%, 100% { opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.terminal-command {
+		font-size: 1.3rem;
+	}
+	
+	.contact-item {
+		font-size: 0.9rem;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.25rem;
+	}
+	
+	.contact-label {
+		min-width: auto;
+	}
+}
+
+@media (max-width: 480px) {
+	.terminal-command {
+		font-size: 1.1rem;
+	}
+	
+	.contact-item {
+		font-size: 0.85rem;
+	}
+}
+</style>
