@@ -4,44 +4,64 @@
 
 <section class="section" id="skills">
 	<div class="container">
-		<h2 class="terminal-command">$ Yiming.skills</h2>
-		<div class="terminal-output">
-			<div class="skills-array">
-				<div class="skill-category">
-					<span class="skill-item">"Python, SQL, Java, JavaScript, R, MATLAB ..."</span>
-				</div>
-				<div class="skill-category">
-					<span class="skill-item">"Data Engineering, ETL/ELT, DataOps, MLOps ..."</span>
-				</div>
-				<div class="skill-category">
-					<span class="skill-item">"AWS, Azure, GCP, Snowflake, PostgreSQL ..."</span>
-				</div>
-				<div class="skill-category">
-					<span class="skill-item">"Airflow, DBT, Docker, Kubernetes, Tableau ..."</span>
-				</div>
-				<div class="skill-category">
-					<span class="skill-item">"Machine Learning, Deep Learning, AI Research ..."</span>
+		<div class="skills-expertise-grid">
+			<div class="skills-pane">
+				<h2 class="terminal-command">$ Yiming.skills</h2>
+				<div class="terminal-output">
+					<div class="skills-array">
+						<div class="skill-category">
+							<div class="skill-label">Programming Languages:</div>
+							<span class="skill-item">Python, SQL, Java, JavaScript, R, MATLAB, C, C++, HTML, CSS</span>
+						</div>
+						<div class="skill-category">
+							<div class="skill-label">Data & Analytics:</div>
+							<span class="skill-item">Pandas, NumPy, SciPy, Matplotlib, Seaborn, Bokeh, Scikit-Learn</span>
+						</div>
+						<div class="skill-category">
+							<div class="skill-label">Machine Learning & AI:</div>
+							<span class="skill-item">TensorFlow, Keras, PyTorch, Theano, Deep Learning, Computer Vision</span>
+						</div>
+						<div class="skill-category">
+							<div class="skill-label">Cloud & Data Engineering:</div>
+							<span class="skill-item">AWS, Azure, GCP, Snowflake, Airflow, DBT, Docker, Kubernetes</span>
+						</div>
+						<div class="skill-category">
+							<div class="skill-label">Databases & BI Tools:</div>
+							<span class="skill-item">PostgreSQL, Oracle, MySQL, Tableau, PowerBI, Qlik, Salesforce</span>
+						</div>
+						<div class="skill-category">
+							<div class="skill-label">DevOps & Development:</div>
+							<span class="skill-item">Git, GitLab, BitBucket, Azure Pipelines, OpenShift, Confluence</span>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		
-		<h2 class="terminal-command">$ Yiming.expertise</h2>
-		<div class="terminal-output">
-			<div class="expertise-array">
-				<div class="expertise-category">
-					<span class="expertise-item">"Data Architecture & Engineering"</span>
-				</div>
-				<div class="expertise-category">
-					<span class="expertise-item">"Software Development & System Design"</span>
-				</div>
-				<div class="expertise-category">
-					<span class="expertise-item">"Machine Learning & AI Research"</span>
-				</div>
-				<div class="expertise-category">
-					<span class="expertise-item">"Team Leadership & Project Management"</span>
-				</div>
-				<div class="expertise-category">
-					<span class="expertise-item">"Problem Solving & Critical Thinking"</span>
+			
+			<div class="expertise-pane">
+				<h2 class="terminal-command">$ Yiming.expertise</h2>
+				<div class="terminal-output">
+					<div class="expertise-array">
+						<div class="expertise-category">
+							<div class="expertise-label">Data Architecture & Engineering:</div>
+							<span class="expertise-item">Designing scalable data pipelines, ETL/ELT processes, data warehousing solutions</span>
+						</div>
+						<div class="expertise-category">
+							<div class="expertise-label">Machine Learning & AI Research:</div>
+							<span class="expertise-item">Deep reinforcement learning, evolutionary algorithms, computer vision, research publications</span>
+						</div>
+						<div class="expertise-category">
+							<div class="expertise-label">Software Development & System Design:</div>
+							<span class="expertise-item">Full-stack development, microservices architecture, cloud-native applications</span>
+						</div>
+						<div class="expertise-category">
+							<div class="expertise-label">Data Science & Analytics:</div>
+							<span class="expertise-item">Statistical analysis, predictive modeling, data visualization, business intelligence</span>
+						</div>
+						<div class="expertise-category">
+							<div class="expertise-label">Technical Leadership:</div>
+							<span class="expertise-item">Team management, project delivery, architectural decision-making, mentoring</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -49,16 +69,27 @@
 </section>
 
 <style>
+.skills-expertise-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 3rem;
+	align-items: start;
+}
+
+.skills-pane,
+.expertise-pane {
+	background: rgba(30, 30, 46, 0.3);
+	border: 1px solid rgba(137, 180, 250, 0.2);
+	border-radius: 12px;
+	padding: 2rem;
+}
+
 .terminal-command {
 	color: #a6e3a1;
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
 	font-size: 1.5rem;
 	font-weight: 500;
 	margin-bottom: 1.5rem;
-	margin-top: 2rem;
-}
-
-.terminal-command:first-child {
 	margin-top: 0;
 }
 
@@ -69,7 +100,7 @@
 
 .terminal-output {
 	margin-left: 0;
-	margin-bottom: 2rem;
+	margin-bottom: 0;
 }
 
 .skills-array,
@@ -84,6 +115,15 @@
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
 	font-size: 1rem;
 	line-height: 1.6;
+	margin-bottom: 0.5rem;
+}
+
+.skill-label,
+.expertise-label {
+	color: #fab387;
+	font-weight: 600;
+	display: block;
+	margin-bottom: 0.2rem;
 }
 
 .skill-item,
@@ -91,35 +131,62 @@
 	color: #cdd6f4;
 	display: block;
 	padding: 0.25rem 0;
+	margin-left: 1rem;
 }
 
-.skill-category::before,
-.expertise-category::before {
+.skill-item::before,
+.expertise-item::before {
 	content: '"';
 	color: #f9e2af;
 	margin-right: 0;
 }
 
-.skill-category::after,
-.expertise-category::after {
+.skill-item::after,
+.expertise-item::after {
 	content: '",';
 	color: #f9e2af;
 }
 
-.skill-category:last-child::after,
-.expertise-category:last-child::after {
+.skill-category:last-child .skill-item::after,
+.expertise-category:last-child .expertise-item::after {
 	content: '"';
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+	.skills-expertise-grid {
+		gap: 2rem;
+	}
+	
+	.skills-pane,
+	.expertise-pane {
+		padding: 1.5rem;
+	}
+}
+
 @media (max-width: 768px) {
+	.skills-expertise-grid {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+	
 	.terminal-command {
 		font-size: 1.3rem;
 	}
 	
+	.skill-label,
+	.expertise-label {
+		font-size: 0.9rem;
+	}
+	
 	.skill-item,
 	.expertise-item {
-		font-size: 0.9rem;
+		font-size: 0.85rem;
+	}
+	
+	.skills-pane,
+	.expertise-pane {
+		padding: 1.5rem;
 	}
 }
 
@@ -128,9 +195,20 @@
 		font-size: 1.1rem;
 	}
 	
+	.skill-label,
+	.expertise-label {
+		font-size: 0.8rem;
+	}
+	
 	.skill-item,
 	.expertise-item {
-		font-size: 0.85rem;
+		font-size: 0.75rem;
+		margin-left: 0.5rem;
+	}
+	
+	.skills-pane,
+	.expertise-pane {
+		padding: 1rem;
 	}
 }
 </style>

@@ -1,140 +1,298 @@
 ---
-// Refactored publications page
-import PublicationsLayout from '../layouts/PublicationsLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 ---
 
-<PublicationsLayout 
+<BaseLayout 
 	title="Publications - Yiming Peng"
 	description="Research publications by Yiming Peng in Machine Learning, Reinforcement Learning, and Evolutionary Computation"
 >
 	<Header currentPage="publications" />
-
-	<!-- Main Content -->
-	<main class="main">
+	<main class="publications-page">
 		<div class="container">
-			<h1 class="page-title">Publications</h1>
-			<p class="page-subtitle">
-				Research contributions in Machine Learning, Reinforcement Learning, and Evolutionary Computation
-			</p>
-
-			<!-- Category Navigation -->
-			<div class="category-nav">
-				<a href="#all" class="category-btn active">All Publications</a>
-				<a href="#journal" class="category-btn">Journal Papers</a>
-				<a href="#conference" class="category-btn">Conference Papers</a>
+			<div class="page-header">
+				<h1 class="page-title">Publications</h1>
+				<p class="page-subtitle">Research publications in machine learning and evolutionary computation</p>
+				<a href="/" class="back-link">← Back to home</a>
 			</div>
 
-			<!-- Research Stats -->
-			<div class="stats-section">
-				<div class="stats-grid">
-					<div class="stat-item">
-						<span class="stat-number">15+</span>
-						<div class="stat-label">Publications</div>
-					</div>
-					<div class="stat-item">
-						<span class="stat-number">200+</span>
-						<div class="stat-label">Citations</div>
-					</div>
-					<div class="stat-item">
-						<span class="stat-number">10+</span>
-						<div class="stat-label">Conference Papers</div>
-					</div>
-					<div class="stat-item">
-						<span class="stat-number">2+</span>
-						<div class="stat-label">Journal Articles</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Publications Grid -->
-			<div class="publications-grid">
-				<!-- Sample Journal Paper -->
-				<div class="publication-card">
-					<span class="publication-type">Journal Article</span>
-					<h3 class="publication-title">
-						Advanced Reinforcement Learning Techniques for Policy Optimization
-					</h3>
-					<p class="publication-authors">
-						<strong>Yiming Peng</strong>, Co-Author Name, Another Author
-					</p>
-					<p class="publication-venue">
-						Journal of Machine Learning Research, 2019
-					</p>
-					<p class="publication-abstract">
-						This paper presents novel approaches to policy optimization in reinforcement learning, 
-						focusing on direct search methods and their applications to complex control problems. 
-						Our experimental results demonstrate significant improvements over existing methods.
-					</p>
-					<div class="publication-links">
-						<a href="#" class="publication-link">
-							<span>📄</span> PDF
-						</a>
-						<a href="https://scholar.google.co.uk/citations?user=bJBbv0EAAAAJ" class="publication-link" target="_blank">
-							<span>🎓</span> Google Scholar
-						</a>
-						<a href="#" class="publication-link">
-							<span>💻</span> Code
-						</a>
-					</div>
-				</div>
-
-				<!-- Sample Conference Paper -->
-				<div class="publication-card">
-					<span class="publication-type">Conference Paper</span>
-					<h3 class="publication-title">
-						Deep Learning Approaches for Evolutionary Computation
-					</h3>
-					<p class="publication-authors">
-						<strong>Yiming Peng</strong>, Research Collaborator
-					</p>
-					<p class="publication-venue">
-						IEEE Congress on Evolutionary Computation (CEC), 2018
-					</p>
-					<p class="publication-abstract">
-						We explore the integration of deep learning techniques with evolutionary algorithms, 
-						demonstrating improved performance on benchmark optimization problems and real-world applications.
-					</p>
-					<div class="publication-links">
-						<a href="#" class="publication-link">
-							<span>📄</span> PDF
-						</a>
-						<a href="#" class="publication-link">
-							<span>🎤</span> Slides
-						</a>
-						<a href="#" class="publication-link">
-							<span>📊</span> Data
-						</a>
-					</div>
-				</div>
-
-				<!-- Sample Conference Paper 2 -->
-				<div class="publication-card">
-					<span class="publication-type">Conference Paper</span>
-					<h3 class="publication-title">
-						Constructive Chunk Incremental IDR/QR LDA for Multiple Data Samples Learning
-					</h3>
-					<p class="publication-authors">
-						<strong>Yiming Peng</strong>, Supervisor Name
-					</p>
-					<p class="publication-venue">
-						International Conference on Machine Learning Applications, 2017
-					</p>
-					<p class="publication-abstract">
-						This paper proposes a constructive chunk Incremental IDR/QR LDA (c-QR/IncLDA) for multiple 
-						data samples incremental learning, addressing the limitations of existing sequential methods 
-						in handling large-scale datasets efficiently.
-					</p>
-					<div class="publication-links">
-						<a href="#" class="publication-link">
-							<span>📄</span> PDF
-						</a>
-						<a href="#" class="publication-link">
-							<span>🎤</span> Slides
-						</a>
+			<div class="publications-placeholder">
+				<div class="placeholder-content">
+					<div class="placeholder-icon">📚</div>
+					<h3 class="placeholder-title">Publications Coming Soon</h3>
+					<p class="placeholder-text">I'm currently updating my publication list with the latest research. Check back soon for a comprehensive overview of my work in machine learning and evolutionary computation.</p>
+					<div class="placeholder-note">
+						<p><em>Note: Publication details are being refined and will be available shortly.</em></p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</main>
-</PublicationsLayout>
+</BaseLayout>
+
+<style>
+.publications-page {
+	padding: 2rem 0 4rem;
+	background: #0d1117;
+	color: #e6edf3;
+	min-height: 100vh;
+}
+
+.page-header {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.page-title {
+	font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	background: linear-gradient(135deg, #89b4fa 0%, #cba6f7 50%, #f9e2af 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #89b4fa !important;
+	font-size: 3rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+	text-align: center;
+	letter-spacing: -0.02em;
+	position: relative;
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (background-clip: text) {
+	.page-title {
+		background: none;
+		color: #89b4fa !important;
+		-webkit-text-fill-color: unset;
+	}
+}
+
+.page-title::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 3px;
+	background: linear-gradient(90deg, #89b4fa 0%, #cba6f7 100%);
+	border-radius: 2px;
+}
+
+.page-subtitle {
+	color: #7c8f8f;
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.back-link {
+	display: inline-block;
+	color: #58a6ff;
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.3s ease;
+}
+
+.back-link:hover {
+	color: #79c0ff;
+}
+
+.publications-list {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.publications-placeholder {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.placeholder-content {
+	text-align: center;
+	background: #161b22;
+	border: 1px solid #21262d;
+	border-radius: 16px;
+	padding: 4rem 2rem;
+	margin-top: 2rem;
+}
+
+.placeholder-icon {
+	font-size: 4rem;
+	margin-bottom: 1.5rem;
+	opacity: 0.8;
+}
+
+.placeholder-title {
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: #e6edf3;
+	margin-bottom: 1rem;
+}
+
+.placeholder-text {
+	color: #7c8f8f;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin-bottom: 2rem;
+}
+
+.placeholder-note {
+	padding-top: 1.5rem;
+	border-top: 1px solid #21262d;
+}
+
+.placeholder-note p {
+	color: #89b4fa;
+	font-size: 0.95rem;
+	margin: 0;
+}
+
+.publication-section {
+	margin-bottom: 3rem;
+}
+
+.section-header {
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	color: #f9e2af;
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid #21262d;
+	padding-bottom: 0.5rem;
+}
+
+.publication-item {
+	background: #161b22;
+	border: 1px solid #21262d;
+	border-radius: 8px;
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-item:hover {
+	border-color: #30363d;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.publication-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #e6edf3;
+	margin-bottom: 0.5rem;
+	line-height: 1.4;
+}
+
+.publication-authors {
+	color: #7c8f8f;
+	margin-bottom: 0.3rem;
+	font-size: 0.95rem;
+}
+
+.publication-authors strong {
+	color: #e6edf3;
+}
+
+.publication-venue {
+	color: #58a6ff;
+	font-weight: 500;
+	margin-bottom: 1rem;
+	font-size: 0.95rem;
+}
+
+.publication-actions {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.action-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	background: #21262d;
+	color: #e6edf3;
+	text-decoration: none;
+	border-radius: 6px;
+	border: 1px solid #30363d;
+	font-weight: 500;
+	font-size: 0.9rem;
+	transition: all 0.3s ease;
+}
+
+.action-link:hover {
+	background: #30363d;
+	border-color: #484f58;
+	color: #58a6ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.publications-page {
+		padding: 1.5rem 0 3rem;
+	}
+	
+	.page-title {
+		font-size: 2rem;
+	}
+	
+	.page-subtitle {
+		font-size: 1rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	.publication-item {
+		padding: 1.25rem;
+	}
+	
+	.publication-title {
+		font-size: 1.1rem;
+	}
+	
+	.publication-actions {
+		gap: 0.5rem;
+	}
+	
+	.action-link {
+		padding: 0.4rem 0.8rem;
+		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.publications-page {
+		padding: 1rem 0 2rem;
+	}
+	
+	.page-title {
+		font-size: 1.75rem;
+	}
+	
+	.page-subtitle {
+		font-size: 0.95rem;
+		margin-bottom: 1.25rem;
+	}
+	
+	.publication-item {
+		padding: 1rem;
+	}
+	
+	.publication-title {
+		font-size: 1rem;
+	}
+	
+	.publication-authors,
+	.publication-venue {
+		font-size: 0.9rem;
+	}
+	
+	.action-link {
+		padding: 0.35rem 0.7rem;
+		font-size: 0.8rem;
+	}
+}
+</style>
