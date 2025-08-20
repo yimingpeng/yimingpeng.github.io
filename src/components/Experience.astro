@@ -269,4 +269,185 @@
 
 <style>
 	@import 'aos/dist/aos.css';
+
+	.section {
+		padding: 3rem 0;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.section-title {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 2.5rem;
+		color: #a6e3a1;
+		text-align: center;
+		margin-bottom: 3rem;
+		font-weight: 600;
+	}
+
+	.experience-timeline {
+		position: relative;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.experience-item {
+		margin-bottom: 2rem;
+		position: relative;
+	}
+
+	.experience-card {
+		background: rgba(30, 30, 46, 0.8);
+		border: 1px solid rgba(166, 227, 161, 0.2);
+		border-radius: 12px;
+		padding: 2rem;
+		backdrop-filter: blur(10px);
+		transition: all 0.3s ease;
+	}
+
+	.experience-card:hover {
+		border-color: rgba(166, 227, 161, 0.4);
+		box-shadow: 0 8px 32px rgba(166, 227, 161, 0.1);
+		transform: translateY(-2px);
+	}
+
+	.experience-date {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		color: #89b4fa;
+		font-size: 0.9rem;
+		font-weight: 500;
+		margin-bottom: 0.5rem;
+	}
+
+	.experience-title {
+		font-size: 1.4rem;
+		color: #cdd6f4;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	.experience-company {
+		color: #a6e3a1;
+		font-size: 1.1rem;
+		font-weight: 500;
+		margin-bottom: 1.5rem;
+	}
+
+	.experience-description {
+		color: #bac2de;
+		line-height: 1.6;
+	}
+
+	.projects-section,
+	.deliverables-section {
+		margin-bottom: 1.5rem;
+	}
+
+	.projects-section:last-child,
+	.deliverables-section:last-child {
+		margin-bottom: 0;
+	}
+
+	.projects-section h4,
+	.deliverables-section h4 {
+		color: #f9e2af;
+		font-size: 1.1rem;
+		font-weight: 600;
+		margin-bottom: 0.8rem;
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	}
+
+	.projects-section ul,
+	.deliverables-section ul {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	.projects-section > ul > li,
+	.deliverables-section > ul > li {
+		position: relative;
+		padding-left: 1.5rem;
+		margin-bottom: 0.8rem;
+		line-height: 1.6;
+	}
+
+	.projects-section > ul > li::before,
+	.deliverables-section > ul > li::before {
+		content: '▸';
+		position: absolute;
+		left: 0;
+		color: #a6e3a1;
+		font-weight: bold;
+	}
+
+	.projects-section ul ul {
+		margin-top: 0.5rem;
+		margin-left: 1rem;
+	}
+
+	.projects-section ul ul li {
+		position: relative;
+		padding-left: 1.5rem;
+		margin-bottom: 0.3rem;
+		color: #a6adc8;
+	}
+
+	.projects-section ul ul li::before {
+		content: '→';
+		position: absolute;
+		left: 0;
+		color: #89b4fa;
+		font-weight: normal;
+	}
+
+	strong {
+		color: #fab387;
+		font-weight: 600;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.section {
+			padding: 2rem 0;
+		}
+
+		.section-title {
+			font-size: 2rem;
+			margin-bottom: 2rem;
+		}
+
+		.experience-card {
+			padding: 1.5rem;
+		}
+
+		.experience-title {
+			font-size: 1.2rem;
+		}
+
+		.experience-company {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.container {
+			padding: 0 0.5rem;
+		}
+
+		.section-title {
+			font-size: 1.5rem;
+		}
+
+		.experience-card {
+			padding: 1rem;
+		}
+
+		.experience-title {
+			font-size: 1.1rem;
+		}
+	}
 </style>
