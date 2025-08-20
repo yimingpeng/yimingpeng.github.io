@@ -1,0 +1,521 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+---
+
+<BaseLayout 
+	title="Projects - Yiming Peng"
+	description="Data Engineering and Software Development projects by Yiming Peng"
+>
+	<Header currentPage="projects" />
+	<main class="projects-page">
+		<div class="container">
+			<div class="page-header">
+				<h1 class="page-title">$ cat projects.json</h1>
+				<p class="page-subtitle">Featured data engineering and software development projects</p>
+				<a href="/" class="back-link">← Back to home</a>
+			</div>
+
+			<div class="projects-grid">
+				<!-- DataOps Platform -->
+				<div class="project-card featured">
+					<div class="project-header">
+						<h3 class="project-title">DataOps Platform</h3>
+						<div class="project-tags">
+							<span class="tag">Python</span>
+							<span class="tag">Airflow</span>
+							<span class="tag">PostgreSQL</span>
+							<span class="tag">Tableau</span>
+						</div>
+					</div>
+					<div class="project-description">
+						<p>Developed and managed an on-premises DataOps platform with 25+ ETL pipelines, improving data ingestion/transformation and reporting capabilities.</p>
+					</div>
+					<div class="project-metrics">
+						<div class="metric">
+							<span class="metric-value">25+</span>
+							<span class="metric-label">ETL Pipelines</span>
+						</div>
+						<div class="metric">
+							<span class="metric-value">40%</span>
+							<span class="metric-label">Processing Speed ↑</span>
+						</div>
+						<div class="metric">
+							<span class="metric-value">99.9%</span>
+							<span class="metric-label">Uptime</span>
+						</div>
+					</div>
+					<div class="project-impact">
+						<h4>Impact:</h4>
+						<ul>
+							<li>Reduced data processing time by 40%</li>
+							<li>Improved data quality and observability</li>
+							<li>Enabled real-time business intelligence</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Data Quality Monitoring -->
+				<div class="project-card">
+					<div class="project-header">
+						<h3 class="project-title">Data Quality Monitoring System</h3>
+						<div class="project-tags">
+							<span class="tag">Python</span>
+							<span class="tag">Great Expectations</span>
+							<span class="tag">ClickHouse</span>
+							<span class="tag">GitLab CI</span>
+						</div>
+					</div>
+					<div class="project-description">
+						<p>Led design and development of a comprehensive data quality monitoring system using Great Expectations, improving observability across the entire data platform.</p>
+					</div>
+					<div class="project-metrics">
+						<div class="metric">
+							<span class="metric-value">100+</span>
+							<span class="metric-label">Quality Checks</span>
+						</div>
+						<div class="metric">
+							<span class="metric-value">80%</span>
+							<span class="metric-label">Error Detection ↑</span>
+						</div>
+					</div>
+					<div class="project-impact">
+						<h4>Key Features:</h4>
+						<ul>
+							<li>Automated data profiling and validation</li>
+							<li>Real-time alerting and notifications</li>
+							<li>Comprehensive data quality dashboards</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Resource Planning Tool -->
+				<div class="project-card">
+					<div class="project-header">
+						<h3 class="project-title">Resource Planning Tool</h3>
+						<div class="project-tags">
+							<span class="tag">Python</span>
+							<span class="tag">ReactJS</span>
+							<span class="tag">PostgreSQL</span>
+							<span class="tag">REST API</span>
+						</div>
+					</div>
+					<div class="project-description">
+						<p>Built a resource planning tool for managing and scheduling crew workloads with capacity optimization algorithms.</p>
+					</div>
+					<div class="project-metrics">
+						<div class="metric">
+							<span class="metric-value">500+</span>
+							<span class="metric-label">Users</span>
+						</div>
+						<div class="metric">
+							<span class="metric-value">30%</span>
+							<span class="metric-label">Planning Efficiency ↑</span>
+						</div>
+					</div>
+					<div class="project-impact">
+						<h4>Features:</h4>
+						<ul>
+							<li>Interactive scheduling interface</li>
+							<li>Capacity optimization algorithms</li>
+							<li>Real-time resource allocation</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Cloud Migration -->
+				<div class="project-card">
+					<div class="project-header">
+						<h3 class="project-title">Cloud Migration & Modernization</h3>
+						<div class="project-tags">
+							<span class="tag">AWS</span>
+							<span class="tag">Docker</span>
+							<span class="tag">Kubernetes</span>
+							<span class="tag">Terraform</span>
+						</div>
+					</div>
+					<div class="project-description">
+						<p>Successfully migrated and modernized 8 ETL pipelines from Docker-compose to OpenShift/Kubernetes, implementing DevOps best practices.</p>
+					</div>
+					<div class="project-metrics">
+						<div class="metric">
+							<span class="metric-value">8</span>
+							<span class="metric-label">Pipelines Migrated</span>
+						</div>
+						<div class="metric">
+							<span class="metric-value">60%</span>
+							<span class="metric-label">Cost Reduction</span>
+						</div>
+					</div>
+					<div class="project-impact">
+						<h4>Achievements:</h4>
+						<ul>
+							<li>Zero-downtime migration strategy</li>
+							<li>Improved scalability and reliability</li>
+							<li>Reduced infrastructure costs by 60%</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- RTO Analytics Dashboard -->
+				<div class="project-card">
+					<div class="project-header">
+						<h3 class="project-title">RTO Analytics Dashboard</h3>
+						<div class="project-tags">
+							<span class="tag">Python</span>
+							<span class="tag">Tableau</span>
+							<span class="tag">SQL</span>
+							<span class="tag">Analytics</span>
+						</div>
+					</div>
+					<div class="project-description">
+						<p>Created real-time dashboards and analytics reports for tracking Return to Office (RTO) policy implementation and organizational compliance.</p>
+					</div>
+					<div class="project-metrics">
+						<div class="metric">
+							<span class="metric-value">Real-time</span>
+							<span class="metric-label">Data Updates</span>
+						</div>
+						<div class="metric">
+							<span class="metric-value">95%</span>
+							<span class="metric-label">Accuracy</span>
+						</div>
+					</div>
+					<div class="project-impact">
+						<h4>Impact:</h4>
+						<ul>
+							<li>Enabled data-driven policy decisions</li>
+							<li>Improved organizational transparency</li>
+							<li>Real-time compliance monitoring</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- ML Model Productionization -->
+				<div class="project-card">
+					<div class="project-header">
+						<h3 class="project-title">ML Model Productionization</h3>
+						<div class="project-tags">
+							<span class="tag">Python</span>
+							<span class="tag">MLOps</span>
+							<span class="tag">Docker</span>
+							<span class="tag">API</span>
+						</div>
+					</div>
+					<div class="project-description">
+						<p>Contributing to productionizing machine learning models for predicting workflow schedules and budgets in production environments.</p>
+					</div>
+					<div class="project-metrics">
+						<div class="metric">
+							<span class="metric-value">85%</span>
+							<span class="metric-label">Prediction Accuracy</span>
+						</div>
+						<div class="metric">
+							<span class="metric-value">50ms</span>
+							<span class="metric-label">Response Time</span>
+						</div>
+					</div>
+					<div class="project-impact">
+						<h4>Technical Highlights:</h4>
+						<ul>
+							<li>Automated model training pipelines</li>
+							<li>Real-time prediction API</li>
+							<li>Model performance monitoring</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="cta-section">
+				<h2>Interested in working together?</h2>
+				<p>Let's discuss how I can help with your data engineering challenges.</p>
+				<a href="/#contact" class="cta-button">Get In Touch</a>
+			</div>
+		</div>
+	</main>
+</BaseLayout>
+
+<style>
+.projects-page {
+	padding-top: 120px;
+	min-height: 100vh;
+	background: linear-gradient(135deg, #181825 0%, #1e1e2e 50%, #181825 100%);
+}
+
+.page-header {
+	text-align: center;
+	margin-bottom: 4rem;
+}
+
+.page-title {
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 2.5rem;
+	color: #a6e3a1;
+	margin-bottom: 1rem;
+	font-weight: 500;
+}
+
+.page-subtitle {
+	font-size: 1.2rem;
+	color: #cdd6f4;
+	opacity: 0.8;
+	margin-bottom: 2rem;
+}
+
+.back-link {
+	display: inline-block;
+	color: #89b4fa;
+	text-decoration: none;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+	border: 1px solid rgba(137, 180, 250, 0.3);
+	border-radius: 6px;
+	transition: all 0.3s ease;
+}
+
+.back-link:hover {
+	background: rgba(137, 180, 250, 0.1);
+	border-color: #89b4fa;
+}
+
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: 2rem;
+	margin-bottom: 4rem;
+}
+
+.project-card {
+	background: rgba(30, 30, 46, 0.8);
+	border: 1px solid rgba(137, 180, 250, 0.2);
+	border-radius: 12px;
+	padding: 2rem;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.project-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: linear-gradient(90deg, #a6e3a1, #89b4fa, #f9e2af);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+	transform: translateY(-5px);
+	border-color: #89b4fa;
+	box-shadow: 0 10px 30px rgba(137, 180, 250, 0.1);
+}
+
+.project-card:hover::before {
+	opacity: 1;
+}
+
+.project-card.featured {
+	grid-column: span 2;
+	background: rgba(30, 30, 46, 0.9);
+	border-color: #a6e3a1;
+}
+
+.project-card.featured::before {
+	opacity: 1;
+	background: linear-gradient(90deg, #a6e3a1, #89b4fa);
+}
+
+.project-header {
+	margin-bottom: 1.5rem;
+}
+
+.project-title {
+	color: #a6e3a1;
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.project-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.tag {
+	background: rgba(137, 180, 250, 0.1);
+	color: #89b4fa;
+	padding: 0.25rem 0.75rem;
+	border-radius: 20px;
+	font-size: 0.85rem;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	border: 1px solid rgba(137, 180, 250, 0.3);
+}
+
+.project-description {
+	margin-bottom: 1.5rem;
+}
+
+.project-description p {
+	color: #cdd6f4;
+	line-height: 1.6;
+	font-size: 1rem;
+}
+
+.project-metrics {
+	display: flex;
+	gap: 1.5rem;
+	margin-bottom: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.metric {
+	text-align: center;
+	flex: 1;
+	min-width: 80px;
+}
+
+.metric-value {
+	display: block;
+	color: #f9e2af;
+	font-size: 1.5rem;
+	font-weight: 700;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.metric-label {
+	display: block;
+	color: #cdd6f4;
+	font-size: 0.85rem;
+	opacity: 0.8;
+	margin-top: 0.25rem;
+}
+
+.project-impact h4 {
+	color: #89b4fa;
+	margin-bottom: 0.75rem;
+	font-size: 1rem;
+}
+
+.project-impact ul {
+	list-style: none;
+	padding: 0;
+}
+
+.project-impact li {
+	color: #cdd6f4;
+	font-size: 0.9rem;
+	margin-bottom: 0.5rem;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+.project-impact li::before {
+	content: '→';
+	color: #a6e3a1;
+	position: absolute;
+	left: 0;
+	font-weight: bold;
+}
+
+.cta-section {
+	text-align: center;
+	padding: 3rem 0;
+	border-top: 1px solid rgba(137, 180, 250, 0.2);
+}
+
+.cta-section h2 {
+	color: #a6e3a1;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.cta-section p {
+	color: #cdd6f4;
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
+	opacity: 0.8;
+}
+
+.cta-button {
+	display: inline-block;
+	background: linear-gradient(135deg, #a6e3a1, #89b4fa);
+	color: #181825;
+	text-decoration: none;
+	padding: 1rem 2rem;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 1.1rem;
+	transition: all 0.3s ease;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.cta-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(166, 227, 161, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.projects-page {
+		padding-top: 100px;
+	}
+	
+	.page-title {
+		font-size: 2rem;
+	}
+	
+	.projects-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+	
+	.project-card.featured {
+		grid-column: span 1;
+	}
+	
+	.project-metrics {
+		gap: 1rem;
+	}
+	
+	.metric {
+		min-width: 60px;
+	}
+	
+	.metric-value {
+		font-size: 1.2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.projects-page {
+		padding-top: 80px;
+	}
+	
+	.page-title {
+		font-size: 1.5rem;
+	}
+	
+	.project-card {
+		padding: 1.5rem;
+	}
+	
+	.project-metrics {
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+	
+	.metric {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		text-align: left;
+	}
+}
+</style>

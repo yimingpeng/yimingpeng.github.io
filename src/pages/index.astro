@@ -3,12 +3,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import Skills from '../components/Skills.astro';
-import Experience from '../components/Experience.astro';
-import Education from '../components/Education.astro';
-import Interests from '../components/Interests.astro';
-import PublicationsPreview from '../components/PublicationsPreview.astro';
-import Contact from '../components/Contact.astro';
+import ProjectsPreview from '../components/ProjectsPreview.astro';
+import SkillsSimple from '../components/SkillsSimple.astro';
+import Contact from '../components/ContactSimple.astro';
 ---
 
 <BaseLayout 
@@ -17,10 +14,7 @@ import Contact from '../components/Contact.astro';
 >
 	<Header currentPage="home" />
 	<Hero />
-	<Skills />
-	<Experience />
-	<Education />
-	<Interests />
-	<PublicationsPreview />
+	<ProjectsPreview />
+	<SkillsSimple />
 	<Contact />
 </BaseLayout>
