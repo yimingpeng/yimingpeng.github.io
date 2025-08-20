@@ -20,7 +20,13 @@ const { currentPage = 'home' } = Astro.props;
 			</ul>
 			<button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
 		</nav>
-		<div class="mobile-menu" id="mobile-menu">
+	</div>
+</header>
+
+<!-- Mobile menu outside header container for proper overlay positioning -->
+<div class="mobile-menu-overlay" id="mobile-menu">
+	<div class="mobile-menu">
+		<div class="mobile-menu-content">
 			<a href="/#about">About</a>
 			<a href="/#skills">Skills</a>
 			<a href="/#experience">Experience</a>
@@ -29,4 +35,4 @@ const { currentPage = 'home' } = Astro.props;
 			<a href="/#contact">Contact</a>
 		</div>
 	</div>
-</header>
+</div>
