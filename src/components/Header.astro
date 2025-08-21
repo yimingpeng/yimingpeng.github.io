@@ -3,7 +3,8 @@ export interface Props {
 	currentPage?: string;
 }
 
-const { currentPage = 'home' } = Astro.props;
+// Extract props for potential future use
+const { currentPage } = Astro.props;
 ---
 
 <header class="header">

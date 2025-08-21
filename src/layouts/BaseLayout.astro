@@ -64,7 +64,7 @@ import '../styles/components.css';
 			// Mobile menu toggle with improved touch handling
 			const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 			const mobileMenu = document.getElementById('mobile-menu');
-			const body = document.body;
+			// const body = document.body; // Reserved for future use
 
 			if (mobileMenuBtn && mobileMenu) {
 				// Use touchstart and click for better mobile responsiveness
@@ -81,9 +81,11 @@ import '../styles/components.css';
 							// Toggle menu button appearance to indicate state
 							if (isActive) {
 								mobileMenuBtn.textContent = '✕'; // Change to X when menu is open
-								// Don't set body overflow to hidden as it affects header scrollability
+								// Don't set body overflow to hidden as it affects header
+								// scrollability
 							} else {
-								mobileMenuBtn.textContent = '☰'; // Change back to hamburger when closed
+								mobileMenuBtn.textContent = '☰'; // Change back to
+								// hamburger when closed
 							}
 						},
 						{ passive: false }
