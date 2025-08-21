@@ -2,11 +2,12 @@
 
 Hello, welcome to my personal portfolio website repository!
 
-I am [Yiming](https://www.linkedin.com/in/yiming-nz/), currently working as a senior software engineer at WetaFx Ltd. 
+I am [Yiming](https://www.linkedin.com/in/yiming-nz/), currently working as a senior software engineer at WetaFx Ltd.
 
 You might have seen my old home page built about 7 years ago, which is clearly much outdated, so I am currently working on rebuilding this new page with modern web technologies.
 
 ## Tech Stack
+
 - **[Astro](https://astro.new/latest/)** - Modern static site generator for fast, content-focused websites
 - **GitHub Actions** - Automated deployment and CI/CD pipeline
 - **TypeScript** - Type-safe JavaScript development
@@ -14,6 +15,7 @@ You might have seen my old home page built about 7 years ago, which is clearly m
 ## Development
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm
 
@@ -21,11 +23,13 @@ You might have seen my old home page built about 7 years ago, which is clearly m
 
 1. Clone the repository
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -64,6 +68,7 @@ This site is configured to deploy automatically to GitHub Pages using GitHub Act
 ### Automatic Deployment
 
 The site will automatically build and deploy when you:
+
 - Push changes to the `master` branch
 - The GitHub Actions workflow (`.github/workflows/deploy.yml`) will handle the build and deployment process
 

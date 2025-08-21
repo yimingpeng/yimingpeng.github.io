@@ -29,8 +29,14 @@ body {
 
 /* Simple blink animation */
 @keyframes blink {
-	0%, 50% { opacity: 1; }
-	51%, 100% { opacity: 0; }
+	0%,
+	50% {
+		opacity: 1;
+	}
+	51%,
+	100% {
+		opacity: 0;
+	}
 }
 
 .terminal-cursor::after {
@@ -108,7 +114,7 @@ body {
 }
 
 .tooltip .tooltip-text::after {
-	content: "";
+	content: '';
 	position: absolute;
 	bottom: 100%;
 	left: 50%;
@@ -142,20 +148,20 @@ body {
 		width: 100%;
 		max-width: 100%;
 	}
-	
+
 	.section {
 		padding: 3rem 0;
 	}
-	
+
 	.section-title {
 		font-size: 2rem;
 	}
-	
+
 	.section-subtitle {
 		font-size: 1.1rem;
 		margin-bottom: 3rem;
 	}
-	
+
 	.tooltip .tooltip-text {
 		width: auto;
 		min-width: 80px;
@@ -171,20 +177,20 @@ body {
 		width: 100%;
 		max-width: 100%;
 	}
-	
+
 	.section {
 		padding: 2.5rem 0;
 	}
-	
+
 	.section-title {
 		font-size: 1.8rem;
 	}
-	
+
 	.section-subtitle {
 		font-size: 1rem;
 		margin-bottom: 2.5rem;
 	}
-	
+
 	.tooltip .tooltip-text {
 		width: auto;
 		min-width: 70px;

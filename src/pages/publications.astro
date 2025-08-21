@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 ---
 
-<BaseLayout 
+<BaseLayout
 	title="Publications - Yiming Peng"
 	description="Research publications by Yiming Peng in Machine Learning, Reinforcement Learning, and Evolutionary Computation"
 >
@@ -12,7 +12,9 @@ import Header from '../components/Header.astro';
 		<div class="container">
 			<div class="page-header">
 				<h1 class="page-title">$ cat publications.txt</h1>
-				<p class="page-subtitle">Research publications in machine learning and evolutionary computation</p>
+				<p class="page-subtitle">
+					Research publications in machine learning and evolutionary computation
+				</p>
 				<a href="/" class="back-link">← Back to home</a>
 			</div>
 
@@ -21,10 +23,16 @@ import Header from '../components/Header.astro';
 					<div class="placeholder-icon">📚</div>
 					<h2 class="placeholder-title">Publications Coming Soon</h2>
 					<div class="placeholder-text">
-						<p>I'm currently updating my publication list with the latest research. Check back soon for a comprehensive overview of my work in machine learning and evolutionary computation.</p>
+						<p>
+							I'm currently updating my publication list with the latest research. Check back soon
+							for a comprehensive overview of my work in machine learning and evolutionary
+							computation.
+						</p>
 					</div>
 					<div class="placeholder-note">
-						<p><em>Note: Publication details are being refined and will be available shortly.</em></p>
+						<p>
+							<em>Note: Publication details are being refined and will be available shortly.</em>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -33,248 +41,250 @@ import Header from '../components/Header.astro';
 </BaseLayout>
 
 <style>
-.publications-page {
-	padding-top: 120px;
-	padding-bottom: 4rem;
-	background: linear-gradient(135deg, #181825 0%, #1e1e2e 50%, #181825 100%);
-	color: #e6edf3;
-	min-height: 100vh;
-}
-
-.page-header {
-	text-align: center;
-	margin-bottom: 3rem;
-}
-
-.page-title {
-	font-family: 'JetBrains Mono', 'Fira Code', monospace;
-	font-size: 2.5rem;
-	color: #a6e3a1;
-	margin-bottom: 1rem;
-	font-weight: 500;
-}
-
-.page-subtitle {
-	color: #7c8f8f;
-	font-size: 1.1rem;
-	margin-bottom: 2rem;
-	max-width: 600px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.back-link {
-	display: inline-block;
-	color: #89b4fa;
-	text-decoration: none;
-	font-family: 'JetBrains Mono', 'Fira Code', monospace;
-	font-size: 1rem;
-	padding: 0.5rem 1rem;
-	border: 1px solid rgba(137, 180, 250, 0.3);
-	border-radius: 6px;
-	transition: all 0.3s ease;
-}
-
-.back-link:hover {
-	background: rgba(137, 180, 250, 0.1);
-	border-color: #89b4fa;
-}
-
-.publications-list {
-	max-width: 800px;
-	margin: 0 auto;
-}
-
-.publications-placeholder {
-	max-width: 600px;
-	margin: 0 auto;
-}
-
-.placeholder-content {
-	text-align: center;
-	background: #161b22;
-	border: 1px solid #21262d;
-	border-radius: 16px;
-	padding: 4rem 2rem;
-	margin-top: 2rem;
-}
-
-.placeholder-icon {
-	font-size: 4rem;
-	margin-bottom: 1.5rem;
-	opacity: 0.8;
-}
-
-.placeholder-title {
-	font-size: 1.8rem;
-	font-weight: 600;
-	color: #e6edf3;
-	margin-bottom: 1rem;
-}
-
-.placeholder-text {
-	color: #7c8f8f;
-	font-size: 1.1rem;
-	line-height: 1.6;
-	margin-bottom: 2rem;
-}
-
-.placeholder-note {
-	padding-top: 1.5rem;
-	border-top: 1px solid #21262d;
-}
-
-.placeholder-note p {
-	color: #89b4fa;
-	font-size: 0.95rem;
-	margin: 0;
-}
-
-.publication-section {
-	margin-bottom: 3rem;
-}
-
-.section-header {
-	font-family: 'JetBrains Mono', 'Fira Code', monospace;
-	color: #f9e2af;
-	font-size: 1.5rem;
-	font-weight: 600;
-	margin-bottom: 1.5rem;
-	border-bottom: 1px solid #21262d;
-	padding-bottom: 0.5rem;
-}
-
-.publication-item {
-	background: #161b22;
-	border: 1px solid #21262d;
-	border-radius: 8px;
-	padding: 1.5rem;
-	margin-bottom: 1rem;
-	transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.publication-item:hover {
-	border-color: #30363d;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.publication-title {
-	font-size: 1.2rem;
-	font-weight: 600;
-	color: #e6edf3;
-	margin-bottom: 0.5rem;
-	line-height: 1.4;
-}
-
-.publication-authors {
-	color: #7c8f8f;
-	margin-bottom: 0.3rem;
-	font-size: 0.95rem;
-}
-
-.publication-authors strong {
-	color: #e6edf3;
-}
-
-.publication-venue {
-	color: #58a6ff;
-	font-weight: 500;
-	margin-bottom: 1rem;
-	font-size: 0.95rem;
-}
-
-.publication-actions {
-	display: flex;
-	gap: 1rem;
-	flex-wrap: wrap;
-}
-
-.action-link {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	padding: 0.5rem 1rem;
-	background: #21262d;
-	color: #e6edf3;
-	text-decoration: none;
-	border-radius: 6px;
-	border: 1px solid #30363d;
-	font-weight: 500;
-	font-size: 0.9rem;
-	transition: all 0.3s ease;
-}
-
-.action-link:hover {
-	background: #30363d;
-	border-color: #484f58;
-	color: #58a6ff;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
 	.publications-page {
-		padding-top: 100px;
-		padding-bottom: 3rem;
+		padding-top: 120px;
+		padding-bottom: 4rem;
+		background: linear-gradient(135deg, #181825 0%, #1e1e2e 50%, #181825 100%);
+		color: #e6edf3;
+		min-height: 100vh;
 	}
-	
+
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
 	.page-title {
-		font-size: 2rem;
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 2.5rem;
+		color: #a6e3a1;
+		margin-bottom: 1rem;
+		font-weight: 500;
 	}
-	
+
 	.page-subtitle {
-		font-size: 1rem;
-		margin-bottom: 1.5rem;
-	}
-	
-	.publication-item {
-		padding: 1.25rem;
-	}
-	
-	.publication-title {
+		color: #7c8f8f;
 		font-size: 1.1rem;
+		margin-bottom: 2rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
 	}
-	
-	.publication-actions {
-		gap: 0.5rem;
-	}
-	
-	.action-link {
-		padding: 0.4rem 0.8rem;
-		font-size: 0.85rem;
-	}
-}
 
-@media (max-width: 480px) {
-	.publications-page {
-		padding-top: 80px;
-		padding-bottom: 2rem;
-	}
-	
-	.page-title {
-		font-size: 1.75rem;
-	}
-	
-	.page-subtitle {
-		font-size: 0.95rem;
-		margin-bottom: 1.25rem;
-	}
-	
-	.publication-item {
-		padding: 1rem;
-	}
-	
-	.publication-title {
+	.back-link {
+		display: inline-block;
+		color: #89b4fa;
+		text-decoration: none;
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
 		font-size: 1rem;
+		padding: 0.5rem 1rem;
+		border: 1px solid rgba(137, 180, 250, 0.3);
+		border-radius: 6px;
+		transition: all 0.3s ease;
 	}
-	
-	.publication-authors,
+
+	.back-link:hover {
+		background: rgba(137, 180, 250, 0.1);
+		border-color: #89b4fa;
+	}
+
+	.publications-list {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.publications-placeholder {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.placeholder-content {
+		text-align: center;
+		background: #161b22;
+		border: 1px solid #21262d;
+		border-radius: 16px;
+		padding: 4rem 2rem;
+		margin-top: 2rem;
+	}
+
+	.placeholder-icon {
+		font-size: 4rem;
+		margin-bottom: 1.5rem;
+		opacity: 0.8;
+	}
+
+	.placeholder-title {
+		font-size: 1.8rem;
+		font-weight: 600;
+		color: #e6edf3;
+		margin-bottom: 1rem;
+	}
+
+	.placeholder-text {
+		color: #7c8f8f;
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin-bottom: 2rem;
+	}
+
+	.placeholder-note {
+		padding-top: 1.5rem;
+		border-top: 1px solid #21262d;
+	}
+
+	.placeholder-note p {
+		color: #89b4fa;
+		font-size: 0.95rem;
+		margin: 0;
+	}
+
+	.publication-section {
+		margin-bottom: 3rem;
+	}
+
+	.section-header {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		color: #f9e2af;
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 1.5rem;
+		border-bottom: 1px solid #21262d;
+		padding-bottom: 0.5rem;
+	}
+
+	.publication-item {
+		background: #161b22;
+		border: 1px solid #21262d;
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin-bottom: 1rem;
+		transition:
+			border-color 0.3s ease,
+			box-shadow 0.3s ease;
+	}
+
+	.publication-item:hover {
+		border-color: #30363d;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	}
+
+	.publication-title {
+		font-size: 1.2rem;
+		font-weight: 600;
+		color: #e6edf3;
+		margin-bottom: 0.5rem;
+		line-height: 1.4;
+	}
+
+	.publication-authors {
+		color: #7c8f8f;
+		margin-bottom: 0.3rem;
+		font-size: 0.95rem;
+	}
+
+	.publication-authors strong {
+		color: #e6edf3;
+	}
+
 	.publication-venue {
-		font-size: 0.9rem;
+		color: #58a6ff;
+		font-weight: 500;
+		margin-bottom: 1rem;
+		font-size: 0.95rem;
 	}
-	
+
+	.publication-actions {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
 	.action-link {
-		padding: 0.35rem 0.7rem;
-		font-size: 0.8rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 1rem;
+		background: #21262d;
+		color: #e6edf3;
+		text-decoration: none;
+		border-radius: 6px;
+		border: 1px solid #30363d;
+		font-weight: 500;
+		font-size: 0.9rem;
+		transition: all 0.3s ease;
 	}
-}
+
+	.action-link:hover {
+		background: #30363d;
+		border-color: #484f58;
+		color: #58a6ff;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.publications-page {
+			padding-top: 100px;
+			padding-bottom: 3rem;
+		}
+
+		.page-title {
+			font-size: 2rem;
+		}
+
+		.page-subtitle {
+			font-size: 1rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.publication-item {
+			padding: 1.25rem;
+		}
+
+		.publication-title {
+			font-size: 1.1rem;
+		}
+
+		.publication-actions {
+			gap: 0.5rem;
+		}
+
+		.action-link {
+			padding: 0.4rem 0.8rem;
+			font-size: 0.85rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.publications-page {
+			padding-top: 80px;
+			padding-bottom: 2rem;
+		}
+
+		.page-title {
+			font-size: 1.75rem;
+		}
+
+		.page-subtitle {
+			font-size: 0.95rem;
+			margin-bottom: 1.25rem;
+		}
+
+		.publication-item {
+			padding: 1rem;
+		}
+
+		.publication-title {
+			font-size: 1rem;
+		}
+
+		.publication-authors,
+		.publication-venue {
+			font-size: 0.9rem;
+		}
+
+		.action-link {
+			padding: 0.35rem 0.7rem;
+			font-size: 0.8rem;
+		}
+	}
 </style>

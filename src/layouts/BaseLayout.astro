@@ -13,7 +13,7 @@ import '../styles/hero.css';
 import '../styles/components.css';
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -22,16 +22,14 @@ import '../styles/components.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		
-
 	</head>
 	<body>
 		<slot />
-		
+
 		<script>
 			// Smooth scrolling for navigation links
 			document.querySelectorAll('a[href^="#"]').forEach((anchor: Element) => {
-				anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
+				anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
 					e.preventDefault();
 					const href = this.getAttribute('href');
 					if (href) {
@@ -67,38 +65,51 @@ import '../styles/components.css';
 			const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 			const mobileMenu = document.getElementById('mobile-menu');
 			const body = document.body;
-			
+
 			if (mobileMenuBtn && mobileMenu) {
 				// Use touchstart and click for better mobile responsiveness
 				['click', 'touchstart'].forEach(eventType => {
-					mobileMenuBtn.addEventListener(eventType, (e: Event) => {
-						e.preventDefault();
-						e.stopPropagation();
-						
-						// Toggle mobile menu
-						const isActive = mobileMenu.classList.toggle('active');
-						
-						// Toggle menu button appearance to indicate state
-						if (isActive) {
-							mobileMenuBtn.textContent = '✕'; // Change to X when menu is open
-							// Don't set body overflow to hidden as it affects header scrollability
-						} else {
-							mobileMenuBtn.textContent = '☰'; // Change back to hamburger when closed
-						}
-					}, { passive: false });
+					mobileMenuBtn.addEventListener(
+						eventType,
+						(e: Event) => {
+							e.preventDefault();
+							e.stopPropagation();
+
+							// Toggle mobile menu
+							const isActive = mobileMenu.classList.toggle('active');
+
+							// Toggle menu button appearance to indicate state
+							if (isActive) {
+								mobileMenuBtn.textContent = '✕'; // Change to X when menu is open
+								// Don't set body overflow to hidden as it affects header scrollability
+							} else {
+								mobileMenuBtn.textContent = '☰'; // Change back to hamburger when closed
+							}
+						},
+						{ passive: false }
+					);
 				});
 
 				// Close mobile menu when clicking outside
 				['click', 'touchstart'].forEach(eventType => {
-					document.addEventListener(eventType, (e: Event) => {
-						const target = e.target as Node;
-						if (mobileMenu && mobileMenuBtn && !mobileMenu.contains(target) && !mobileMenuBtn.contains(target)) {
-							mobileMenu.classList.remove('active');
-							mobileMenuBtn.textContent = '☰'; // Reset button text
-						}
-					}, { passive: true });
+					document.addEventListener(
+						eventType,
+						(e: Event) => {
+							const target = e.target as Node;
+							if (
+								mobileMenu &&
+								mobileMenuBtn &&
+								!mobileMenu.contains(target) &&
+								!mobileMenuBtn.contains(target)
+							) {
+								mobileMenu.classList.remove('active');
+								mobileMenuBtn.textContent = '☰'; // Reset button text
+							}
+						},
+						{ passive: true }
+					);
 				});
-				
+
 				// Close menu when clicking on a menu item
 				mobileMenu.querySelectorAll('.mobile-menu-content a').forEach((link: Element) => {
 					link.addEventListener('click', () => {
