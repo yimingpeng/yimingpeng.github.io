@@ -1,21 +1,17 @@
 ---
-export interface Props {
-	currentPage?: string;
-}
-
-// Extract props for potential future use
-const { currentPage } = Astro.props;
+// Header with anchor-only navigation for single-page layout
 ---
 
 <header class="header">
 	<div class="container">
 		<nav class="nav">
-			<a href="/" class="logo">Yiming Peng</a>
+			<a href="/#about" class="logo">Yiming Peng</a>
 			<ul class="nav-links">
 				<li><a href="/#about">About</a></li>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="/experience">Experience</a></li>
-				<li><a href="/publications">Publications</a></li>
+				<li><a href="/#projects">Projects</a></li>
+				<li><a href="/#experience">Experience</a></li>
+				<li><a href="/#writing">Writing</a></li>
+				<li><a href="/#publications">Publications</a></li>
 				<li><a href="/#contact">Contact</a></li>
 			</ul>
 			<button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
@@ -28,9 +24,10 @@ const { currentPage } = Astro.props;
 	<div class="mobile-menu">
 		<div class="mobile-menu-content">
 			<a href="/#about">About</a>
-			<a href="/projects">Projects</a>
-			<a href="/experience">Experience</a>
-			<a href="/publications">Publications</a>
+			<a href="/#projects">Projects</a>
+			<a href="/#experience">Experience</a>
+			<a href="/#writing">Writing</a>
+			<a href="/#publications">Publications</a>
 			<a href="/#contact">Contact</a>
 		</div>
 	</div>

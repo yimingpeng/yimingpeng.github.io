@@ -25,7 +25,7 @@ export default [
 			'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
 			'@typescript-eslint/explicit-function-return-type': 'off',
 			'@typescript-eslint/explicit-module-boundary-types': 'off',
-			'max-len': ['error', { code: 100, ignoreUrls: true, ignoreStrings: true }]
+			'max-len': ['error', { code: 100, tabWidth: 2, ignoreUrls: true, ignoreStrings: true }]
 		}
 	},
 
@@ -47,7 +47,7 @@ export default [
 			quotes: ['error', 'single', { allowTemplateLiterals: true }],
 			semi: ['error', 'always'],
 			indent: ['error', 'tab'],
-			'max-len': ['error', { code: 100, ignoreUrls: true, ignoreStrings: true }]
+			'max-len': ['error', { code: 100, tabWidth: 2, ignoreUrls: true, ignoreStrings: true }]
 		}
 	},
 

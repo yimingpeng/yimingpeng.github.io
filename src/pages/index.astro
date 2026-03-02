@@ -1,20 +1,25 @@
 ---
-// Refactored homepage using components and layouts
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import ProjectsPreview from '../components/ProjectsPreview.astro';
-import SkillsSimple from '../components/SkillsSimple.astro';
+import Experience from '../components/Experience.astro';
+import Writing from '../components/Writing.astro';
+import Publications from '../components/Publications.astro';
 import Contact from '../components/ContactSimple.astro';
 ---
 
 <BaseLayout
-	title="Yiming Peng - Data Engineer/Data Architect/Software Engineer"
-	description="Data Engineer/Data Architect/Software Engineer at Wētā FX with 8+ years of data integration expertise and 20+ years programming experience"
+	title="Yiming Peng — Data Engineer & Architect"
+	description="Senior Data Engineer building scalable DataOps and MLOps platforms. Currently at Wētā FX. Apache Airflow contributor. PhD in Machine Learning."
 >
-	<Header currentPage="home" />
-	<Hero />
-	<ProjectsPreview />
-	<SkillsSimple />
-	<Contact />
+	<Header />
+	<main>
+		<Hero />
+		<ProjectsPreview />
+		<Experience />
+		<Writing />
+		<Publications />
+		<Contact />
+	</main>
 </BaseLayout>

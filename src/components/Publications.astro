@@ -1,0 +1,168 @@
+---
+// Publications section — real papers (placeholder data until user provides actual links)
+---
+
+<section class="section" id="publications">
+	<div class="container">
+		<h2 class="section-title">$ cat publications.bib</h2>
+		<div class="pubs-list">
+			<!-- Placeholder entries — user to replace with real paper data -->
+			<div class="pub-item">
+				<div class="pub-venue">
+					<span class="venue-tag">[Conference TBD]</span>
+					<span class="pub-year">2018</span>
+				</div>
+				<h3 class="pub-title">[Paper title — please add real title here]</h3>
+				<p class="pub-authors">
+					<strong>Yiming Peng</strong>, [Co-authors TBD]
+				</p>
+				<div class="pub-actions">
+					<span class="placeholder-note">Add PDF / DOI link when available</span>
+				</div>
+			</div>
+
+			<div class="pub-item">
+				<div class="pub-venue">
+					<span class="venue-tag">[Conference TBD]</span>
+					<span class="pub-year">2017</span>
+				</div>
+				<h3 class="pub-title">[Paper title — please add real title here]</h3>
+				<p class="pub-authors">
+					<strong>Yiming Peng</strong>, [Co-authors TBD]
+				</p>
+				<div class="pub-actions">
+					<span class="placeholder-note">Add PDF / DOI link when available</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="scholar-cta">
+			<a
+				href="https://scholar.google.co.uk/citations?user=bJBbv0EAAAAJ"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="scholar-link"
+			>
+				Full list on Google Scholar →
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.section {
+		padding: 4rem 0;
+	}
+
+	.container {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.section-title {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 1.4rem;
+		color: #a6e3a1;
+		font-weight: 500;
+		margin-bottom: 2.5rem;
+	}
+
+	.pubs-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		max-width: 750px;
+	}
+
+	.pub-item {
+		border-left: 2px solid rgba(137, 180, 250, 0.3);
+		padding: 0.75rem 1.25rem;
+		transition: border-color 0.2s ease;
+	}
+
+	.pub-item:hover {
+		border-color: #89b4fa;
+	}
+
+	.pub-venue {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 0.4rem;
+	}
+
+	.venue-tag {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.75rem;
+		color: #f9e2af;
+		background: rgba(249, 226, 175, 0.08);
+		border: 1px solid rgba(249, 226, 175, 0.2);
+		padding: 0.15rem 0.5rem;
+		border-radius: 4px;
+	}
+
+	.pub-year {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.8rem;
+		color: #6c7086;
+	}
+
+	.pub-title {
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: #cdd6f4;
+		line-height: 1.4;
+		margin-bottom: 0.35rem;
+	}
+
+	.pub-authors {
+		font-size: 0.85rem;
+		color: #6c7086;
+		margin-bottom: 0.6rem;
+	}
+
+	.pub-authors strong {
+		color: #bac2de;
+	}
+
+	.pub-actions {
+		display: flex;
+		gap: 0.75rem;
+		align-items: center;
+	}
+
+	.pub-link {
+		font-size: 0.82rem;
+		color: #89b4fa;
+		text-decoration: none;
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		transition: color 0.2s ease;
+	}
+
+	.pub-link:hover {
+		color: #a6e3a1;
+	}
+
+	.placeholder-note {
+		font-size: 0.78rem;
+		color: #45475a;
+		font-style: italic;
+	}
+
+	.scholar-cta {
+		margin-top: 2rem;
+	}
+
+	.scholar-link {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.9rem;
+		color: #89b4fa;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.scholar-link:hover {
+		color: #a6e3a1;
+	}
+</style>

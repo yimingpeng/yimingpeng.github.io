@@ -1,136 +1,157 @@
 ---
-// Projects preview section for homepage
+// Featured Projects section — curated, narrative-driven
 ---
 
 <section class="section" id="projects">
 	<div class="container">
-		<h2 class="terminal-command">$ Yiming.featured_projects</h2>
-		<div class="terminal-output">
-			<div class="projects-preview">
-				<!-- Featured Project 1 -->
-				<div class="project-preview-card">
-					<div class="project-header">
-						<h3 class="project-title">Enterprise DataOps Platform</h3>
-						<div class="project-tags">
-							<span class="tag">Python</span>
-							<span class="tag">Airflow</span>
-							<span class="tag">PostgreSQL</span>
-						</div>
-					</div>
-					<p class="project-description">
-						Architected fault-tolerant enterprise DataOps platform, eliminating recurring pipeline
-						failures and earning stakeholder recognition for reliable data delivery.
-					</p>
-					<div class="project-metrics">
-						<span class="metric">Enterprise Scale</span>
-						<span class="metric">Multi-source Integration</span>
-						<span class="metric">Production Critical</span>
+		<h2 class="section-title">$ ls ./featured-projects</h2>
+		<div class="projects-grid">
+			<!-- Project 1: DataOps Platform -->
+			<div class="project-card">
+				<div class="project-header">
+					<h3 class="project-title">DataOps Platform @ Wētā FX</h3>
+					<div class="project-tags">
+						<span class="tag">Python</span>
+						<span class="tag">Airflow</span>
+						<span class="tag">ClickHouse</span>
+						<span class="tag">Ansible</span>
 					</div>
 				</div>
-
-				<!-- Featured Project 2 -->
-				<div class="project-preview-card">
-					<div class="project-header">
-						<h3 class="project-title">Data Quality & Observability System</h3>
-						<div class="project-tags">
-							<span class="tag">Great Expectations</span>
-							<span class="tag">ClickHouse</span>
-							<span class="tag">GitLab CI</span>
-						</div>
-					</div>
-					<p class="project-description">
-						Spearheaded comprehensive data quality framework from the ground up, dramatically
-						reducing incidents and increasing stakeholder confidence in data reliability.
-					</p>
-					<div class="project-metrics">
-						<span class="metric">Platform-wide Coverage</span>
-						<span class="metric">Proactive Detection</span>
-						<span class="metric">Automated Validation</span>
-					</div>
-				</div>
-
-				<!-- Featured Project 3 -->
-				<div class="project-preview-card">
-					<div class="project-header">
-						<h3 class="project-title">Cloud Migration & Modernization</h3>
-						<div class="project-tags">
-							<span class="tag">OpenShift</span>
-							<span class="tag">Kubernetes</span>
-							<span class="tag">GitOps</span>
-						</div>
-					</div>
-					<p class="project-description">
-						Led complex cloud-native transformation of critical production systems, achieving
-						seamless migration with enhanced resilience and operational efficiency.
-					</p>
-					<div class="project-metrics">
-						<span class="metric">Production Critical</span>
-						<span class="metric">Zero-downtime Migration</span>
-						<span class="metric">Cloud-native Architecture</span>
-					</div>
-				</div>
+				<p class="project-narrative">
+					Production on-premises data platform powering BI and ML workflows across Wētā FX. Built
+					and maintains 25+ ETL pipelines ingesting from disparate sources — solving the persistent
+					problem of unreliable, undocumented data hand-offs between departments.
+				</p>
+				<p class="project-impact">
+					<span class="impact-label">Impact:</span> Eliminated recurring pipeline failures; stakeholder
+					teams now rely on it as production-critical infrastructure.
+				</p>
 			</div>
 
-			<div class="view-all-projects">
-				<a href="/projects" class="terminal-link">
-					<span class="terminal-prompt">$ </span>
-					<span class="command">cd projects && ls -la</span>
-					<span class="terminal-arrow">→</span>
-				</a>
+			<!-- Project 2: Airflow OSS Contributions -->
+			<div class="project-card">
+				<div class="project-header">
+					<h3 class="project-title">Apache Airflow — OSS Contributions</h3>
+					<div class="project-tags">
+						<span class="tag">Python</span>
+						<span class="tag">Open Source</span>
+						<span class="tag">Apache Airflow</span>
+					</div>
+				</div>
+				<p class="project-narrative">
+					Contributor to Apache Airflow — the de facto standard for data pipeline orchestration used
+					by thousands of organizations worldwide. Contributions focus on stability, usability, and
+					operator improvements drawn from real production experience.
+				</p>
+				<p class="project-impact">
+					<span class="impact-label">Links:</span>
+					<a
+						href="https://github.com/apache/airflow"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="project-link">GitHub →</a
+					>
+					<span class="placeholder-note">[PR links — add when available]</span>
+				</p>
+			</div>
+
+			<!-- Project 3: Data Quality Monitoring -->
+			<div class="project-card">
+				<div class="project-header">
+					<h3 class="project-title">Data Quality & Observability System</h3>
+					<div class="project-tags">
+						<span class="tag">Great Expectations</span>
+						<span class="tag">Python</span>
+						<span class="tag">GitLab CI</span>
+					</div>
+				</div>
+				<p class="project-narrative">
+					Designed and built a platform-wide data quality framework from the ground up using Great
+					Expectations — moving the team from reactive fire-fighting to proactive anomaly detection.
+					Integrated into the CI/CD pipeline so quality checks run automatically on every deploy.
+				</p>
+				<p class="project-impact">
+					<span class="impact-label">Impact:</span> Dramatically reduced data incidents; stakeholders
+					gained confidence to act on data without manual verification.
+				</p>
+			</div>
+
+			<!-- Project 4: MLOps Pipeline -->
+			<div class="project-card">
+				<div class="project-header">
+					<h3 class="project-title">Kubernetes MLOps Platform</h3>
+					<div class="project-tags">
+						<span class="tag">Kubernetes</span>
+						<span class="tag">Kubeflow</span>
+						<span class="tag">AWS EKS</span>
+					</div>
+				</div>
+				<p class="project-narrative">
+					Co-designed and built a Kubernetes-based MLOps platform at Chorus NZ to close the gap
+					between data science experimentation and production deployment. Enabled model training,
+					versioning, and serving pipelines within a unified, reproducible infrastructure.
+				</p>
+				<p class="project-impact">
+					<span class="impact-label">Impact:</span> First production ML infrastructure at the organisation
+					— made model deployment a routine operation rather than a heroic effort.
+				</p>
 			</div>
 		</div>
 	</div>
 </section>
 
 <style>
-	.terminal-command {
-		color: #a6e3a1;
+	.section {
+		padding: 4rem 0;
+	}
+
+	.container {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.section-title {
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 1.5rem;
+		font-size: 1.4rem;
+		color: #a6e3a1;
 		font-weight: 500;
-		margin-bottom: 2rem;
+		margin-bottom: 2.5rem;
 	}
 
-	.terminal-output {
-		margin-left: 0;
-	}
-
-	.projects-preview {
+	.projects-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
 		gap: 1.5rem;
-		margin-bottom: 2rem;
 	}
 
-	.project-preview-card {
+	.project-card {
 		background: rgba(30, 30, 46, 0.6);
-		border: 1px solid rgba(137, 180, 250, 0.2);
+		border: 1px solid rgba(137, 180, 250, 0.15);
 		border-radius: 8px;
-		padding: 1.5rem;
-		transition: all 0.3s ease;
+		padding: 1.75rem;
+		transition: border-color 0.2s ease;
 		position: relative;
 		overflow: hidden;
 	}
 
-	.project-preview-card::before {
+	.project-card::before {
 		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		height: 2px;
-		background: linear-gradient(90deg, #a6e3a1, #89b4fa, #f9e2af);
+		background: linear-gradient(90deg, #a6e3a1, #89b4fa);
 		opacity: 0;
-		transition: opacity 0.3s ease;
+		transition: opacity 0.2s ease;
 	}
 
-	.project-preview-card:hover {
-		transform: translateY(-3px);
-		border-color: #89b4fa;
-		background: rgba(30, 30, 46, 0.8);
+	.project-card:hover {
+		border-color: rgba(137, 180, 250, 0.35);
 	}
 
-	.project-preview-card:hover::before {
+	.project-card:hover::before {
 		opacity: 1;
 	}
 
@@ -139,11 +160,11 @@
 	}
 
 	.project-title {
-		color: #a6e3a1;
-		font-size: 1.2rem;
-		font-weight: 600;
-		margin-bottom: 0.75rem;
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 1.05rem;
+		font-weight: 600;
+		color: #cdd6f4;
+		margin-bottom: 0.75rem;
 	}
 
 	.project-tags {
@@ -153,124 +174,58 @@
 	}
 
 	.tag {
-		background: rgba(137, 180, 250, 0.1);
+		background: rgba(137, 180, 250, 0.08);
 		color: #89b4fa;
-		padding: 0.2rem 0.6rem;
-		border-radius: 12px;
-		font-size: 0.75rem;
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		border: 1px solid rgba(137, 180, 250, 0.3);
-	}
-
-	.project-description {
-		color: #cdd6f4;
-		line-height: 1.6;
-		font-size: 0.95rem;
-		margin-bottom: 1rem;
-		opacity: 0.9;
-	}
-
-	.project-metrics {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.75rem;
-	}
-
-	.metric {
-		color: #f9e2af;
-		font-size: 0.85rem;
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		background: rgba(249, 226, 175, 0.1);
-		padding: 0.25rem 0.5rem;
+		padding: 0.2rem 0.55rem;
 		border-radius: 4px;
-		border: 1px solid rgba(249, 226, 175, 0.2);
-	}
-
-	.view-all-projects {
-		text-align: center;
-		margin-top: 2rem;
-		padding-top: 2rem;
-		border-top: 1px solid rgba(137, 180, 250, 0.2);
-	}
-
-	.terminal-link {
-		color: #cdd6f4;
-		text-decoration: none;
+		font-size: 0.72rem;
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 1.1rem;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 0.75rem 1.5rem;
-		border: 1px solid rgba(137, 180, 250, 0.3);
-		border-radius: 6px;
-		transition: all 0.3s ease;
-		background: rgba(30, 30, 46, 0.5);
+		border: 1px solid rgba(137, 180, 250, 0.2);
 	}
 
-	.terminal-link:hover {
-		border-color: #89b4fa;
-		background: rgba(137, 180, 250, 0.1);
-		transform: translateY(-2px);
+	.project-narrative {
+		color: #bac2de;
+		line-height: 1.7;
+		font-size: 0.92rem;
+		margin-bottom: 1rem;
 	}
 
-	.terminal-prompt {
+	.project-impact {
+		color: #6c7086;
+		font-size: 0.88rem;
+		line-height: 1.5;
+	}
+
+	.impact-label {
+		color: #f9e2af;
+		font-weight: 600;
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	}
+
+	.project-link {
 		color: #89b4fa;
+		text-decoration: none;
+		margin-left: 0.5rem;
 	}
 
-	.command {
-		color: #cdd6f4;
-	}
-
-	.terminal-arrow {
+	.project-link:hover {
 		color: #a6e3a1;
-		font-weight: bold;
 	}
 
-	/* Responsive Design */
+	.placeholder-note {
+		color: #45475a;
+		font-size: 0.8rem;
+		font-style: italic;
+		margin-left: 0.5rem;
+	}
+
 	@media (max-width: 768px) {
-		.terminal-command {
-			font-size: 1.3rem;
-		}
-
-		.projects-preview {
+		.projects-grid {
 			grid-template-columns: 1fr;
-			gap: 1rem;
 		}
 
-		.project-preview-card {
-			padding: 1.25rem;
-		}
-
-		.project-metrics {
-			gap: 0.5rem;
-		}
-
-		.metric {
-			font-size: 0.8rem;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.terminal-command {
-			font-size: 1.1rem;
-		}
-
-		.project-preview-card {
-			padding: 1rem;
-		}
-
-		.project-title {
-			font-size: 1.1rem;
-		}
-
-		.project-description {
-			font-size: 0.9rem;
-		}
-
-		.terminal-link {
-			font-size: 1rem;
-			padding: 0.6rem 1.2rem;
+		.section-title {
+			font-size: 1.2rem;
 		}
 	}
 </style>
