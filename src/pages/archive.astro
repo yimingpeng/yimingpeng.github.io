@@ -1,0 +1,390 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+const projects = [
+	// Wētā FX
+	{
+		year: 2024,
+		name: 'DataOps Platform',
+		madeAt: 'Wētā FX',
+		tech: ['Python', 'Airflow', 'PostgreSQL', 'ClickHouse', 'Ansible'],
+		link: null
+	},
+	{
+		year: 2024,
+		name: 'Data Quality & Observability System',
+		madeAt: 'Wētā FX',
+		tech: ['Great Expectations', 'Python', 'GitLab CI'],
+		link: null
+	},
+	{
+		year: 2024,
+		name: 'Resource Planning & Crew Scheduling Tool',
+		madeAt: 'Wētā FX',
+		tech: ['Python', 'ReactJS', 'PostgreSQL'],
+		link: null
+	},
+	{
+		year: 2023,
+		name: 'RTO Compliance Analytics',
+		madeAt: 'Wētā FX',
+		tech: ['Python', 'SQL', 'Tableau'],
+		link: null
+	},
+	// MBIE / Emergence
+	{
+		year: 2023,
+		name: 'ETL Cloud Migration (Docker → OpenShift)',
+		madeAt: 'MBIE',
+		tech: ['Airflow', 'DBT', 'OpenShift', 'Azure Pipelines'],
+		link: null
+	},
+	{
+		year: 2022,
+		name: 'Modern DataOps Platform Design',
+		madeAt: 'MBIE',
+		tech: ['Airflow', 'DBT', 'Dynatrace', 'OpenShift'],
+		link: null
+	},
+	// IHC New Zealand
+	{
+		year: 2022,
+		name: 'AWS ECS Data Platform',
+		madeAt: 'IHC New Zealand',
+		tech: ['AWS CloudFormation', 'Docker', 'Python', 'Airflow'],
+		link: null
+	},
+	{
+		year: 2022,
+		name: 'Enterprise ETL Pipeline Suite (→ Snowflake)',
+		madeAt: 'IHC New Zealand',
+		tech: ['Airflow', 'DBT', 'Snowflake', 'Python'],
+		link: null
+	},
+	{
+		year: 2021,
+		name: 'User Provisioning Automation',
+		madeAt: 'IHC New Zealand',
+		tech: ['Python', 'Airflow', 'Snowflake', 'Azure AD'],
+		link: null
+	},
+	// Chorus New Zealand
+	{
+		year: 2021,
+		name: 'Kubernetes MLOps Platform',
+		madeAt: 'Chorus NZ',
+		tech: ['Kubernetes', 'Kubeflow', 'AWS EKS', 'CloudFormation'],
+		link: null
+	},
+	{
+		year: 2020,
+		name: 'Oracle DW → AWS Redshift Migration',
+		madeAt: 'Chorus NZ',
+		tech: ['Python', 'PySpark', 'Airflow', 'Redshift'],
+		link: null
+	},
+	{
+		year: 2020,
+		name: 'Financial Data Analytics System',
+		madeAt: 'Chorus NZ',
+		tech: ['Python', 'SAP Hana', 'Tableau'],
+		link: null
+	},
+	// KPMG
+	{
+		year: 2019,
+		name: 'Azure National Data Platform',
+		madeAt: 'KPMG NZ',
+		tech: ['Azure', 'NodeJS', 'SQL'],
+		link: null
+	},
+	{
+		year: 2019,
+		name: 'Suspicious Transaction Analysis Platform',
+		madeAt: 'KPMG NZ',
+		tech: ['Python', 'R', 'SQL'],
+		link: null
+	},
+	// VUW / Research
+	{
+		year: 2019,
+		name: 'CEC 2019 Conference Website',
+		madeAt: 'Victoria University',
+		tech: ['Bootstrap', 'HTML', 'CSS', 'JavaScript'],
+		link: 'https://github.com/yimingpeng'
+	},
+	{
+		year: 2018,
+		name: 'AI 2018 Conference Website',
+		madeAt: 'Victoria University',
+		tech: ['Bootstrap', 'HTML', 'CSS', 'JavaScript'],
+		link: 'https://github.com/yimingpeng'
+	},
+	{
+		year: 2018,
+		name: 'Reinforcement Learning Systems (15+)',
+		madeAt: 'Victoria University',
+		tech: ['Python', 'TensorFlow', 'PyTorch', 'Theano'],
+		link: 'https://github.com/yimingpeng'
+	},
+	{
+		year: 2017,
+		name: 'CNN Ensemble Image Classification System',
+		madeAt: 'Victoria University',
+		tech: ['Python', 'TensorFlow', 'Keras', 'Scikit-Learn'],
+		link: null
+	},
+	// Unitec
+	{
+		year: 2014,
+		name: 'Decentralised Network Traffic Monitoring System',
+		madeAt: 'Unitec Institute of Technology',
+		tech: ['Java', 'JADE', 'Unity3D', 'MySQL'],
+		link: null
+	},
+	{
+		year: 2013,
+		name: 'Financial Forecast Systems (Stock & Crude Oil)',
+		madeAt: 'Unitec Institute of Technology',
+		tech: ['MATLAB'],
+		link: null
+	}
+];
+---
+
+<BaseLayout
+	title="Project Archive — Yiming Peng"
+	description="Full archive of projects by Yiming Peng across data engineering, MLOps, and research."
+>
+	<Header />
+	<main class="archive-page">
+		<div class="container">
+			<div class="page-header">
+				<a href="/#projects" class="back-link">← Back</a>
+				<h1 class="page-title">$ ls -la ./all-projects</h1>
+				<p class="page-subtitle">
+					All noteworthy projects, ordered by recency. Proprietary work has no public links.
+				</p>
+			</div>
+
+			<div class="table-wrapper">
+				<table class="projects-table">
+					<thead>
+						<tr>
+							<th>Year</th>
+							<th>Project</th>
+							<th>Made at</th>
+							<th>Built with</th>
+							<th class="link-col">Link</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							projects.map(p => (
+								<tr>
+									<td class="year">{p.year}</td>
+									<td class="project-name">{p.name}</td>
+									<td class="made-at">{p.madeAt}</td>
+									<td class="tech-list">
+										{p.tech.map((t, i) => (
+											<span>
+												{t}
+												{i < p.tech.length - 1 && (
+													<span class="tech-sep"> · </span>
+												)}
+											</span>
+										))}
+									</td>
+									<td class="link-col">
+										{p.link && (
+											<a
+												href={p.link}
+												target="_blank"
+												rel="noopener noreferrer"
+												class="ext-link"
+												title="View on GitHub"
+											>
+												<svg
+													viewBox="0 0 24 24"
+													fill="currentColor"
+													width="14"
+													height="14"
+												>
+													<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+												</svg>
+											</a>
+										)}
+									</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+</BaseLayout>
+
+<style>
+	.archive-page {
+		padding-top: 7rem;
+		padding-bottom: 5rem;
+		min-height: 100vh;
+	}
+
+	.container {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.page-header {
+		margin-bottom: 3rem;
+	}
+
+	.back-link {
+		display: inline-block;
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.85rem;
+		color: #89b4fa;
+		text-decoration: none;
+		margin-bottom: 1.5rem;
+		transition: color 0.2s ease;
+	}
+
+	.back-link:hover {
+		color: #a6e3a1;
+	}
+
+	.page-title {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 1.6rem;
+		color: #a6e3a1;
+		font-weight: 500;
+		margin-bottom: 0.75rem;
+	}
+
+	.page-subtitle {
+		font-size: 0.9rem;
+		color: #6c7086;
+	}
+
+	.table-wrapper {
+		overflow-x: auto;
+	}
+
+	.projects-table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.9rem;
+	}
+
+	.projects-table thead tr {
+		border-bottom: 1px solid rgba(166, 227, 161, 0.3);
+	}
+
+	.projects-table th {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.72rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #a6e3a1;
+		font-weight: 500;
+		padding: 0 1rem 0.75rem 0;
+		text-align: left;
+		white-space: nowrap;
+	}
+
+	.projects-table tbody tr {
+		border-bottom: 1px solid rgba(69, 71, 90, 0.35);
+		transition: background 0.15s ease;
+	}
+
+	.projects-table tbody tr:last-child {
+		border-bottom: none;
+	}
+
+	.projects-table tbody tr:hover {
+		background: rgba(137, 180, 250, 0.04);
+	}
+
+	.projects-table td {
+		padding: 0.85rem 1rem 0.85rem 0;
+		vertical-align: middle;
+	}
+
+	.year {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.82rem;
+		color: #6c7086;
+		white-space: nowrap;
+	}
+
+	.project-name {
+		color: #cdd6f4;
+		font-weight: 500;
+	}
+
+	.made-at {
+		font-size: 0.85rem;
+		color: #89b4fa;
+		white-space: nowrap;
+	}
+
+	.tech-list {
+		color: #585b70;
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.78rem;
+	}
+
+	.tech-sep {
+		color: #313244;
+	}
+
+	.link-col {
+		text-align: center;
+		width: 2.5rem;
+	}
+
+	.ext-link {
+		color: #45475a;
+		transition: color 0.2s ease;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.ext-link:hover {
+		color: #a6e3a1;
+	}
+
+	@media (max-width: 768px) {
+		.archive-page {
+			padding-top: 6rem;
+		}
+
+		.page-title {
+			font-size: 1.2rem;
+		}
+
+		.made-at {
+			display: none;
+		}
+
+		.projects-table th:nth-child(3),
+		.projects-table td:nth-child(3) {
+			display: none;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.tech-list {
+			display: none;
+		}
+
+		.projects-table th:nth-child(4),
+		.projects-table td:nth-child(4) {
+			display: none;
+		}
+	}
+</style>

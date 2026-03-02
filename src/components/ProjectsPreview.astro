@@ -97,6 +97,14 @@
 				</p>
 			</div>
 		</div>
+		<div class="archive-cta">
+			<a href="/archive" class="archive-link">
+				View full project archive
+				<svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13">
+					<path d="M10 6v2H5v11h11v-5h2v7H3V6h7zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z" />
+				</svg>
+			</a>
+		</div>
 	</div>
 </section>
 
@@ -217,6 +225,27 @@
 		font-size: 0.8rem;
 		font-style: italic;
 		margin-left: 0.5rem;
+	}
+
+	.archive-cta {
+		margin-top: 2rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid rgba(69, 71, 90, 0.4);
+	}
+
+	.archive-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.85rem;
+		color: #6c7086;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.archive-link:hover {
+		color: #a6e3a1;
 	}
 
 	@media (max-width: 768px) {
