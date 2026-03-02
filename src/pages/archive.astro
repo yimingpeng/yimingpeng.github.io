@@ -8,29 +8,37 @@ const projects = [
 		year: 2024,
 		name: 'DataOps Platform',
 		madeAt: 'Wētā FX',
-		tech: ['Python', 'Airflow', 'PostgreSQL', 'ClickHouse', 'Ansible'],
-		link: null
+		tech: ['Python', 'Airflow', 'ClickHouse', 'Ansible'],
+		description:
+			'Built and owns 25+ ETL pipelines on-prem; eliminated recurring data failures and ' +
+			'made the platform production-critical for BI and ML teams.'
 	},
 	{
 		year: 2024,
 		name: 'Data Quality & Observability System',
 		madeAt: 'Wētā FX',
 		tech: ['Great Expectations', 'Python', 'GitLab CI'],
-		link: null
+		description:
+			'Designed platform-wide quality framework from scratch; moved the team from ' +
+			'reactive firefighting to proactive anomaly detection.'
 	},
 	{
 		year: 2024,
 		name: 'Resource Planning & Crew Scheduling Tool',
 		madeAt: 'Wētā FX',
 		tech: ['Python', 'ReactJS', 'PostgreSQL'],
-		link: null
+		description:
+			'Built the first in-house capacity planning tool for managing and optimising ' +
+			'crew workload scheduling across the studio.'
 	},
 	{
 		year: 2023,
 		name: 'RTO Compliance Analytics',
 		madeAt: 'Wētā FX',
 		tech: ['Python', 'SQL', 'Tableau'],
-		link: null
+		description:
+			'Delivered real-time dashboards enabling Talent & Culture to track Return to ' +
+			'Office policy implementation and measure organisational compliance.'
 	},
 	// MBIE / Emergence
 	{
@@ -38,58 +46,74 @@ const projects = [
 		name: 'ETL Cloud Migration (Docker → OpenShift)',
 		madeAt: 'MBIE',
 		tech: ['Airflow', 'DBT', 'OpenShift', 'Azure Pipelines'],
-		link: null
+		description:
+			'Migrated 8 production pipelines from Docker-compose to OpenShift with zero ' +
+			'downtime; improved observability via Dynatrace and dbt-elementary.'
 	},
 	{
 		year: 2022,
 		name: 'Modern DataOps Platform Design',
 		madeAt: 'MBIE',
-		tech: ['Airflow', 'DBT', 'Dynatrace', 'OpenShift'],
-		link: null
+		tech: ['Airflow', 'DBT', 'Dynatrace'],
+		description:
+			'Architected a comprehensive platform design covering observability, data catalog, ' +
+			'lineage, governance, and strategy — forming the foundation for future data work.'
 	},
 	// IHC New Zealand
 	{
 		year: 2022,
 		name: 'AWS ECS Data Platform',
 		madeAt: 'IHC New Zealand',
-		tech: ['AWS CloudFormation', 'Docker', 'Python', 'Airflow'],
-		link: null
+		tech: ['AWS CloudFormation', 'Docker', 'Airflow'],
+		description:
+			'Stood up a containerised data tooling environment (Retool, N8N, Airflow) on AWS ' +
+			'ECS; gave analysts self-service access to data for the first time.'
 	},
 	{
 		year: 2022,
 		name: 'Enterprise ETL Pipeline Suite (→ Snowflake)',
 		madeAt: 'IHC New Zealand',
 		tech: ['Airflow', 'DBT', 'Snowflake', 'Python'],
-		link: null
+		description:
+			'Built 9 Snowflake pipelines from 5 source systems; powered 33 Power BI reports ' +
+			'used org-wide for workforce and financial analytics.'
 	},
 	{
 		year: 2021,
 		name: 'User Provisioning Automation',
 		madeAt: 'IHC New Zealand',
 		tech: ['Python', 'Airflow', 'Snowflake', 'Azure AD'],
-		link: null
+		description:
+			'Automated ServiceNow/Payglobal → Azure AD user provisioning via Airflow; ' +
+			'eliminated manual IT overhead and onboarding errors.'
 	},
 	// Chorus New Zealand
 	{
 		year: 2021,
 		name: 'Kubernetes MLOps Platform',
 		madeAt: 'Chorus NZ',
-		tech: ['Kubernetes', 'Kubeflow', 'AWS EKS', 'CloudFormation'],
-		link: null
+		tech: ['Kubernetes', 'Kubeflow', 'AWS EKS'],
+		description:
+			'Co-built the organisation\'s first ML infrastructure on EKS with Kubeflow; ' +
+			'made model deployment a repeatable, automated operation.'
 	},
 	{
 		year: 2020,
 		name: 'Oracle DW → AWS Redshift Migration',
 		madeAt: 'Chorus NZ',
 		tech: ['Python', 'PySpark', 'Airflow', 'Redshift'],
-		link: null
+		description:
+			'Designed and built a replication system migrating the legacy Oracle DW to AWS ' +
+			'Redshift via PySpark; unblocked cloud-native analytics adoption.'
 	},
 	{
 		year: 2020,
 		name: 'Financial Data Analytics System',
 		madeAt: 'Chorus NZ',
 		tech: ['Python', 'SAP Hana', 'Tableau'],
-		link: null
+		description:
+			'Built an internal financial analytics system integrating SAP Hana data; ' +
+			'delivered Tableau dashboards for the finance team.'
 	},
 	// KPMG
 	{
@@ -97,14 +121,18 @@ const projects = [
 		name: 'Azure National Data Platform',
 		madeAt: 'KPMG NZ',
 		tech: ['Azure', 'NodeJS', 'SQL'],
-		link: null
+		description:
+			'Co-built a high-profile national-scale Azure analytics platform for a government ' +
+			'agency; deployed for ongoing operations across the country.'
 	},
 	{
 		year: 2019,
-		name: 'Suspicious Transaction Analysis Platform',
+		name: 'Suspicious Transaction & Geo-Location Analysis',
 		madeAt: 'KPMG NZ',
 		tech: ['Python', 'R', 'SQL'],
-		link: null
+		description:
+			'Delivered transaction monitoring and geo-location analysis systems across ' +
+			'four government and private sector clients.'
 	},
 	// VUW / Research
 	{
@@ -112,43 +140,55 @@ const projects = [
 		name: 'CEC 2019 Conference Website',
 		madeAt: 'Victoria University',
 		tech: ['Bootstrap', 'HTML', 'CSS', 'JavaScript'],
-		link: 'https://github.com/yimingpeng'
+		description:
+			'Built the IEEE Congress on Evolutionary Computation 2019 website and managed ' +
+			'four social media channels for international conference publicity.'
 	},
 	{
 		year: 2018,
 		name: 'AI 2018 Conference Website',
 		madeAt: 'Victoria University',
 		tech: ['Bootstrap', 'HTML', 'CSS', 'JavaScript'],
-		link: 'https://github.com/yimingpeng'
+		description:
+			'Developed the full conference website for the 31st Australasian Joint ' +
+			'Conference on Artificial Intelligence.'
 	},
 	{
 		year: 2018,
 		name: 'Reinforcement Learning Systems (15+)',
 		madeAt: 'Victoria University',
 		tech: ['Python', 'TensorFlow', 'PyTorch', 'Theano'],
-		link: 'https://github.com/yimingpeng'
+		description:
+			'Implemented 15+ novel deep RL systems (100k+ lines) as the core research ' +
+			'contribution of a PhD in Machine Learning.'
 	},
 	{
 		year: 2017,
 		name: 'CNN Ensemble Image Classification System',
 		madeAt: 'Victoria University',
 		tech: ['Python', 'TensorFlow', 'Keras', 'Scikit-Learn'],
-		link: null
+		description:
+			'Built a deep learning ensemble for image classification published as a ' +
+			'conference paper in evolutionary computation.'
 	},
 	// Unitec
 	{
 		year: 2014,
 		name: 'Decentralised Network Traffic Monitoring System',
-		madeAt: 'Unitec Institute of Technology',
+		madeAt: 'Unitec',
 		tech: ['Java', 'JADE', 'Unity3D', 'MySQL'],
-		link: null
+		description:
+			'Led a team to build a real-time decentralised monitoring system (150k+ lines) ' +
+			'still in use at Unitec; contributed to a $10.6M MBIE-funded cyber-security project.'
 	},
 	{
 		year: 2013,
 		name: 'Financial Forecast Systems (Stock & Crude Oil)',
-		madeAt: 'Unitec Institute of Technology',
+		madeAt: 'Unitec',
 		tech: ['MATLAB'],
-		link: null
+		description:
+			'Implemented stock market and crude oil price trend prediction systems ' +
+			'using neural network approaches in MATLAB.'
 	}
 ];
 ---
@@ -164,7 +204,7 @@ const projects = [
 				<a href="/#projects" class="back-link">← Back</a>
 				<h1 class="page-title">$ ls -la ./all-projects</h1>
 				<p class="page-subtitle">
-					All noteworthy projects, ordered by recency. Proprietary work has no public links.
+					All noteworthy projects, ordered by recency.
 				</p>
 			</div>
 
@@ -172,11 +212,10 @@ const projects = [
 				<table class="projects-table">
 					<thead>
 						<tr>
-							<th>Year</th>
-							<th>Project</th>
-							<th>Made at</th>
-							<th>Built with</th>
-							<th class="link-col">Link</th>
+							<th class="col-year">Year</th>
+							<th class="col-project">Project</th>
+							<th class="col-madeat">Made at</th>
+							<th class="col-tech">Built with</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -184,7 +223,10 @@ const projects = [
 							projects.map(p => (
 								<tr>
 									<td class="year">{p.year}</td>
-									<td class="project-name">{p.name}</td>
+									<td class="project-cell">
+										<span class="project-name">{p.name}</span>
+										<span class="project-desc">{p.description}</span>
+									</td>
 									<td class="made-at">{p.madeAt}</td>
 									<td class="tech-list">
 										{p.tech.map((t, i) => (
@@ -195,26 +237,6 @@ const projects = [
 												)}
 											</span>
 										))}
-									</td>
-									<td class="link-col">
-										{p.link && (
-											<a
-												href={p.link}
-												target="_blank"
-												rel="noopener noreferrer"
-												class="ext-link"
-												title="View on GitHub"
-											>
-												<svg
-													viewBox="0 0 24 24"
-													fill="currentColor"
-													width="14"
-													height="14"
-												>
-													<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-												</svg>
-											</a>
-										)}
 									</td>
 								</tr>
 							))
@@ -234,7 +256,7 @@ const projects = [
 	}
 
 	.container {
-		max-width: 1000px;
+		max-width: 1100px;
 		margin: 0 auto;
 		padding: 0 1.5rem;
 	}
@@ -262,11 +284,11 @@ const projects = [
 		font-size: 1.6rem;
 		color: #a6e3a1;
 		font-weight: 500;
-		margin-bottom: 0.75rem;
+		margin-bottom: 0.6rem;
 	}
 
 	.page-subtitle {
-		font-size: 0.9rem;
+		font-size: 0.88rem;
 		color: #6c7086;
 	}
 
@@ -277,7 +299,6 @@ const projects = [
 	.projects-table {
 		width: 100%;
 		border-collapse: collapse;
-		font-size: 0.9rem;
 	}
 
 	.projects-table thead tr {
@@ -286,18 +307,30 @@ const projects = [
 
 	.projects-table th {
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 0.72rem;
+		font-size: 0.7rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		color: #a6e3a1;
 		font-weight: 500;
-		padding: 0 1rem 0.75rem 0;
+		padding: 0 1.5rem 0.75rem 0;
 		text-align: left;
 		white-space: nowrap;
 	}
 
+	.col-year {
+		width: 3.5rem;
+	}
+
+	.col-madeat {
+		width: 12rem;
+	}
+
+	.col-tech {
+		width: 16rem;
+	}
+
 	.projects-table tbody tr {
-		border-bottom: 1px solid rgba(69, 71, 90, 0.35);
+		border-bottom: 1px solid rgba(69, 71, 90, 0.3);
 		transition: background 0.15s ease;
 	}
 
@@ -309,9 +342,13 @@ const projects = [
 		background: rgba(137, 180, 250, 0.04);
 	}
 
+	.projects-table tbody tr:hover .project-desc {
+		color: #585b70;
+	}
+
 	.projects-table td {
-		padding: 0.85rem 1rem 0.85rem 0;
-		vertical-align: middle;
+		padding: 1rem 1.5rem 1rem 0;
+		vertical-align: top;
 	}
 
 	.year {
@@ -319,46 +356,59 @@ const projects = [
 		font-size: 0.82rem;
 		color: #6c7086;
 		white-space: nowrap;
+		padding-top: 1.1rem;
+	}
+
+	.project-cell {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
 	}
 
 	.project-name {
+		font-size: 0.92rem;
 		color: #cdd6f4;
 		font-weight: 500;
+		line-height: 1.3;
+	}
+
+	.project-desc {
+		font-size: 0.8rem;
+		color: #45475a;
+		line-height: 1.55;
+		transition: color 0.15s ease;
 	}
 
 	.made-at {
-		font-size: 0.85rem;
+		font-size: 0.82rem;
 		color: #89b4fa;
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
 		white-space: nowrap;
+		padding-top: 1.1rem;
 	}
 
 	.tech-list {
-		color: #585b70;
+		color: #45475a;
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 0.78rem;
+		font-size: 0.75rem;
+		line-height: 1.6;
+		padding-top: 1.05rem;
 	}
 
 	.tech-sep {
 		color: #313244;
 	}
 
-	.link-col {
-		text-align: center;
-		width: 2.5rem;
+	/* Hide columns progressively on smaller screens */
+	@media (max-width: 900px) {
+		.col-tech,
+		.made-at,
+		.tech-list {
+			display: none;
+		}
 	}
 
-	.ext-link {
-		color: #45475a;
-		transition: color 0.2s ease;
-		display: inline-flex;
-		align-items: center;
-	}
-
-	.ext-link:hover {
-		color: #a6e3a1;
-	}
-
-	@media (max-width: 768px) {
+	@media (max-width: 600px) {
 		.archive-page {
 			padding-top: 6rem;
 		}
@@ -367,23 +417,8 @@ const projects = [
 			font-size: 1.2rem;
 		}
 
-		.made-at {
-			display: none;
-		}
-
-		.projects-table th:nth-child(3),
-		.projects-table td:nth-child(3) {
-			display: none;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.tech-list {
-			display: none;
-		}
-
-		.projects-table th:nth-child(4),
-		.projects-table td:nth-child(4) {
+		.col-year,
+		.year {
 			display: none;
 		}
 	}
