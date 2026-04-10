@@ -2,6 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 
+const toAnchorId = (name: string): string =>
+	name
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-+|-+$/g, '');
+
 const projects = [
 	// Wētā FX
 	{
@@ -12,6 +18,15 @@ const projects = [
 		description:
 			'Built and owns 25+ ETL pipelines on-prem; eliminated recurring data failures and ' +
 			'made the platform production-critical for BI and ML teams.'
+	},
+	{
+		year: 2024,
+		name: 'Apache Airflow OSS Contributions',
+		madeAt: 'Apache Airflow Community',
+		tech: ['Python', 'Open Source', 'Apache Airflow'],
+		description:
+			'Contributed production-informed fixes and enhancements to Airflow operators and ' +
+			'platform stability, improving reliability and usability for wider community adoption.'
 	},
 	{
 		year: 2024,
@@ -221,7 +236,7 @@ const projects = [
 					<tbody>
 						{
 							projects.map(p => (
-								<tr>
+								<tr id={toAnchorId(p.name)}>
 									<td class="year">{p.year}</td>
 									<td class="project-cell">
 										<span class="project-name">{p.name}</span>
@@ -289,7 +304,7 @@ const projects = [
 
 	.page-subtitle {
 		font-size: 0.88rem;
-		color: #6c7086;
+		color: #9ca5c4;
 	}
 
 	.table-wrapper {
@@ -343,7 +358,12 @@ const projects = [
 	}
 
 	.projects-table tbody tr:hover .project-desc {
-		color: #585b70;
+		color: #aeb7d4;
+	}
+
+	.projects-table tbody tr:target {
+		background: rgba(166, 227, 161, 0.12);
+		outline: 1px solid rgba(166, 227, 161, 0.35);
 	}
 
 	.projects-table td {
@@ -354,7 +374,7 @@ const projects = [
 	.year {
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
 		font-size: 0.82rem;
-		color: #6c7086;
+		color: #9ca5c4;
 		white-space: nowrap;
 		padding-top: 1.1rem;
 	}
@@ -374,7 +394,7 @@ const projects = [
 
 	.project-desc {
 		font-size: 0.8rem;
-		color: #45475a;
+		color: #8f98b7;
 		line-height: 1.55;
 		transition: color 0.15s ease;
 	}
@@ -388,7 +408,7 @@ const projects = [
 	}
 
 	.tech-list {
-		color: #45475a;
+		color: #8f98b7;
 		font-family: 'JetBrains Mono', 'Fira Code', monospace;
 		font-size: 0.75rem;
 		line-height: 1.6;

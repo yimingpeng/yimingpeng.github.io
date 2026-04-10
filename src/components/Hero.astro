@@ -99,7 +99,7 @@
 
 <style>
 	.hero {
-		padding: 8rem 0 4rem;
+		padding: 8rem 0 3.25rem;
 	}
 
 	.container {
@@ -116,6 +116,7 @@
 
 	.hero-text {
 		flex: 1;
+		max-width: 62ch;
 	}
 
 	h1 {
@@ -140,8 +141,8 @@
 	}
 
 	.bio {
-		color: #bac2de;
-		line-height: 1.7;
+		color: #c3cae3;
+		line-height: 1.75;
 		font-size: 1rem;
 		margin-bottom: 2rem;
 	}
@@ -170,7 +171,7 @@
 	}
 
 	.social-link {
-		color: #6c7086;
+		color: #9399b2;
 		transition: color 0.2s ease;
 		display: flex;
 		align-items: center;
@@ -224,6 +225,11 @@
 			text-align: center;
 		}
 
+		.hero-text {
+			max-width: 34ch;
+			margin: 0 auto;
+		}
+
 		.social-links {
 			justify-content: center;
 		}
@@ -245,6 +251,11 @@
 
 		.tagline {
 			font-size: 1.05rem;
+		}
+
+		.bio {
+			font-size: 0.95rem;
+			line-height: 1.8;
 		}
 	}
 </style>

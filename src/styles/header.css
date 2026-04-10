@@ -40,14 +40,44 @@
 }
 
 .nav-links a {
+	position: relative;
 	text-decoration: none;
-	color: #a6adc8;
+	color: #bcc3dd;
 	font-weight: 500;
-	transition: color 0.3s ease;
+	padding: 0.2rem 0;
+	transition: color 0.25s ease;
+}
+
+.nav-links a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -0.25rem;
+	height: 2px;
+	border-radius: 2px;
+	background: linear-gradient(90deg, #89b4fa, #a6e3a1);
+	transform: scaleX(0.2);
+	opacity: 0;
+	transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .nav-links a:hover {
 	color: #89b4fa;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+	transform: scaleX(1);
+	opacity: 1;
+}
+
+.nav-links a:focus-visible,
+.mobile-menu-content a:focus-visible,
+.mobile-menu-btn:focus-visible,
+.logo:focus-visible {
+	outline: 2px solid #a6e3a1;
+	outline-offset: 3px;
 }
 
 .mobile-menu-btn {
@@ -123,10 +153,10 @@
 .mobile-menu-content a {
 	display: block;
 	padding: 0.75rem 2rem;
-	color: #a6adc8;
+	color: #c3cae3;
 	text-decoration: none;
 	font-weight: 500;
-	transition: background 0.3s ease;
+	transition: background 0.25s ease, color 0.25s ease;
 	touch-action: manipulation; /* Improves touch response */
 	-webkit-tap-highlight-color: transparent; /* Removes tap highlight on iOS */
 }

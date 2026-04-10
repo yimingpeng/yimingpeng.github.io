@@ -110,7 +110,7 @@
 
 	.contact-subtitle {
 		font-size: 0.95rem;
-		color: #7c8f8f;
+		color: #b2bfd7;
 		max-width: 400px;
 		margin: 0 auto;
 		line-height: 1.5;
@@ -132,15 +132,21 @@
 		transition: all 0.3s ease;
 		padding: 1rem;
 		border-radius: 12px;
-		background: rgba(30, 30, 46, 0.3);
-		border: 1px solid rgba(137, 180, 250, 0.2);
+		background: rgba(30, 30, 46, 0.4);
+		border: 1px solid rgba(137, 180, 250, 0.28);
 		min-width: 80px;
 	}
 
 	.contact-item:hover {
 		transform: translateY(-3px);
-		border-color: rgba(137, 180, 250, 0.4);
+		border-color: rgba(137, 180, 250, 0.5);
 		background: rgba(30, 30, 46, 0.5);
+	}
+
+	.contact-item:focus-visible {
+		outline: 2px solid #a6e3a1;
+		outline-offset: 3px;
+		border-color: rgba(166, 227, 161, 0.55);
 	}
 
 	.contact-icon {
@@ -150,8 +156,12 @@
 		align-items: center;
 		justify-content: center;
 		border-radius: 10px;
-		background: linear-gradient(135deg, rgba(137, 180, 250, 0.1) 0%, rgba(203, 166, 247, 0.1) 100%);
-		border: 1px solid rgba(137, 180, 250, 0.2);
+		background: linear-gradient(
+			135deg,
+			rgba(137, 180, 250, 0.15) 0%,
+			rgba(203, 166, 247, 0.15) 100%
+		);
+		border: 1px solid rgba(137, 180, 250, 0.3);
 		transition: all 0.3s ease;
 		margin-bottom: 0.5rem;
 	}
@@ -164,7 +174,11 @@
 	}
 
 	.contact-item:hover .contact-icon {
-		background: linear-gradient(135deg, rgba(137, 180, 250, 0.2) 0%, rgba(203, 166, 247, 0.2) 100%);
+		background: linear-gradient(
+			135deg,
+			rgba(137, 180, 250, 0.2) 0%,
+			rgba(203, 166, 247, 0.2) 100%
+		);
 		border-color: rgba(137, 180, 250, 0.4);
 		transform: scale(1.05);
 	}
