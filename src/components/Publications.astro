@@ -2,7 +2,7 @@
 // Publications teaser for homepage — full content lives on /publications
 ---
 
-<section class="section" id="publications">
+<section class="section publications-section" id="publications">
 	<div class="container">
 		<h2 class="section-title">$ ls ./publications</h2>
 		<div class="publications-teaser">
@@ -24,69 +24,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.section {
-		padding: 3.5rem 0;
-	}
-
-	.container {
-		max-width: 1000px;
-		margin: 0 auto;
-		padding: 0 1.5rem;
-	}
-
-	.section-title {
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 1.4rem;
-		color: #a6e3a1;
-		font-weight: 500;
-		margin-bottom: 1.4rem;
-	}
-
-	.publications-teaser {
-		max-width: 780px;
-		border: 1px solid rgba(137, 180, 250, 0.2);
-		background: rgba(30, 30, 46, 0.45);
-		border-radius: 10px;
-		padding: 1.25rem 1.4rem;
-	}
-
-	.teaser-copy {
-		font-size: 0.95rem;
-		line-height: 1.65;
-		color: #c3cae3;
-		margin-bottom: 0.9rem;
-	}
-
-	.teaser-actions {
-		display: flex;
-		gap: 1rem;
-		flex-wrap: wrap;
-		align-items: center;
-	}
-
-	.publications-link,
-	.scholar-link {
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 0.86rem;
-		color: #89b4fa;
-		text-decoration: none;
-		transition: color 0.2s ease;
-	}
-
-	.publications-link:hover,
-	.scholar-link:hover {
-		color: #a6e3a1;
-	}
-
-	@media (max-width: 768px) {
-		.publications-teaser {
-			padding: 1rem 1.1rem;
-		}
-
-		.teaser-copy {
-			font-size: 0.9rem;
-		}
-	}
-</style>
