@@ -1,15 +1,12 @@
 ---
 export interface Props {
 	title: string;
-	description: string;
+	description?: string;
 }
 
 const { title, description } = Astro.props;
 
-// Import CSS files
-import '../styles/global.css';
-import '../styles/header.css';
-import '../styles/home-sections.css';
+import '../styles/tailwind.css';
 ---
 
 <!doctype html>
@@ -20,105 +17,18 @@ import '../styles/home-sections.css';
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<meta name="description" content={description} />
-	</head>
-	<body>
-		<slot />
-
-		<script>
-			// Smooth scrolling for navigation links
-			document.querySelectorAll('a[href^="#"]').forEach((anchor: Element) => {
-				anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
-					e.preventDefault();
-					const href = this.getAttribute('href');
-					if (href) {
-						const target = document.querySelector(href);
-						if (target) {
-							target.scrollIntoView({
-								behavior: 'smooth',
-								block: 'start'
-							});
-						}
-					}
-					// Close mobile menu if open
-					const mobileMenu = document.getElementById('mobile-menu');
-					if (mobileMenu) {
-						mobileMenu.classList.remove('active');
-					}
-				});
-			});
-
-			// Add scroll effect to header
-			window.addEventListener('scroll', () => {
-				const header = document.querySelector('.header') as HTMLElement | null;
-				if (header) {
-					if (window.scrollY > 100) {
-						header.style.background = 'rgba(30, 30, 46, 0.98)';
-					} else {
-						header.style.background = 'rgba(30, 30, 46, 0.95)';
-					}
-				}
-			});
-
-			// Mobile menu toggle with improved touch handling
-			const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-			const mobileMenu = document.getElementById('mobile-menu');
-			// const body = document.body; // Reserved for future use
-
-			if (mobileMenuBtn && mobileMenu) {
-				// Use touchstart and click for better mobile responsiveness
-				['click', 'touchstart'].forEach(eventType => {
-					mobileMenuBtn.addEventListener(
-						eventType,
-						(e: Event) => {
-							e.preventDefault();
-							e.stopPropagation();
-
-							// Toggle mobile menu
-							const isActive = mobileMenu.classList.toggle('active');
-
-							// Toggle menu button appearance to indicate state
-							if (isActive) {
-								mobileMenuBtn.textContent = '✕'; // Change to X when menu is open
-								// Don't set body overflow to hidden as it affects header
-								// scrollability
-							} else {
-								mobileMenuBtn.textContent = '☰'; // Change back to
-								// hamburger when closed
-							}
-						},
-						{ passive: false }
-					);
-				});
-
-				// Close mobile menu when clicking outside
-				['click', 'touchstart'].forEach(eventType => {
-					document.addEventListener(
-						eventType,
-						(e: Event) => {
-							const target = e.target as Node;
-							if (
-								mobileMenu &&
-								mobileMenuBtn &&
-								!mobileMenu.contains(target) &&
-								!mobileMenuBtn.contains(target)
-							) {
-								mobileMenu.classList.remove('active');
-								mobileMenuBtn.textContent = '☰'; // Reset button text
-							}
-						},
-						{ passive: true }
-					);
-				});
-
-				// Close menu when clicking on a menu item
-				mobileMenu.querySelectorAll('.mobile-menu-content a').forEach((link: Element) => {
-					link.addEventListener('click', () => {
-						mobileMenu.classList.remove('active');
-						mobileMenuBtn.textContent = '☰'; // Reset button text
-					});
-				});
-			}
+		{description && <meta name="description" content={description} />}
+		<script is:inline>
+			const theme =
+				localStorage.getItem('theme') ||
+				(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+			document.documentElement.classList.toggle('dark', theme === 'dark');
 		</script>
+	</head>
+	<body
+		class="min-h-screen bg-white dark:bg-[#1e1e2e] text-gray-900 dark:text-[#cdd6f4] transition-colors duration-300"
+		style="font-family: 'JetBrains Mono', monospace"
+	>
+		<slot />
 	</body>
 </html>

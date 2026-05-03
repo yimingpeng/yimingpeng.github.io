@@ -53,6 +53,6 @@ export default [
 
 	// Ignore patterns
 	{
-		ignores: ['dist/**', 'node_modules/**', '.astro/**']
+		ignores: ['dist/**', 'node_modules/**', '.astro/**', 'figma-export/**']
 	}
 ];

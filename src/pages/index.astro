@@ -1,25 +1,327 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import ProjectsPreview from '../components/ProjectsPreview.astro';
-import Experience from '../components/Experience.astro';
-import Writing from '../components/Writing.astro';
-import Publications from '../components/Publications.astro';
-import Contact from '../components/ContactSimple.astro';
+import TerminalCLI from '../components/TerminalCLI.astro';
+import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
 ---
 
 <BaseLayout
-	title="Yiming Peng — Data Engineer & Architect"
+	title="Yiming Peng — Data Engineer"
 	description="Senior Data Engineer building scalable DataOps and MLOps platforms. Currently at Wētā FX. Apache Airflow contributor. PhD in Machine Learning."
 >
 	<Header />
-	<main>
-		<Hero />
-		<ProjectsPreview />
-		<Experience />
-		<Writing />
-		<Publications />
-		<Contact />
+	<main class="max-w-[760px] mx-auto px-6 pt-24 md:pt-32 space-y-20 pb-20">
+		<section id="about" class="space-y-8">
+			<div class="space-y-3">
+				<h1 class="text-[2.5rem] leading-tight font-bold text-gray-900 dark:text-[#cdd6f4]">
+					Yiming Peng /i' miŋ/
+				</h1>
+				<p class="text-gray-500 dark:text-[#a6adc8] text-lg">
+					Senior Data Engineer · PhD · Apache Airflow Contributor
+				</p>
+			</div>
+			<p class="text-gray-800 dark:text-[#bac2de] text-xl leading-relaxed max-w-[600px]">
+				I build data platforms that power decisions at scale.
+			</p>
+			<ul class="space-y-3 text-gray-600 dark:text-[#a6adc8]">
+				<li class="flex gap-3">
+					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> 8+ years building DataOps/MLOps platforms
+					across NZ and global production
+				</li>
+				<li class="flex gap-3">
+					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> Apache Airflow open source contributor
+					— production orchestration at scale
+				</li>
+				<li class="flex gap-3">
+					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> Currently at Wētā FX, data infrastructure
+					behind world-class visual effects
+				</li>
+			</ul>
+			<div class="flex flex-wrap gap-x-6 gap-y-3 pt-6">
+				<a
+					href="mailto:yimingpengjojo@gmail.com"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Email</a
+				>
+				<a
+					href="https://github.com/yimingpeng"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">GitHub</a
+				>
+				<a
+					href="https://linkedin.com/in/yimingpeng"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">LinkedIn</a
+				>
+				<a
+					href="https://scholar.google.com/citations?user=yimingpeng"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Scholar</a
+				>
+				<a
+					href="https://medium.com/@yimingpeng"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Medium</a
+				>
+				<a href="/files/cv.pdf" class="text-blue-600 dark:text-[#89b4fa] hover:underline">CV ↓</a>
+			</div>
+		</section>
+
+		<section id="projects" class="space-y-6">
+			<h2
+				class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4] border-b border-gray-100 dark:border-[#313244] pb-2"
+			>
+				Selected Projects
+			</h2>
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+				<a
+					href="/archive"
+					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
+				>
+					<div class="flex-1 space-y-4">
+						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
+							Eliminated recurring pipeline failures; production-critical at Wētā FX.
+						</p>
+						<div>
+							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
+								DataOps Platform @ Wētā FX
+							</h3>
+							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
+								On-premises data platform powering BI and ML workflows. Built with Airflow,
+								ClickHouse, and Ansible across a complex production environment.
+							</p>
+						</div>
+					</div>
+					<div class="mt-8 flex justify-between items-end">
+						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
+							Python · Airflow · ClickHouse · Ansible
+						</span>
+						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
+					</div>
+				</a>
+				<a
+					href="/archive"
+					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
+				>
+					<div class="flex-1 space-y-4">
+						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
+							Contributor to the de facto standard for data pipeline orchestration.
+						</p>
+						<div>
+							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
+								Apache Airflow — OSS Contributions
+							</h3>
+							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
+								Active contributor to Apache Airflow. Work includes bug fixes, feature improvements,
+								and documentation used by thousands of teams worldwide.
+							</p>
+						</div>
+					</div>
+					<div class="mt-8 flex justify-between items-end">
+						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
+							Python · Apache Airflow · Open Source
+						</span>
+						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
+					</div>
+				</a>
+				<a
+					href="/archive"
+					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
+				>
+					<div class="flex-1 space-y-4">
+						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
+							Dramatically reduced data incidents; stakeholders now trust the data.
+						</p>
+						<div>
+							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
+								Data Quality &amp; Observability System
+							</h3>
+							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
+								Platform-wide data quality framework using Great Expectations, with GitLab CI
+								integration for automated validation on every pipeline run.
+							</p>
+						</div>
+					</div>
+					<div class="mt-8 flex justify-between items-end">
+						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
+							Great Expectations · Python · GitLab CI
+						</span>
+						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
+					</div>
+				</a>
+				<a
+					href="/archive"
+					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
+				>
+					<div class="flex-1 space-y-4">
+						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
+							Made ML model deployment routine rather than heroic at Chorus NZ.
+						</p>
+						<div>
+							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">Kubernetes MLOps Platform</h3>
+							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
+								Kubernetes-based MLOps platform to close the gap between experimentation and
+								production. First production ML infrastructure at the organisation.
+							</p>
+						</div>
+					</div>
+					<div class="mt-8 flex justify-between items-end">
+						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
+							Kubernetes · Kubeflow · AWS EKS
+						</span>
+						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
+					</div>
+				</a>
+			</div>
+			<a href="/archive" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
+				View full project archive →
+			</a>
+		</section>
+
+		<section id="experience" class="space-y-6">
+			<h2
+				class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4] border-b border-gray-100 dark:border-[#313244] pb-2"
+			>
+				Experience
+			</h2>
+			<div class="space-y-4">
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">Wētā FX</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Senior Software Engineer, Data</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Oct 2023 – Present
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">MBIE</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Data Architect</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Jul 2022 – Jul 2023
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">IHC New Zealand</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">
+							Principal Data &amp; Integration Architect
+						</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Jul 2021 – Jul 2022
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">Chorus New Zealand</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Senior Data Engineer</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Dec 2019 – Jun 2021
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">KPMG New Zealand</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Data Engineer</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Mar 2019 – Nov 2019
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">
+							Victoria University of Wellington
+						</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Research Scientist</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Sep 2015 – Mar 2019
+					</span>
+				</div>
+			</div>
+			<p class="text-xs text-gray-400 dark:text-[#6c7086]">
+				certs: CKA · CKAD · Astronomer Airflow · Tableau Server Admin
+			</p>
+			<a href="/files/cv.pdf" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
+				Full CV / Résumé ↓
+			</a>
+		</section>
+
+		<section class="space-y-6 pt-4">
+			<TerminalCLI />
+		</section>
+
+		<section id="writing" class="space-y-6">
+			<h2
+				class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4] border-b border-gray-100 dark:border-[#313244] pb-2"
+			>
+				Writing
+			</h2>
+			<p class="text-gray-600 dark:text-[#bac2de]">
+				Articles on data engineering, platform design, and lessons from production systems. Coming
+				soon — published from Obsidian.
+			</p>
+			<a
+				href="https://medium.com/@yimingpeng"
+				class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">Medium →</a
+			>
+		</section>
+
+		<section id="publications" class="space-y-6">
+			<h2
+				class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4] border-b border-gray-100 dark:border-[#313244] pb-2"
+			>
+				Publications
+			</h2>
+			<p class="text-gray-600 dark:text-[#bac2de]">
+				15 peer-reviewed papers in machine learning and evolutionary computation (2015–2019).
+			</p>
+			<div class="flex flex-wrap gap-6">
+				<a href="/publications" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
+					View all publications →
+				</a>
+				<a
+					href="https://scholar.google.com"
+					class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">Google Scholar →</a
+				>
+			</div>
+		</section>
+
+		<section id="contact" class="space-y-6">
+			<h2
+				class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4] border-b border-gray-100 dark:border-[#313244] pb-2"
+			>
+				Contact
+			</h2>
+			<p class="text-gray-600 dark:text-[#bac2de]">
+				Open to research collaborations, consulting projects, and open source contributions.
+			</p>
+			<div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-6">
+				<a
+					href="mailto:yimingpengjojo@gmail.com"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline"
+				>
+					yimingpengjojo@gmail.com
+				</a>
+				<a
+					href="https://linkedin.com/in/yimingpeng"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">LinkedIn</a
+				>
+				<a
+					href="https://github.com/yimingpeng"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">GitHub</a
+				>
+				<a href="/files/cv.pdf" class="text-blue-600 dark:text-[#89b4fa] hover:underline">
+					Resume .pdf
+				</a>
+			</div>
+		</section>
 	</main>
+	<AIChatPlaceholder />
 </BaseLayout>

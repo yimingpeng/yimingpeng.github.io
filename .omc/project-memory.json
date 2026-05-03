@@ -1,0 +1,300 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1777803746327,
+  "projectRoot": "/Users/yimingpeng/pCloud/02 - Areas/My_App/Portifolio WebSites/yimingpeng.github.io",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "astro",
+        "version": "5.13.2",
+        "category": "fullstack"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": null,
+    "lintCommand": "npm run lint",
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "astro dev",
+      "build": "astro build",
+      "preview": "astro preview",
+      "astro": "astro",
+      "lint": "eslint . --ext .js,.ts,.astro",
+      "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
+      "format": "prettier --write .",
+      "format:check": "prettier --check ."
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "master",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "dist": {
+      "path": "dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 8,
+      "lastAccessed": 1777803746297,
+      "keyFiles": [
+        "favicon.svg",
+        "icon-192.png",
+        "icon.png",
+        "index.html",
+        "portrait.jpg"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 7,
+      "lastAccessed": 1777803746316,
+      "keyFiles": [
+        "favicon.svg",
+        "icon-192.png",
+        "icon.png",
+        "portrait.jpg",
+        "yiming.jpg"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 0,
+      "lastAccessed": 1777803746317,
+      "keyFiles": []
+    },
+    "dist/assets": {
+      "path": "dist/assets",
+      "purpose": "Static assets",
+      "fileCount": 1,
+      "lastAccessed": 1777803746318,
+      "keyFiles": [
+        "archive.DAQ5whHQ.css"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 8,
+      "lastAccessed": 1777803746321,
+      "keyFiles": [
+        "Contact.astro",
+        "ContactSimple.astro",
+        "Experience.astro"
+      ]
+    },
+    "src/pages": {
+      "path": "src/pages",
+      "purpose": "Page components",
+      "fileCount": 3,
+      "lastAccessed": 1777803746322,
+      "keyFiles": [
+        "archive.astro",
+        "index.astro",
+        "publications.astro"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/pages/publications.astro",
+      "accessCount": 5,
+      "lastAccessed": 1777807002404,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/home-sections.css",
+      "accessCount": 4,
+      "lastAccessed": 1777804139676,
+      "type": "file"
+    },
+    {
+      "path": "src/layouts/BaseLayout.astro",
+      "accessCount": 3,
+      "lastAccessed": 1777806888278,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Header.astro",
+      "accessCount": 3,
+      "lastAccessed": 1777806900707,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "accessCount": 3,
+      "lastAccessed": 1777806982551,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/archive.astro",
+      "accessCount": 3,
+      "lastAccessed": 1777806989303,
+      "type": "file"
+    },
+    {
+      "path": "src/components/TerminalCLI.astro",
+      "accessCount": 3,
+      "lastAccessed": 1777807126775,
+      "type": "file"
+    },
+    {
+      "path": "figma-export/Portfolio Design/app/App.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1777806828543,
+      "type": "file"
+    },
+    {
+      "path": "figma-export/Portfolio Design/app/components/Navigation.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1777806829420,
+      "type": "file"
+    },
+    {
+      "path": "figma-export/Portfolio Design/app/components/Terminal.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1777806830043,
+      "type": "file"
+    },
+    {
+      "path": "figma-export/Portfolio Design/app/components/ChatWidget.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1777806830969,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/global.css",
+      "accessCount": 2,
+      "lastAccessed": 1777806878685,
+      "type": "file"
+    },
+    {
+      "path": "eslint.config.js",
+      "accessCount": 2,
+      "lastAccessed": 1777807056971,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Hero.astro",
+      "accessCount": 1,
+      "lastAccessed": 1777804096967,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Experience.astro",
+      "accessCount": 1,
+      "lastAccessed": 1777804097599,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ProjectsPreview.astro",
+      "accessCount": 1,
+      "lastAccessed": 1777804097820,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Writing.astro",
+      "accessCount": 1,
+      "lastAccessed": 1777804098003,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Publications.astro",
+      "accessCount": 1,
+      "lastAccessed": 1777804098275,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ContactSimple.astro",
+      "accessCount": 1,
+      "lastAccessed": 1777804100524,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/header.css",
+      "accessCount": 1,
+      "lastAccessed": 1777804104543,
+      "type": "file"
+    },
+    {
+      "path": ".claude/REDESIGN_PLAN.md",
+      "accessCount": 1,
+      "lastAccessed": 1777804139018,
+      "type": "file"
+    },
+    {
+      "path": "figma-export/Portfolio Design/styles/theme.css",
+      "accessCount": 1,
+      "lastAccessed": 1777806596619,
+      "type": "file"
+    },
+    {
+      "path": "figma-export/Portfolio Design/styles/index.css",
+      "accessCount": 1,
+      "lastAccessed": 1777806596879,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 1,
+      "lastAccessed": 1777806833583,
+      "type": "file"
+    },
+    {
+      "path": "astro.config.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1777806833884,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/tailwind.css",
+      "accessCount": 1,
+      "lastAccessed": 1777806884212,
+      "type": "file"
+    },
+    {
+      "path": "src/components/AIChatPlaceholder.astro",
+      "accessCount": 1,
+      "lastAccessed": 1777806930591,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

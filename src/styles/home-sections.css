@@ -401,6 +401,9 @@
 }
 
 .experience-section .cert-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
 	font-size: 0.78rem;
 	color: #45475a;
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
@@ -408,6 +411,15 @@
 	font-style: italic;
 	white-space: nowrap;
 	transition: color 0.2s ease;
+}
+
+.experience-section .cert-badge-icon {
+	width: 18px;
+	height: 18px;
+	object-fit: cover;
+	border-radius: 3px;
+	border: 1px solid rgba(137, 180, 250, 0.25);
+	background: rgba(24, 24, 37, 0.6);
 }
 
 .experience-section .cert-link:hover {
@@ -805,6 +817,7 @@
 
 	.experience-section .cert-link {
 		grid-column: 1 / -1;
+		justify-self: start;
 	}
 }
 
