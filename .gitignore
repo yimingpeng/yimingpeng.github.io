@@ -28,3 +28,7 @@ figma-export/
 .claude/
 CLAUDE.md
 .github/copilot-instructions.md
+
+.kilo
+.omc
+.vscode/
