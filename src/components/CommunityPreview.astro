@@ -1,0 +1,44 @@
+---
+import { getSortedEvents } from '../data/community';
+
+interface Props {
+	limit?: number;
+}
+
+const { limit = 5 } = Astro.props;
+const events = getSortedEvents().slice(0, limit);
+---
+
+<div class="space-y-3">
+	<h3 class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-[#6c7086]">
+		Community &amp; Events
+	</h3>
+	<div class="space-y-4">
+		{
+			events.map(event => (
+				<div class="flex gap-4 items-start">
+					<span class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap pt-[2px] w-20 shrink-0">
+						{event.dateDisplay}
+					</span>
+					<div class="space-y-1 min-w-0">
+						<div class="flex items-baseline gap-2 flex-wrap">
+							<span class="text-[10px] uppercase tracking-widest text-gray-400 dark:text-[#6c7086]">
+								{event.type}
+							</span>
+						</div>
+						<p class="text-gray-800 dark:text-[#bac2de] text-sm">{event.description}</p>
+						{event.status && (
+							<span class="text-xs text-blue-400 dark:text-[#89b4fa] italic">{event.status}</span>
+						)}
+					</div>
+				</div>
+			))
+		}
+	</div>
+	<a
+		href="/community"
+		class="text-xs text-gray-400 dark:text-[#6c7086] hover:text-blue-600 dark:hover:text-[#89b4fa] transition-colors"
+	>
+		→ all events
+	</a>
+</div>

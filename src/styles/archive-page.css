@@ -18,27 +18,27 @@
 	display: inline-block;
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
 	font-size: 0.85rem;
-	color: #89b4fa;
+	color: var(--accent);
 	text-decoration: none;
 	margin-bottom: 1.5rem;
 	transition: color 0.2s ease;
 }
 
 .archive-page .back-link:hover {
-	color: #a6e3a1;
+	color: var(--accent-2);
 }
 
 .archive-page .page-title {
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
 	font-size: 1.6rem;
-	color: #a6e3a1;
+	color: var(--accent-2);
 	font-weight: 500;
 	margin-bottom: 0.6rem;
 }
 
 .archive-page .page-subtitle {
 	font-size: 0.88rem;
-	color: #9ca5c4;
+	color: var(--text-muted);
 }
 
 .archive-page .table-wrapper {
@@ -51,7 +51,7 @@
 }
 
 .archive-page .projects-table thead tr {
-	border-bottom: 1px solid rgba(166, 227, 161, 0.3);
+	border-bottom: 1px solid var(--border-strong);
 }
 
 .archive-page .projects-table th {
@@ -59,7 +59,7 @@
 	font-size: 0.7rem;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	color: #a6e3a1;
+	color: var(--accent-2);
 	font-weight: 500;
 	padding: 0 1.5rem 0.75rem 0;
 	text-align: left;
@@ -79,7 +79,7 @@
 }
 
 .archive-page .projects-table tbody tr {
-	border-bottom: 1px solid rgba(69, 71, 90, 0.3);
+	border-bottom: 1px solid var(--border);
 	transition: background 0.15s ease;
 }
 
@@ -88,16 +88,16 @@
 }
 
 .archive-page .projects-table tbody tr:hover {
-	background: rgba(137, 180, 250, 0.04);
+	background: var(--accent-soft);
 }
 
 .archive-page .projects-table tbody tr:hover .project-desc {
-	color: #aeb7d4;
+	color: var(--text);
 }
 
 .archive-page .projects-table tbody tr:target {
-	background: rgba(166, 227, 161, 0.12);
-	outline: 1px solid rgba(166, 227, 161, 0.35);
+	background: var(--accent-soft);
+	outline: 1px solid var(--accent);
 }
 
 .archive-page .projects-table td {
@@ -108,7 +108,7 @@
 .archive-page .year {
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
 	font-size: 0.82rem;
-	color: #9ca5c4;
+	color: var(--text-muted);
 	white-space: nowrap;
 	padding-top: 1.1rem;
 }
@@ -121,28 +121,28 @@
 
 .archive-page .project-name {
 	font-size: 0.92rem;
-	color: #cdd6f4;
+	color: var(--text);
 	font-weight: 500;
 	line-height: 1.3;
 }
 
 .archive-page .project-desc {
 	font-size: 0.8rem;
-	color: #8f98b7;
+	color: var(--text-muted);
 	line-height: 1.55;
 	transition: color 0.15s ease;
 }
 
 .archive-page .made-at {
 	font-size: 0.82rem;
-	color: #89b4fa;
+	color: var(--accent);
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
 	white-space: nowrap;
 	padding-top: 1.1rem;
 }
 
 .archive-page .tech-list {
-	color: #8f98b7;
+	color: var(--text-muted);
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
 	font-size: 0.75rem;
 	line-height: 1.6;
@@ -150,7 +150,7 @@
 }
 
 .archive-page .tech-sep {
-	color: #313244;
+	color: var(--border-strong);
 }
 
 @media (max-width: 900px) {

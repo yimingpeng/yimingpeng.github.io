@@ -3,11 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import TerminalCLI from '../components/TerminalCLI.astro';
 import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
+import CommunityPreview from '../components/CommunityPreview.astro';
 ---
 
 <BaseLayout
 	title="Yiming Peng — Data Engineer"
-	description="Senior Data Engineer building scalable DataOps and MLOps platforms. Currently at Wētā FX. Apache Airflow contributor. PhD in Machine Learning."
+	description="Senior Data Engineer building scalable DataOps and MLOps platforms. Currently at Wētā FX. 10+ years in New Zealand data and MLOps. PhD in Reinforcement Learning."
 >
 	<Header />
 	<main class="max-w-[760px] mx-auto px-6 pt-24 md:pt-32 space-y-20 pb-20">
@@ -17,24 +18,24 @@ import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
 					Yiming Peng /i' miŋ/
 				</h1>
 				<p class="text-gray-500 dark:text-[#a6adc8] text-lg">
-					Senior Data Engineer · PhD · Apache Airflow Contributor
+					Senior Data Engineer · PhD in Reinforcement Learning
 				</p>
 			</div>
-			<p class="text-gray-800 dark:text-[#bac2de] text-xl leading-relaxed max-w-[600px]">
-				I build data platforms that power decisions at scale.
+			<p class="text-gray-800 dark:text-[#bac2de] text-xl leading-relaxed">
+				I design data systems, also fix the leaky pipes 😏
 			</p>
 			<ul class="space-y-3 text-gray-600 dark:text-[#a6adc8]">
 				<li class="flex gap-3">
-					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> 8+ years building DataOps/MLOps platforms
-					across NZ and global production
+					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> Currently at Wētā FX, building data
+					infrastructure behind world-class visual effects
 				</li>
 				<li class="flex gap-3">
-					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> Apache Airflow open source contributor
-					— production orchestration at scale
+					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> 10+ years building DataOps/MLOps platforms
+					across New Zealand and global production environments
 				</li>
 				<li class="flex gap-3">
-					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> Currently at Wētā FX, data infrastructure
-					behind world-class visual effects
+					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> Contributor to Apache Airflow with
+					several merged fixes and improvements
 				</li>
 			</ul>
 			<div class="flex flex-wrap gap-x-6 gap-y-3 pt-6">
@@ -47,18 +48,101 @@ import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
 					class="text-blue-600 dark:text-[#89b4fa] hover:underline">GitHub</a
 				>
 				<a
-					href="https://linkedin.com/in/yimingpeng"
+					href="https://www.linkedin.com/in/yiming-nz/"
 					class="text-blue-600 dark:text-[#89b4fa] hover:underline">LinkedIn</a
 				>
 				<a
-					href="https://scholar.google.com/citations?user=yimingpeng"
+					href="https://scholar.google.co.uk/citations?user=bJBbv0EAAAAJ"
 					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Scholar</a
 				>
 				<a
 					href="https://medium.com/@yimingpeng"
 					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Medium</a
 				>
-				<a href="/files/cv.pdf" class="text-blue-600 dark:text-[#89b4fa] hover:underline">CV ↓</a>
+				<a href="/yiming_cv.pdf" class="text-blue-600 dark:text-[#89b4fa] hover:underline">CV ↓</a>
+			</div>
+		</section>
+
+		<!-- Recent: Speaking & Certifications -->
+		<section id="recent" class="space-y-8">
+			<h2
+				class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4] border-b border-gray-100 dark:border-[#313244] pb-2"
+			>
+				Recent
+			</h2>
+
+			<!-- Community & Events -->
+			<CommunityPreview />
+
+			<!-- Certifications -->
+			<div class="space-y-3">
+				<h3
+					class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-[#6c7086]"
+				>
+					Certifications
+				</h3>
+				<div class="space-y-3">
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2026</span
+						>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>CKS — Certified Kubernetes Security Specialist</span
+							>
+							<span class="text-xs text-amber-500 dark:text-[#f9e2af] italic">in progress</span>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2025</span
+						>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>CKA — Certified Kubernetes Administrator</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]">Linux Foundation</span>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2025</span
+						>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>CKAD — Certified Kubernetes Application Developer</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]">Linux Foundation</span>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2024</span
+						>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>Astronomer Certification — Apache Airflow 2</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]">Astronomer</span>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2023</span
+						>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>Tableau Server Administrator</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]">Tableau</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -100,15 +184,15 @@ import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
 				>
 					<div class="flex-1 space-y-4">
 						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
-							Contributor to the de facto standard for data pipeline orchestration.
+							Open source work focused on practical, production-informed improvements.
 						</p>
 						<div>
 							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
-								Apache Airflow — OSS Contributions
+								Open Source Contributions — Apache Airflow
 							</h3>
 							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
-								Active contributor to Apache Airflow. Work includes bug fixes, feature improvements,
-								and documentation used by thousands of teams worldwide.
+								Contributed around 4-5 pull requests and issue fixes to Apache Airflow, focused on
+								reliability and developer experience improvements.
 							</p>
 						</div>
 					</div>
@@ -153,7 +237,9 @@ import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
 							Made ML model deployment routine rather than heroic at Chorus NZ.
 						</p>
 						<div>
-							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">Kubernetes MLOps Platform</h3>
+							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
+								Kubernetes MLOps Platform
+							</h3>
 							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
 								Kubernetes-based MLOps platform to close the gap between experimentation and
 								production. First production ML infrastructure at the organisation.
@@ -245,10 +331,7 @@ import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
 					</span>
 				</div>
 			</div>
-			<p class="text-xs text-gray-400 dark:text-[#6c7086]">
-				certs: CKA · CKAD · Astronomer Airflow · Tableau Server Admin
-			</p>
-			<a href="/files/cv.pdf" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
+			<a href="/yiming_cv.pdf" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
 				Full CV / Résumé ↓
 			</a>
 		</section>
@@ -280,14 +363,15 @@ import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
 				Publications
 			</h2>
 			<p class="text-gray-600 dark:text-[#bac2de]">
-				15 peer-reviewed papers in machine learning and evolutionary computation (2015–2019).
+				13 peer-reviewed papers in reinforcement learning and evolutionary computation (2012–2024) —
+				165+ citations.
 			</p>
 			<div class="flex flex-wrap gap-6">
 				<a href="/publications" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
 					View all publications →
 				</a>
 				<a
-					href="https://scholar.google.com"
+					href="https://scholar.google.co.uk/citations?user=bJBbv0EAAAAJ"
 					class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">Google Scholar →</a
 				>
 			</div>
@@ -310,14 +394,14 @@ import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
 					yimingpengjojo@gmail.com
 				</a>
 				<a
-					href="https://linkedin.com/in/yimingpeng"
+					href="https://www.linkedin.com/in/yiming-nz/"
 					class="text-blue-600 dark:text-[#89b4fa] hover:underline">LinkedIn</a
 				>
 				<a
 					href="https://github.com/yimingpeng"
 					class="text-blue-600 dark:text-[#89b4fa] hover:underline">GitHub</a
 				>
-				<a href="/files/cv.pdf" class="text-blue-600 dark:text-[#89b4fa] hover:underline">
+				<a href="/yiming_cv.pdf" class="text-blue-600 dark:text-[#89b4fa] hover:underline">
 					Resume .pdf
 				</a>
 			</div>

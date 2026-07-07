@@ -147,7 +147,10 @@
 	border: 1px solid rgba(137, 180, 250, 0.15);
 	border-radius: 8px;
 	padding: 1.75rem;
-	transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+	transition:
+		border-color 0.2s ease,
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
 	position: relative;
 	overflow: hidden;
 }
@@ -248,7 +251,9 @@
 	color: #a6e3a1;
 	text-decoration: none;
 	border-bottom: 1px solid rgba(166, 227, 161, 0.35);
-	transition: color 0.2s ease, border-color 0.2s ease;
+	transition:
+		color 0.2s ease,
+		border-color 0.2s ease;
 }
 
 .projects-preview .project-cta-link:hover {
@@ -651,11 +656,7 @@
 	align-items: center;
 	justify-content: center;
 	border-radius: 10px;
-	background: linear-gradient(
-		135deg,
-		rgba(137, 180, 250, 0.15) 0%,
-		rgba(203, 166, 247, 0.15) 100%
-	);
+	background: linear-gradient(135deg, rgba(137, 180, 250, 0.15) 0%, rgba(203, 166, 247, 0.15) 100%);
 	border: 1px solid rgba(137, 180, 250, 0.3);
 	transition: all 0.3s ease;
 	margin-bottom: 0.5rem;
@@ -669,11 +670,7 @@
 }
 
 .contact .contact-item:hover .contact-icon {
-	background: linear-gradient(
-		135deg,
-		rgba(137, 180, 250, 0.2) 0%,
-		rgba(203, 166, 247, 0.2) 100%
-	);
+	background: linear-gradient(135deg, rgba(137, 180, 250, 0.2) 0%, rgba(203, 166, 247, 0.2) 100%);
 	border-color: rgba(137, 180, 250, 0.4);
 	transform: scale(1.05);
 }

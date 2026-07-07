@@ -59,7 +59,9 @@
 	background: linear-gradient(90deg, #89b4fa, #a6e3a1);
 	transform: scaleX(0.2);
 	opacity: 0;
-	transition: transform 0.25s ease, opacity 0.25s ease;
+	transition:
+		transform 0.25s ease,
+		opacity 0.25s ease;
 }
 
 .nav-links a:hover {
@@ -156,7 +158,9 @@
 	color: #c3cae3;
 	text-decoration: none;
 	font-weight: 500;
-	transition: background 0.25s ease, color 0.25s ease;
+	transition:
+		background 0.25s ease,
+		color 0.25s ease;
 	touch-action: manipulation; /* Improves touch response */
 	-webkit-tap-highlight-color: transparent; /* Removes tap highlight on iOS */
 }

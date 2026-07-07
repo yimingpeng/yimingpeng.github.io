@@ -1,11 +1,11 @@
 ---
+
 ---
+
 <div
 	class="w-full max-w-[760px] mx-auto rounded-xl overflow-hidden shadow-xl border border-gray-200 dark:border-[#313244]"
 >
-	<div
-		class="bg-[#2a2a3b] px-4 py-3 flex items-center relative border-b border-[#1e1e2e]"
-	>
+	<div class="bg-[#2a2a3b] px-4 py-3 flex items-center relative border-b border-[#1e1e2e]">
 		<div class="flex space-x-2 absolute left-4">
 			<div class="w-3 h-3 bg-[#ff5f56] rounded-full border border-[#e0443e]"></div>
 			<div class="w-3 h-3 bg-[#ffbd2e] rounded-full border border-[#dea123]"></div>
@@ -40,7 +40,6 @@
 					class="bg-transparent border-none outline-none flex-1 text-transparent caret-transparent w-full"
 					autocomplete="off"
 					spellcheck="false"
-					autofocus
 				/>
 			</div>
 		</div>
@@ -48,78 +47,78 @@
 </div>
 
 <script>
-const input = document.getElementById('terminal-input') as HTMLInputElement;
-const output = document.getElementById('terminal-output')!;
-const body = document.getElementById('terminal-body')!;
-const mirror = document.getElementById('input-mirror') as HTMLElement;
-const cursor = document.getElementById('cursor') as HTMLElement;
+	const input = document.getElementById('terminal-input') as HTMLInputElement;
+	const output = document.getElementById('terminal-output')!;
+	const body = document.getElementById('terminal-body')!;
+	const mirror = document.getElementById('input-mirror') as HTMLElement;
+	const cursor = document.getElementById('cursor') as HTMLElement;
 
-const updateCursor = () => {
-	cursor.style.left = `${mirror.offsetWidth + 1}px`;
-};
+	const updateCursor = () => {
+		cursor.style.left = `${mirror.offsetWidth + 1}px`;
+	};
 
-input.addEventListener('input', () => {
-	mirror.textContent = input.value;
-	updateCursor();
-});
+	input.addEventListener('input', () => {
+		mirror.textContent = input.value;
+		updateCursor();
+	});
 
-body.addEventListener('click', () => input.focus());
+	body.addEventListener('click', () => input.focus());
 
-const commands: Record<string, string> = {
-	help: `about   - View my background
+	const commands: Record<string, string> = {
+		help: `about   - View my background
 skills  - List technical stack
 contact - Display contact info
 clear   - Clear terminal output`,
-	about:
-		'Senior Data Engineer with a PhD in Machine Learning and 8+ years building '
-		+ 'DataOps/MLOps platforms. Currently at Wētā FX. Apache Airflow contributor.',
-	skills:
-		'Python · SQL · Apache Airflow · ClickHouse · Kubernetes · Kubeflow · '
-		+ 'Great Expectations · dbt · AWS · Ansible · Terraform',
-	contact:
-		'Email: yimingpengjojo@gmail.com\n'
-		+ 'GitHub: github.com/yimingpeng\n'
-		+ 'LinkedIn: linkedin.com/in/yimingpeng'
-};
+		about:
+			'Senior Data Engineer with a PhD in Reinforcement Learning and 10+ years building ' +
+			'DataOps/MLOps platforms. Currently at Wētā FX. Apache Airflow contributor.',
+		skills:
+			'Python · SQL · Apache Airflow · ClickHouse · Kubernetes · Kubeflow · ' +
+			'Great Expectations · dbt · AWS · Ansible · Terraform',
+		contact:
+			'Email: yimingpengjojo@gmail.com\n' +
+			'GitHub: github.com/yimingpeng\n' +
+			'LinkedIn: linkedin.com/in/yiming-nz'
+	};
 
-function appendLine(cmd: string, result: string) {
-	const cmdLine = document.createElement('div');
-	cmdLine.className = 'flex items-start space-x-2 text-gray-300 break-all mb-1';
-	const prompt = document.createElement('span');
-	prompt.className = 'text-[#4ade80] font-semibold whitespace-nowrap';
-	prompt.textContent = 'yiming@portfolio:~$';
-	const cmdSpan = document.createElement('span');
-	cmdSpan.className = 'text-white ml-2';
-	cmdSpan.textContent = cmd;
-	cmdLine.appendChild(prompt);
-	cmdLine.appendChild(cmdSpan);
-	output.appendChild(cmdLine);
+	function appendLine(cmd: string, result: string) {
+		const cmdLine = document.createElement('div');
+		cmdLine.className = 'flex items-start space-x-2 text-gray-300 break-all mb-1';
+		const prompt = document.createElement('span');
+		prompt.className = 'text-[#4ade80] font-semibold whitespace-nowrap';
+		prompt.textContent = 'yiming@portfolio:~$';
+		const cmdSpan = document.createElement('span');
+		cmdSpan.className = 'text-white ml-2';
+		cmdSpan.textContent = cmd;
+		cmdLine.appendChild(prompt);
+		cmdLine.appendChild(cmdSpan);
+		output.appendChild(cmdLine);
 
-	if (result) {
-		const resultEl = document.createElement('div');
-		resultEl.className = 'text-gray-300 mt-1 mb-3 whitespace-pre-wrap';
-		resultEl.textContent = result;
-		output.appendChild(resultEl);
-	}
-	body.scrollTop = body.scrollHeight;
-}
-
-input.addEventListener('keydown', (e) => {
-	if (e.key !== 'Enter') return;
-	const raw = input.value;
-	const cmd = raw.trim().toLowerCase();
-	input.value = '';
-	mirror.textContent = '';
-	updateCursor();
-
-	if (cmd === '') return;
-
-	if (cmd === 'clear') {
-		output.innerHTML = '';
-		return;
+		if (result) {
+			const resultEl = document.createElement('div');
+			resultEl.className = 'text-gray-300 mt-1 mb-3 whitespace-pre-wrap';
+			resultEl.textContent = result;
+			output.appendChild(resultEl);
+		}
+		body.scrollTop = body.scrollHeight;
 	}
 
-	const result = commands[cmd] ?? `bash: ${cmd}: command not found`;
-	appendLine(raw, result);
-});
+	input.addEventListener('keydown', e => {
+		if (e.key !== 'Enter') return;
+		const raw = input.value;
+		const cmd = raw.trim().toLowerCase();
+		input.value = '';
+		mirror.textContent = '';
+		updateCursor();
+
+		if (cmd === '') return;
+
+		if (cmd === 'clear') {
+			output.innerHTML = '';
+			return;
+		}
+
+		const result = commands[cmd] ?? `bash: ${cmd}: command not found`;
+		appendLine(raw, result);
+	});
 </script>

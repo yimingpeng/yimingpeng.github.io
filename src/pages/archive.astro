@@ -112,7 +112,7 @@ const projects = [
 		madeAt: 'Chorus NZ',
 		tech: ['Kubernetes', 'Kubeflow', 'AWS EKS'],
 		description:
-			'Co-built the organisation\'s first ML infrastructure on EKS with Kubeflow; ' +
+			`Co-built the organisation's first ML infrastructure on EKS with Kubeflow; ` +
 			'made model deployment a repeatable, automated operation.'
 	},
 	{
@@ -221,9 +221,7 @@ const projects = [
 			<div class="page-header">
 				<a href="/#projects" class="back-link">← Back</a>
 				<h1 class="page-title">$ ls -la ./all-projects</h1>
-				<p class="page-subtitle">
-					All noteworthy projects, ordered by recency.
-				</p>
+				<p class="page-subtitle">All noteworthy projects, ordered by recency.</p>
 			</div>
 
 			<div class="table-wrapper">
@@ -250,9 +248,7 @@ const projects = [
 										{p.tech.map((t, i) => (
 											<span>
 												{t}
-												{i < p.tech.length - 1 && (
-													<span class="tech-sep"> · </span>
-												)}
+												{i < p.tech.length - 1 && <span class="tech-sep"> · </span>}
 											</span>
 										))}
 									</td>

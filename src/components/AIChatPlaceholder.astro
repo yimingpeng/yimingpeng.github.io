@@ -1,5 +1,7 @@
 ---
+
 ---
+
 <button
 	id="chat-btn"
 	class="fixed bottom-6 right-6 flex items-center gap-2 bg-[#2563eb] dark:bg-[#89b4fa] text-white dark:text-[#1e1e2e] px-5 py-3 rounded-full shadow-lg hover:scale-105 transition-transform z-40"
@@ -67,7 +69,7 @@
 
 	btn.addEventListener('click', () => modal.classList.remove('hidden'));
 	close.addEventListener('click', () => modal.classList.add('hidden'));
-	modal.addEventListener('click', (e) => {
+	modal.addEventListener('click', e => {
 		if (e.target === modal) modal.classList.add('hidden');
 	});
 </script>

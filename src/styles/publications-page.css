@@ -1,9 +1,14 @@
 .publications-page {
 	padding-top: 120px;
 	padding-bottom: 4rem;
-	background: linear-gradient(135deg, #181825 0%, #1e1e2e 50%, #181825 100%);
-	color: #e6edf3;
 	min-height: 100vh;
+	color: var(--text);
+}
+
+.publications-page .container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
 }
 
 .publications-page .page-header {
@@ -14,13 +19,13 @@
 .publications-page .page-title {
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
 	font-size: 2.5rem;
-	color: #a6e3a1;
+	color: var(--accent-2);
 	margin-bottom: 1rem;
 	font-weight: 500;
 }
 
 .publications-page .page-subtitle {
-	color: #7c8f8f;
+	color: var(--text-muted);
 	font-size: 1.1rem;
 	margin-bottom: 2rem;
 	max-width: 600px;
@@ -30,26 +35,22 @@
 
 .publications-page .back-link {
 	display: inline-block;
-	color: #89b4fa;
+	color: var(--accent);
 	text-decoration: none;
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
 	font-size: 1rem;
 	padding: 0.5rem 1rem;
-	border: 1px solid rgba(137, 180, 250, 0.3);
+	border: 1px solid var(--border);
 	border-radius: 6px;
 	transition: all 0.3s ease;
 }
 
 .publications-page .back-link:hover {
-	background: rgba(137, 180, 250, 0.1);
-	border-color: #89b4fa;
+	background: var(--accent-soft);
+	border-color: var(--accent);
 }
 
-.publications-page .publications-list {
-	max-width: 800px;
-	margin: 0 auto;
-}
-
+.publications-page .publications-list,
 .publications-page .publications-placeholder {
 	max-width: 600px;
 	margin: 0 auto;
@@ -57,8 +58,8 @@
 
 .publications-page .placeholder-content {
 	text-align: center;
-	background: #161b22;
-	border: 1px solid #21262d;
+	background: var(--surface);
+	border: 1px solid var(--border);
 	border-radius: 16px;
 	padding: 4rem 2rem;
 	margin-top: 2rem;
@@ -73,12 +74,12 @@
 .publications-page .placeholder-title {
 	font-size: 1.8rem;
 	font-weight: 600;
-	color: #e6edf3;
+	color: var(--text);
 	margin-bottom: 1rem;
 }
 
 .publications-page .placeholder-text {
-	color: #7c8f8f;
+	color: var(--text-muted);
 	font-size: 1.1rem;
 	line-height: 1.6;
 	margin-bottom: 2rem;
@@ -86,11 +87,11 @@
 
 .publications-page .placeholder-note {
 	padding-top: 1.5rem;
-	border-top: 1px solid #21262d;
+	border-top: 1px solid var(--border);
 }
 
 .publications-page .placeholder-note p {
-	color: #89b4fa;
+	color: var(--accent);
 	font-size: 0.95rem;
 	margin: 0;
 }
@@ -101,17 +102,17 @@
 
 .publications-page .section-header {
 	font-family: 'JetBrains Mono', 'Fira Code', monospace;
-	color: #f9e2af;
+	color: var(--warning);
 	font-size: 1.5rem;
 	font-weight: 600;
 	margin-bottom: 1.5rem;
-	border-bottom: 1px solid #21262d;
+	border-bottom: 1px solid var(--border);
 	padding-bottom: 0.5rem;
 }
 
 .publications-page .publication-item {
-	background: #161b22;
-	border: 1px solid #21262d;
+	background: var(--surface);
+	border: 1px solid var(--border);
 	border-radius: 8px;
 	padding: 1.5rem;
 	margin-bottom: 1rem;
@@ -121,30 +122,30 @@
 }
 
 .publications-page .publication-item:hover {
-	border-color: #30363d;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	border-color: var(--border-strong);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .publications-page .publication-title {
 	font-size: 1.2rem;
 	font-weight: 600;
-	color: #e6edf3;
+	color: var(--text);
 	margin-bottom: 0.5rem;
 	line-height: 1.4;
 }
 
 .publications-page .publication-authors {
-	color: #7c8f8f;
+	color: var(--text-muted);
 	margin-bottom: 0.3rem;
 	font-size: 0.95rem;
 }
 
 .publications-page .publication-authors strong {
-	color: #e6edf3;
+	color: var(--text);
 }
 
 .publications-page .publication-venue {
-	color: #58a6ff;
+	color: var(--accent);
 	font-weight: 500;
 	margin-bottom: 1rem;
 	font-size: 0.95rem;
@@ -161,20 +162,20 @@
 	align-items: center;
 	gap: 0.5rem;
 	padding: 0.5rem 1rem;
-	background: #21262d;
-	color: #e6edf3;
+	background: var(--surface-muted);
+	color: var(--text);
 	text-decoration: none;
 	border-radius: 6px;
-	border: 1px solid #30363d;
+	border: 1px solid var(--border);
 	font-weight: 500;
 	font-size: 0.9rem;
 	transition: all 0.3s ease;
 }
 
 .publications-page .action-link:hover {
-	background: #30363d;
-	border-color: #484f58;
-	color: #58a6ff;
+	background: var(--accent-soft);
+	border-color: var(--border-strong);
+	color: var(--accent);
 }
 
 @media (max-width: 768px) {
