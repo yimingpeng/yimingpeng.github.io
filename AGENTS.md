@@ -1,21 +1,8 @@
 # AGENTS.md
 
-This file provides guidance to Claude Code and Codex when working with code in this repository.
-`CLAUDE.md` imports this file, so this is the single source of truth — edit here only.
-
-## Working Method (Claude plans, Codex implements)
-
-This repo uses a two-model workflow. Follow it for any new feature or modification:
-
-1. Start in **Claude Code plan mode**. Claude explores the code and writes a concrete implementation plan.
-2. Once the plan is approved, hand it to **Codex** (`codex:rescue`) to implement. Codex does all the
-   heavy-lifting: writing the code, running lint/build/tests, and self-verifying its own work.
-3. Codex reports back with a **comprehensive implementation summary**.
-4. **Claude Code checks Codex's summary and diff against the original plan** before anything is
-   reported back to the user as done.
-
-In short: Claude does the thinking (planning, review, verification-of-verification); Codex does the
-labor (implementation, self-testing).
+This file provides shared project guidance for coding agents working in this repository. Keep it
+tool-neutral: project facts, commands, architecture, conventions, and verification expectations belong
+here. Tool-specific workflow rules belong in that tool's own instruction file, such as `CLAUDE.md`.
 
 ## Project Overview
 
