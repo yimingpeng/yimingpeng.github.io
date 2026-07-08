@@ -20,6 +20,7 @@ const peerReviewedYears = peerReviewedPublications
 	.map(publication => publication.year)
 	.filter((y): y is number => y != null);
 const peerReviewedYearSpan = `${Math.min(...peerReviewedYears)}-${Math.max(...peerReviewedYears)}`;
+const CREDLY_PROFILE_URL = 'https://www.credly.com/users/yiming-peng.87fe02c4';
 ---
 
 <BaseLayout
@@ -72,6 +73,12 @@ const peerReviewedYearSpan = `${Math.min(...peerReviewedYears)}-${Math.max(...pe
 					class="text-blue-600 dark:text-[#89b4fa] hover:underline">LinkedIn</a
 				>
 				<a
+					href={CREDLY_PROFILE_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Credly</a
+				>
+				<a
 					href="https://scholar.google.co.uk/citations?user=bJBbv0EAAAAJ"
 					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Scholar</a
 				>
@@ -98,11 +105,21 @@ const peerReviewedYearSpan = `${Math.min(...peerReviewedYears)}-${Math.max(...pe
 
 			<!-- Certifications -->
 			<div class="space-y-3">
-				<h3
-					class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-[#6c7086]"
-				>
-					Certifications
-				</h3>
+				<div class="flex flex-wrap items-center justify-between gap-3">
+					<h3
+						class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-[#6c7086]"
+					>
+						Certifications
+					</h3>
+					<a
+						href={CREDLY_PROFILE_URL}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-xs text-blue-600 hover:underline dark:text-[#89b4fa]"
+					>
+						View all on Credly
+					</a>
+				</div>
 				<div class="space-y-3">
 					<div class="flex gap-4 items-baseline">
 						<span
@@ -542,11 +559,9 @@ const peerReviewedYearSpan = `${Math.min(...peerReviewedYears)}-${Math.max(...pe
 				</div>
 				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
 					<div class="flex items-baseline space-x-2">
-						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">
-							Unitec Institute of Technology
-						</span>
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">Unitec</span>
 						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
-						<span class="text-gray-600 dark:text-[#bac2de]"> Research and Teaching Assistant </span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Research and Teaching Assistant</span>
 					</div>
 					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
 						Jun 2012 – Jun 2015
