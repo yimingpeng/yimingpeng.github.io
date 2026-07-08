@@ -88,17 +88,18 @@ npm run format:check  # Check Prettier formatting without writing changes
 The site deploys automatically to GitHub Pages from the `master` branch.
 
 - Workflow: `.github/workflows/deploy.yml`
-- Build action: `withastro/action@v2`
+- Checkout action: `actions/checkout@v7`
+- Build action: `withastro/action@v6`
 - Node version in CI: `24`
-- Deployment action: `actions/deploy-pages@v4`
+- Deployment action: `actions/deploy-pages@v5`
 - Production URL: [https://yimingpeng.github.io](https://yimingpeng.github.io)
 
 To configure GitHub Pages for this repository, set **Settings -> Pages -> Source** to
 **GitHub Actions**.
 
 Manual deployments can be triggered from the GitHub Actions tab via the `workflow_dispatch` event.
-The workflow uses Node.js 24 for the Astro build to avoid GitHub Actions warnings about the
-deprecated Node.js 20 runtime.
+The workflow uses Node.js 24 and current GitHub Pages action versions to avoid GitHub Actions
+warnings about the deprecated Node.js 20 runtime.
 
 ## Development Disclosure
 
