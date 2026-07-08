@@ -1,15 +1,25 @@
 export type PublicationType = 'journal' | 'conference' | 'preprint' | 'thesis';
 
+export interface PublicationLink {
+	label: string;
+	href: string;
+}
+
 export interface Publication {
 	title: string;
 	authors: string;
 	venue: string;
 	year: number;
 	type: PublicationType;
+	links?: PublicationLink[];
 }
 
 export const SCHOLAR_URL = 'https://scholar.google.co.uk/citations?user=bJBbv0EAAAAJ';
+export const LINKEDIN_PUBLICATIONS_URL =
+	'https://www.linkedin.com/in/yiming-nz/details/publications/';
 export const TOTAL_CITATIONS = 165;
+
+const LEGACY_PUBLICATION_BASE = 'https://yimingpeng.github.io/yimingpeng.github.io/publication';
 
 export const publications: Publication[] = [
 	{
@@ -18,7 +28,8 @@ export const publications: Publication[] = [
 		authors: 'Y Peng, G Chen, M Zhang, B Xue',
 		venue: 'Memetic Computing',
 		year: 2024,
-		type: 'journal'
+		type: 'journal',
+		links: [{ label: 'Code', href: 'https://github.com/yimingpeng/cmaes_baselines' }]
 	},
 	{
 		title: 'Dynamic multi-modal multi-objective optimization: a preliminary study',
@@ -32,7 +43,8 @@ export const publications: Publication[] = [
 		authors: 'Y Peng, G Chen, M Zhang',
 		venue: 'Int. Joint Conf. on Neural Networks (IJCNN)',
 		year: 2020,
-		type: 'conference'
+		type: 'conference',
+		links: [{ label: 'Code', href: 'https://github.com/yimingpeng/primal_dual_baseline' }]
 	},
 	{
 		title: 'Policy direct search for effective reinforcement learning',
@@ -55,21 +67,39 @@ export const publications: Publication[] = [
 		authors: 'Y Peng, G Chen, H Singh, M Zhang',
 		venue: 'Genetic and Evolutionary Computation Conference (GECCO)',
 		year: 2018,
-		type: 'conference'
+		type: 'conference',
+		links: [
+			{
+				label: 'Download',
+				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-6/c-paper-6.pdf`
+			},
+			{ label: 'DOI', href: 'https://doi.org/10.1145/3205455.3205536' }
+		]
 	},
 	{
 		title: 'Constrained expectation-maximization methods for effective reinforcement learning',
 		authors: 'G Chen, Y Peng, M Zhang',
 		venue: 'Int. Joint Conf. on Neural Networks (IJCNN)',
 		year: 2018,
-		type: 'conference'
+		type: 'conference',
+		links: [
+			{
+				label: 'Download',
+				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-9/c-paper-9.pdf`
+			},
+			{ label: 'Publisher', href: 'https://ieeexplore.ieee.org/document/8488990' }
+		]
 	},
 	{
 		title: 'An adaptive clipping approach for proximal policy optimization',
 		authors: 'G Chen, Y Peng, M Zhang',
 		venue: 'arXiv preprint',
 		year: 2018,
-		type: 'preprint'
+		type: 'preprint',
+		links: [
+			{ label: 'Download', href: 'https://arxiv.org/pdf/1804.06461' },
+			{ label: 'arXiv', href: 'https://arxiv.org/abs/1804.06461' }
+		]
 	},
 	{
 		title:
@@ -77,14 +107,25 @@ export const publications: Publication[] = [
 		authors: 'G Chen, Y Peng, M Zhang',
 		venue: 'arXiv preprint',
 		year: 2018,
-		type: 'preprint'
+		type: 'preprint',
+		links: [
+			{ label: 'Download', href: 'https://arxiv.org/pdf/1809.00403' },
+			{ label: 'arXiv', href: 'https://arxiv.org/abs/1809.00403' }
+		]
 	},
 	{
 		title: 'A sandpile model for reliable actor-critic reinforcement learning',
 		authors: 'Y Peng, G Chen, M Zhang, S Pang',
 		venue: 'Int. Joint Conf. on Neural Networks (IJCNN)',
 		year: 2017,
-		type: 'conference'
+		type: 'conference',
+		links: [
+			{
+				label: 'Download',
+				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-5/c-paper-5.pdf`
+			},
+			{ label: 'Publisher', href: 'https://ieeexplore.ieee.org/document/7966362' }
+		]
 	},
 	{
 		title:
@@ -92,7 +133,14 @@ export const publications: Publication[] = [
 		authors: 'Y Peng, G Chen, M Zhang, Y Mei',
 		venue: 'Simulated Evolution and Learning (SEAL)',
 		year: 2017,
-		type: 'conference'
+		type: 'conference',
+		links: [
+			{
+				label: 'Download',
+				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-4/c-paper-4.pdf`
+			},
+			{ label: 'DOI', href: 'https://doi.org/10.1007/978-3-319-68759-9_39' }
+		]
 	},
 	{
 		title:
@@ -100,14 +148,28 @@ export const publications: Publication[] = [
 		authors: 'W Hardwick-Smith, Y Peng, G Chen, Y Mei, M Zhang',
 		venue: 'Australasian Joint Conf. on AI (AJCAI)',
 		year: 2017,
-		type: 'conference'
+		type: 'conference',
+		links: [
+			{
+				label: 'Download',
+				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-8/c-paper-8.pdf`
+			},
+			{ label: 'DOI', href: 'https://doi.org/10.1007/978-3-319-63004-5_4' }
+		]
 	},
 	{
 		title: 'Automated state feature learning for actor-critic reinforcement learning through NEAT',
 		authors: 'Y Peng, G Chen, S Holdaway, Y Mei, M Zhang',
 		venue: 'GECCO Companion',
 		year: 2017,
-		type: 'conference'
+		type: 'conference',
+		links: [
+			{
+				label: 'Download',
+				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-3/c-paper-3.pdf`
+			},
+			{ label: 'Publisher', href: 'https://dl.acm.org/citation.cfm?id=3076035' }
+		]
 	},
 	{
 		title: 'Generalized compatible function approximation for policy gradient search',

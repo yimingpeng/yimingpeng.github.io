@@ -4,6 +4,20 @@ import Header from '../components/Header.astro';
 import TerminalCLI from '../components/TerminalCLI.astro';
 import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
 import CommunityPreview from '../components/CommunityPreview.astro';
+import {
+	getSortedPublications,
+	LINKEDIN_PUBLICATIONS_URL,
+	SCHOLAR_URL,
+	TOTAL_CITATIONS
+} from '../data/publications';
+
+const publications = getSortedPublications();
+const peerReviewedPublications = publications.filter(publication =>
+	['journal', 'conference'].includes(publication.type)
+);
+const peerReviewedCount = peerReviewedPublications.length;
+const peerReviewedYears = peerReviewedPublications.map(publication => publication.year);
+const peerReviewedYearSpan = `${Math.min(...peerReviewedYears)}-${Math.max(...peerReviewedYears)}`;
 ---
 
 <BaseLayout
@@ -363,16 +377,24 @@ import CommunityPreview from '../components/CommunityPreview.astro';
 				Publications
 			</h2>
 			<p class="text-gray-600 dark:text-[#bac2de]">
-				13 peer-reviewed papers in reinforcement learning and evolutionary computation (2012–2024) —
-				165+ citations.
+				{peerReviewedCount} peer-reviewed papers in reinforcement learning and evolutionary
+				{' '}computation ({peerReviewedYearSpan}) - {TOTAL_CITATIONS}+ citations.
 			</p>
 			<div class="flex flex-wrap gap-6">
 				<a href="/publications" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
 					View all publications →
 				</a>
 				<a
-					href="https://scholar.google.co.uk/citations?user=bJBbv0EAAAAJ"
-					class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">Google Scholar →</a
+					href={LINKEDIN_PUBLICATIONS_URL}
+					class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline"
+					target="_blank"
+					rel="noopener noreferrer">LinkedIn →</a
+				>
+				<a
+					href={SCHOLAR_URL}
+					class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline"
+					target="_blank"
+					rel="noopener noreferrer">Google Scholar →</a
 				>
 			</div>
 		</section>
