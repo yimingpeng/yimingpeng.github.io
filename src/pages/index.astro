@@ -1,25 +1,610 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import ProjectsPreview from '../components/ProjectsPreview.astro';
-import Experience from '../components/Experience.astro';
-import Writing from '../components/Writing.astro';
-import Publications from '../components/Publications.astro';
-import Contact from '../components/ContactSimple.astro';
+import TerminalCLI from '../components/TerminalCLI.astro';
+import AIChatPlaceholder from '../components/AIChatPlaceholder.astro';
+import CommunityPreview from '../components/CommunityPreview.astro';
+import {
+	getSortedPublications,
+	LINKEDIN_PUBLICATIONS_URL,
+	SCHOLAR_URL,
+	TOTAL_CITATIONS
+} from '../data/publications';
+
+const publications = getSortedPublications();
+const peerReviewedPublications = publications.filter(publication =>
+	['journal', 'conference'].includes(publication.type)
+);
+const peerReviewedCount = peerReviewedPublications.length;
+const peerReviewedYears = peerReviewedPublications
+	.map(publication => publication.year)
+	.filter((y): y is number => y != null);
+const peerReviewedYearSpan = `${Math.min(...peerReviewedYears)}-${Math.max(...peerReviewedYears)}`;
+const CREDLY_PROFILE_URL = 'https://www.credly.com/users/yiming-peng.87fe02c4';
 ---
 
 <BaseLayout
-	title="Yiming Peng — Data Engineer & Architect"
-	description="Senior Data Engineer building scalable DataOps and MLOps platforms. Currently at Wētā FX. Apache Airflow contributor. PhD in Machine Learning."
+	title="Yiming Peng — Data Engineer"
+	description="Senior Data Engineer building scalable DataOps and MLOps platforms. Currently at Wētā FX. 10+ years in New Zealand data and MLOps. PhD in Reinforcement Learning."
 >
 	<Header />
-	<main>
-		<Hero />
-		<ProjectsPreview />
-		<Experience />
-		<Writing />
-		<Publications />
-		<Contact />
+	<main class="max-w-[760px] mx-auto px-6 pt-24 md:pt-32 space-y-20 pb-20">
+		<section id="about" class="space-y-8">
+			<div class="space-y-3">
+				<h1 class="text-[2.5rem] leading-tight font-bold text-gray-900 dark:text-[#cdd6f4]">
+					Yiming Peng /i' miŋ/
+				</h1>
+				<p class="text-gray-500 dark:text-[#a6adc8] text-lg">
+					Senior Data Engineer · PhD in Reinforcement Learning
+				</p>
+			</div>
+			<p class="text-gray-800 dark:text-[#bac2de] text-xl leading-relaxed">
+				I design data systems, also fix the leaky "pipes" 😏
+			</p>
+			<ul class="space-y-3 text-gray-600 dark:text-[#a6adc8]">
+				<li class="flex gap-3">
+					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> Currently at Wētā FX, building data
+					infrastructure behind world-class visual effects
+				</li>
+				<li class="flex gap-3">
+					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> 10+ years building DataOps/MLOps platforms
+					across New Zealand and global production environments
+				</li>
+				<li class="flex gap-3">
+					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> Contributor to Apache Airflow with
+					several merged fixes and improvements
+				</li>
+				<li class="flex gap-3">
+					<span class="text-blue-600 dark:text-[#89b4fa]">→</span> Volunteering in the tech community
+					through meetups, talks, and experience-sharing events
+				</li>
+			</ul>
+			<div class="flex flex-wrap gap-x-6 gap-y-3 pt-6">
+				<a
+					href="mailto:yimingpengjojo@gmail.com"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Email</a
+				>
+				<a
+					href="https://github.com/yimingpeng"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">GitHub</a
+				>
+				<a
+					href="https://www.linkedin.com/in/yiming-nz/"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">LinkedIn</a
+				>
+				<a
+					href={CREDLY_PROFILE_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Credly</a
+				>
+				<a
+					href="https://scholar.google.co.uk/citations?user=bJBbv0EAAAAJ"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Scholar</a
+				>
+				<a
+					href="https://medium.com/@yimingpeng"
+					class="text-blue-600 dark:text-[#89b4fa] hover:underline">Medium</a
+				>
+				<a href="/yiming_cv.pdf" class="text-blue-600 dark:text-[#89b4fa] hover:underline">
+					CV · Jul 2026 ↓
+				</a>
+			</div>
+		</section>
+
+		<!-- Recent: Speaking & Certifications -->
+		<section id="recent" class="space-y-8">
+			<h2
+				class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4] border-b border-gray-100 dark:border-[#313244] pb-2"
+			>
+				Recent
+			</h2>
+
+			<!-- Community & Events -->
+			<CommunityPreview />
+
+			<!-- Certifications -->
+			<div class="space-y-3">
+				<div class="flex flex-wrap items-center justify-between gap-3">
+					<h3
+						class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-[#6c7086]"
+					>
+						Certifications
+					</h3>
+					<a
+						href={CREDLY_PROFILE_URL}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-xs text-blue-600 hover:underline dark:text-[#89b4fa]"
+					>
+						View all on Credly
+					</a>
+				</div>
+				<div class="space-y-3">
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2026</span
+						>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>KCNA — Kubernetes and Cloud Native Associate</span
+							>
+							<span class="text-xs text-amber-500 dark:text-[#f9e2af] italic"
+								>in progress · target Aug 2026</span
+							>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2026</span
+						>
+						<a
+							href="https://www.credly.com/badges/a9601d33-4e34-486b-99e9-253d8d00cd5c/linked_in_profile"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="CKS Certificate"
+							class="shrink-0"
+						>
+							<img
+								src="/files/certifications/cks.png"
+								alt="CKS badge"
+								class="h-6 w-6 rounded border border-gray-200 object-cover dark:border-[#313244]"
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>CKS — Certified Kubernetes Security Specialist</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]"
+								>Linux Foundation · Jun 2026</span
+							>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2025</span
+						>
+						<a
+							href="https://www.credly.com/badges/ec7232b8-b542-4daa-8846-07372b66fc03/linked_in_profile"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="CKA Certificate"
+							class="shrink-0"
+						>
+							<img
+								src="/files/certifications/cka.png"
+								alt="CKA badge"
+								class="h-6 w-6 rounded border border-gray-200 object-cover dark:border-[#313244]"
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>CKA — Certified Kubernetes Administrator</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]"
+								>Linux Foundation · Oct 2025</span
+							>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2025</span
+						>
+						<a
+							href="https://www.credly.com/badges/bff106cd-060d-4185-8989-0eb2fac2d712/linked_in_profile"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="CKAD Certificate"
+							class="shrink-0"
+						>
+							<img
+								src="/files/certifications/ckad.png"
+								alt="CKAD badge"
+								class="h-6 w-6 rounded border border-gray-200 object-cover dark:border-[#313244]"
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>CKAD — Certified Kubernetes Application Developer</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]"
+								>Linux Foundation · Jun 2025</span
+							>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2025</span
+						>
+						<a
+							href="https://www.credly.com/badges/acd0bdd4-286a-436e-a60b-bfe2e853d618/linked_in_profile"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="Tableau Server Certified Associate"
+							class="shrink-0"
+						>
+							<img
+								src="/files/certifications/tableau-server-admin.png"
+								alt="Tableau Server Certified Associate badge"
+								class="h-6 w-6 rounded border border-gray-200 object-cover dark:border-[#313244]"
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>Tableau Server Certified Associate</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]">Tableau · Apr 2025</span>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2025</span
+						>
+						<a
+							href="https://www.credly.com/badges/b91eb010-27f7-49a2-bf07-e50bc9961468/linked_in_profile"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="Getting Started with ClickHouse"
+							class="shrink-0"
+						>
+							<img
+								src="/files/certifications/clickhouse-getting-started.png"
+								alt="ClickHouse badge"
+								class="h-6 w-6 rounded border border-gray-200 object-cover dark:border-[#313244]"
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>Getting Started with ClickHouse</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]">ClickHouse · Apr 2025</span>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2024</span
+						>
+						<a
+							href="https://www.credly.com/badges/0ea6b848-300b-4dfb-8fab-5e10b717b6f2/linked_in_profile"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="Astronomer Champions Program for Apache Airflow"
+							class="shrink-0"
+						>
+							<img
+								src="/files/certifications/astronomer-champions-program.png"
+								alt="Astronomer Champions badge"
+								class="h-6 w-6 rounded border border-gray-200 object-cover dark:border-[#313244]"
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>Astronomer Champions Program for Apache Airflow</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]">Astronomer · Jun 2024</span>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2022</span
+						>
+						<a
+							href="https://www.credly.com/badges/a1d12623-df6c-445b-bcb7-51a767425001/linked_in_profile"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="Astronomer Certification DAG Authoring for Apache Airflow 2"
+							class="shrink-0"
+						>
+							<img
+								src="/files/certifications/astronomer-dag-authoring-airflow2.png"
+								alt="Astronomer DAG Authoring badge"
+								class="h-6 w-6 rounded border border-gray-200 object-cover dark:border-[#313244]"
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>Astronomer Certification — Apache Airflow 2</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]">Astronomer · Oct 2022</span>
+						</div>
+					</div>
+					<div class="flex gap-4 items-baseline">
+						<span
+							class="text-xs text-gray-400 dark:text-[#6c7086] font-mono whitespace-nowrap w-20 shrink-0"
+							>2022</span
+						>
+						<a
+							href="https://www.credly.com/badges/6030784e-da5e-4236-a2ae-e077cf82f7bd/linked_in_profile"
+							target="_blank"
+							rel="noopener noreferrer"
+							title="Astronomer Certification for Apache Airflow 2 Fundamentals"
+							class="shrink-0"
+						>
+							<img
+								src="/files/certifications/astronomer-airflow2-fundamentals.png"
+								alt="Astronomer Airflow Fundamentals badge"
+								class="h-6 w-6 rounded border border-gray-200 object-cover dark:border-[#313244]"
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 min-w-0">
+							<span class="text-sm text-gray-800 dark:text-[#bac2de]"
+								>Astronomer Certification — Airflow 2 Fundamentals</span
+							>
+							<span class="text-xs text-gray-400 dark:text-[#6c7086]">Astronomer · Aug 2022</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects" class="space-y-6">
+			<h2
+				class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4] border-b border-gray-100 dark:border-[#313244] pb-2"
+			>
+				Selected Projects
+			</h2>
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+				<a
+					href="/archive"
+					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
+				>
+					<div class="flex-1 space-y-4">
+						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
+							Eliminated recurring pipeline failures; production-critical at Wētā FX.
+						</p>
+						<div>
+							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
+								DataOps Platform @ Wētā FX
+							</h3>
+							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
+								On-premises data platform powering BI and ML workflows. Built with Airflow,
+								ClickHouse, and Ansible across a complex production environment.
+							</p>
+						</div>
+					</div>
+					<div class="mt-8 flex justify-between items-end">
+						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
+							Python · Airflow · ClickHouse · Ansible
+						</span>
+						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
+					</div>
+				</a>
+				<a
+					href="/archive"
+					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
+				>
+					<div class="flex-1 space-y-4">
+						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
+							Open source work focused on practical, production-informed improvements.
+						</p>
+						<div>
+							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
+								Open Source Contributions — Apache Airflow
+							</h3>
+							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
+								Contributed around 4-5 pull requests and issue fixes to Apache Airflow, focused on
+								reliability and developer experience improvements.
+							</p>
+						</div>
+					</div>
+					<div class="mt-8 flex justify-between items-end">
+						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
+							Python · Apache Airflow · Open Source
+						</span>
+						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
+					</div>
+				</a>
+				<a
+					href="/archive"
+					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
+				>
+					<div class="flex-1 space-y-4">
+						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
+							Dramatically reduced data incidents; stakeholders now trust the data.
+						</p>
+						<div>
+							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
+								Data Quality &amp; Observability System
+							</h3>
+							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
+								Platform-wide data quality framework using Great Expectations, with GitLab CI
+								integration for automated validation on every pipeline run.
+							</p>
+						</div>
+					</div>
+					<div class="mt-8 flex justify-between items-end">
+						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
+							Great Expectations · Python · GitLab CI
+						</span>
+						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
+					</div>
+				</a>
+				<a
+					href="/archive"
+					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
+				>
+					<div class="flex-1 space-y-4">
+						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
+							Made ML model deployment routine rather than heroic at Chorus NZ.
+						</p>
+						<div>
+							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
+								Kubernetes MLOps Platform
+							</h3>
+							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
+								Kubernetes-based MLOps platform to close the gap between experimentation and
+								production. First production ML infrastructure at the organisation.
+							</p>
+						</div>
+					</div>
+					<div class="mt-8 flex justify-between items-end">
+						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
+							Kubernetes · Kubeflow · AWS EKS
+						</span>
+						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
+					</div>
+				</a>
+			</div>
+			<a href="/archive" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
+				View full project archive →
+			</a>
+		</section>
+
+		<section id="experience" class="space-y-6">
+			<h2
+				class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4] border-b border-gray-100 dark:border-[#313244] pb-2"
+			>
+				Experience
+			</h2>
+			<div class="space-y-4">
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">Wētā FX</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Senior Software Engineer, Data</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Oct 2023 – Present
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">MBIE</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Data Architect</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Jul 2022 – Jul 2023
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">IHC New Zealand</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">
+							Principal Data &amp; Integration Architect
+						</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Jul 2021 – Jul 2022
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">Chorus New Zealand</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Senior Data Engineer</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Dec 2019 – Jun 2021
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">KPMG New Zealand</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Data Engineer</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Apr 2019 – Nov 2019
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">
+							Victoria University of Wellington
+						</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Research Scientist</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Dec 2018 – Apr 2019
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">
+							Victoria University of Wellington
+						</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">PhD Researcher</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Sep 2015 – Dec 2018
+					</span>
+				</div>
+				<div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+					<div class="flex items-baseline space-x-2">
+						<span class="font-semibold text-gray-800 dark:text-[#cdd6f4]">Unitec</span>
+						<span class="text-gray-400 dark:text-[#6c7086] hidden sm:inline">—</span>
+						<span class="text-gray-600 dark:text-[#bac2de]">Research and Teaching Assistant</span>
+					</div>
+					<span class="text-gray-400 dark:text-[#a6adc8] text-sm mt-1 sm:mt-0">
+						Jun 2012 – Jun 2015
+					</span>
+				</div>
+			</div>
+			<a href="/yiming_cv.pdf" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
+				Full CV / Résumé · Updated Jul 2026 ↓
+			</a>
+		</section>
+
+		<section class="space-y-6 pt-4">
+			<TerminalCLI />
+		</section>
+
+		<section id="publications" class="space-y-6">
+			<h2
+				class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4] border-b border-gray-100 dark:border-[#313244] pb-2"
+			>
+				Publications
+			</h2>
+			<p class="text-gray-600 dark:text-[#bac2de]">
+				{peerReviewedCount} peer-reviewed papers in reinforcement learning and evolutionary
+				{' '}computation ({peerReviewedYearSpan}) - {TOTAL_CITATIONS}+ citations.
+			</p>
+			<div class="flex flex-wrap gap-6">
+				<a href="/publications" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
+					View all publications →
+				</a>
+				<a
+					href={LINKEDIN_PUBLICATIONS_URL}
+					class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline"
+					target="_blank"
+					rel="noopener noreferrer">LinkedIn →</a
+				>
+				<a
+					href={SCHOLAR_URL}
+					class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline"
+					target="_blank"
+					rel="noopener noreferrer">Google Scholar →</a
+				>
+			</div>
+		</section>
 	</main>
+	<AIChatPlaceholder />
 </BaseLayout>

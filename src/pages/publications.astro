@@ -1,290 +1,107 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import {
+	getSortedPublications,
+	LINKEDIN_PUBLICATIONS_URL,
+	SCHOLAR_URL,
+	TOTAL_CITATIONS
+} from '../data/publications';
+
+const publications = getSortedPublications();
+const peerReviewedCount = publications.filter(publication =>
+	['journal', 'conference'].includes(publication.type)
+).length;
+const years = publications
+	.map(publication => publication.year)
+	.filter((y): y is number => y != null);
+const yearSpan = `${Math.min(...years)}-${Math.max(...years)}`;
+
+const renderAuthors = (authors: string) =>
+	authors.split(/(Y Peng)/g).map(part => ({
+		text: part,
+		isSelf: part === 'Y Peng'
+	}));
 ---
 
 <BaseLayout
 	title="Publications - Yiming Peng"
-	description="Research publications by Yiming Peng in Machine Learning, Reinforcement Learning, and Evolutionary Computation"
+	description="Research publications by Yiming Peng in reinforcement learning and evolutionary computation."
 >
-	<Header currentPage="publications" />
-	<main class="publications-page">
-		<div class="container">
-			<div class="page-header">
-				<h1 class="page-title">$ cat publications.txt</h1>
-				<p class="page-subtitle">
-					Research publications in machine learning and evolutionary computation
-				</p>
-				<a href="/" class="back-link">← Back to home</a>
-			</div>
-
-			<div class="publications-placeholder">
-				<div class="placeholder-content">
-					<div class="placeholder-icon">📚</div>
-					<h2 class="placeholder-title">Publications Coming Soon</h2>
-					<div class="placeholder-text">
-						<p>
-							I'm currently updating my publication list with the latest research. Check back soon
-							for a comprehensive overview of my work in machine learning and evolutionary
-							computation.
-						</p>
-					</div>
-					<div class="placeholder-note">
-						<p>
-							<em> Note: Publication details are being refined and will be available shortly. </em>
-						</p>
-					</div>
+	<Header />
+	<main class="pt-24 pb-20 max-w-[760px] mx-auto px-6">
+		<section class="space-y-12">
+			<div class="space-y-4">
+				<div class="space-y-2">
+					<h1 class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4]">Publications</h1>
+					<p class="text-sm text-gray-500 dark:text-[#6c7086]">
+						{peerReviewedCount} peer-reviewed papers, {publications.length} publications total,
+						{yearSpan}, {TOTAL_CITATIONS}+ citations.
+					</p>
+				</div>
+				<div class="flex flex-wrap gap-4">
+					<a href="/" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
+						← Back to home
+					</a>
+					<a
+						href={LINKEDIN_PUBLICATIONS_URL}
+						class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						LinkedIn Publications →
+					</a>
+					<a
+						href={SCHOLAR_URL}
+						class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Google Scholar →
+					</a>
 				</div>
 			</div>
-		</div>
+
+			<div class="space-y-10">
+				{
+					publications.map(publication => (
+						<article class="space-y-2">
+							<div class="flex items-baseline gap-3 flex-wrap">
+								<span class="text-xs text-gray-400 dark:text-[#6c7086] font-mono">
+									{publication.year ?? 'TBD'}
+								</span>
+								<span class="text-xs uppercase tracking-widest text-gray-400 dark:text-[#6c7086]">
+									{publication.type}
+								</span>
+							</div>
+							<h2 class="text-base font-semibold text-gray-900 dark:text-[#cdd6f4] leading-snug">
+								{publication.title}
+							</h2>
+							<p class="text-sm text-gray-700 dark:text-[#bac2de] leading-relaxed">
+								{renderAuthors(publication.authors).map(part =>
+									part.isSelf ? <strong class="font-semibold">{part.text}</strong> : part.text
+								)}
+							</p>
+							<p class="text-sm text-gray-500 dark:text-[#6c7086]">{publication.venue}</p>
+							{publication.links && publication.links.length > 0 && (
+								<div class="flex flex-wrap gap-x-4 gap-y-2">
+									{publication.links.map(link => (
+										<a
+											href={link.href}
+											class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											{link.label} →
+										</a>
+									))}
+								</div>
+							)}
+							<hr class="border-gray-100 dark:border-[#313244] pt-4" />
+						</article>
+					))
+				}
+			</div>
+		</section>
 	</main>
 </BaseLayout>
-
-<style>
-	.publications-page {
-		padding-top: 120px;
-		padding-bottom: 4rem;
-		background: linear-gradient(135deg, #181825 0%, #1e1e2e 50%, #181825 100%);
-		color: #e6edf3;
-		min-height: 100vh;
-	}
-
-	.page-header {
-		text-align: center;
-		margin-bottom: 3rem;
-	}
-
-	.page-title {
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 2.5rem;
-		color: #a6e3a1;
-		margin-bottom: 1rem;
-		font-weight: 500;
-	}
-
-	.page-subtitle {
-		color: #7c8f8f;
-		font-size: 1.1rem;
-		margin-bottom: 2rem;
-		max-width: 600px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.back-link {
-		display: inline-block;
-		color: #89b4fa;
-		text-decoration: none;
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 1rem;
-		padding: 0.5rem 1rem;
-		border: 1px solid rgba(137, 180, 250, 0.3);
-		border-radius: 6px;
-		transition: all 0.3s ease;
-	}
-
-	.back-link:hover {
-		background: rgba(137, 180, 250, 0.1);
-		border-color: #89b4fa;
-	}
-
-	.publications-list {
-		max-width: 800px;
-		margin: 0 auto;
-	}
-
-	.publications-placeholder {
-		max-width: 600px;
-		margin: 0 auto;
-	}
-
-	.placeholder-content {
-		text-align: center;
-		background: #161b22;
-		border: 1px solid #21262d;
-		border-radius: 16px;
-		padding: 4rem 2rem;
-		margin-top: 2rem;
-	}
-
-	.placeholder-icon {
-		font-size: 4rem;
-		margin-bottom: 1.5rem;
-		opacity: 0.8;
-	}
-
-	.placeholder-title {
-		font-size: 1.8rem;
-		font-weight: 600;
-		color: #e6edf3;
-		margin-bottom: 1rem;
-	}
-
-	.placeholder-text {
-		color: #7c8f8f;
-		font-size: 1.1rem;
-		line-height: 1.6;
-		margin-bottom: 2rem;
-	}
-
-	.placeholder-note {
-		padding-top: 1.5rem;
-		border-top: 1px solid #21262d;
-	}
-
-	.placeholder-note p {
-		color: #89b4fa;
-		font-size: 0.95rem;
-		margin: 0;
-	}
-
-	.publication-section {
-		margin-bottom: 3rem;
-	}
-
-	.section-header {
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		color: #f9e2af;
-		font-size: 1.5rem;
-		font-weight: 600;
-		margin-bottom: 1.5rem;
-		border-bottom: 1px solid #21262d;
-		padding-bottom: 0.5rem;
-	}
-
-	.publication-item {
-		background: #161b22;
-		border: 1px solid #21262d;
-		border-radius: 8px;
-		padding: 1.5rem;
-		margin-bottom: 1rem;
-		transition:
-			border-color 0.3s ease,
-			box-shadow 0.3s ease;
-	}
-
-	.publication-item:hover {
-		border-color: #30363d;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-	}
-
-	.publication-title {
-		font-size: 1.2rem;
-		font-weight: 600;
-		color: #e6edf3;
-		margin-bottom: 0.5rem;
-		line-height: 1.4;
-	}
-
-	.publication-authors {
-		color: #7c8f8f;
-		margin-bottom: 0.3rem;
-		font-size: 0.95rem;
-	}
-
-	.publication-authors strong {
-		color: #e6edf3;
-	}
-
-	.publication-venue {
-		color: #58a6ff;
-		font-weight: 500;
-		margin-bottom: 1rem;
-		font-size: 0.95rem;
-	}
-
-	.publication-actions {
-		display: flex;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
-
-	.action-link {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 0.5rem 1rem;
-		background: #21262d;
-		color: #e6edf3;
-		text-decoration: none;
-		border-radius: 6px;
-		border: 1px solid #30363d;
-		font-weight: 500;
-		font-size: 0.9rem;
-		transition: all 0.3s ease;
-	}
-
-	.action-link:hover {
-		background: #30363d;
-		border-color: #484f58;
-		color: #58a6ff;
-	}
-
-	/* Responsive Design */
-	@media (max-width: 768px) {
-		.publications-page {
-			padding-top: 100px;
-			padding-bottom: 3rem;
-		}
-
-		.page-title {
-			font-size: 2rem;
-		}
-
-		.page-subtitle {
-			font-size: 1rem;
-			margin-bottom: 1.5rem;
-		}
-
-		.publication-item {
-			padding: 1.25rem;
-		}
-
-		.publication-title {
-			font-size: 1.1rem;
-		}
-
-		.publication-actions {
-			gap: 0.5rem;
-		}
-
-		.action-link {
-			padding: 0.4rem 0.8rem;
-			font-size: 0.85rem;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.publications-page {
-			padding-top: 80px;
-			padding-bottom: 2rem;
-		}
-
-		.page-title {
-			font-size: 1.75rem;
-		}
-
-		.page-subtitle {
-			font-size: 0.95rem;
-			margin-bottom: 1.25rem;
-		}
-
-		.publication-item {
-			padding: 1rem;
-		}
-
-		.publication-title {
-			font-size: 1rem;
-		}
-
-		.publication-authors,
-		.publication-venue {
-			font-size: 0.9rem;
-		}
-
-		.action-link {
-			padding: 0.35rem 0.7rem;
-			font-size: 0.8rem;
-		}
-	}
-</style>

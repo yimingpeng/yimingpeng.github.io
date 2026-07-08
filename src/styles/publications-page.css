@@ -1,0 +1,246 @@
+.publications-page {
+	padding-top: 120px;
+	padding-bottom: 4rem;
+	min-height: 100vh;
+	color: var(--text);
+}
+
+.publications-page .container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.publications-page .page-header {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.publications-page .page-title {
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 2.5rem;
+	color: var(--accent-2);
+	margin-bottom: 1rem;
+	font-weight: 500;
+}
+
+.publications-page .page-subtitle {
+	color: var(--text-muted);
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.publications-page .back-link {
+	display: inline-block;
+	color: var(--accent);
+	text-decoration: none;
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	transition: all 0.3s ease;
+}
+
+.publications-page .back-link:hover {
+	background: var(--accent-soft);
+	border-color: var(--accent);
+}
+
+.publications-page .publications-list,
+.publications-page .publications-placeholder {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.publications-page .placeholder-content {
+	text-align: center;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	padding: 4rem 2rem;
+	margin-top: 2rem;
+}
+
+.publications-page .placeholder-icon {
+	font-size: 4rem;
+	margin-bottom: 1.5rem;
+	opacity: 0.8;
+}
+
+.publications-page .placeholder-title {
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: var(--text);
+	margin-bottom: 1rem;
+}
+
+.publications-page .placeholder-text {
+	color: var(--text-muted);
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin-bottom: 2rem;
+}
+
+.publications-page .placeholder-note {
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--border);
+}
+
+.publications-page .placeholder-note p {
+	color: var(--accent);
+	font-size: 0.95rem;
+	margin: 0;
+}
+
+.publications-page .publication-section {
+	margin-bottom: 3rem;
+}
+
+.publications-page .section-header {
+	font-family: 'JetBrains Mono', 'Fira Code', monospace;
+	color: var(--warning);
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid var(--border);
+	padding-bottom: 0.5rem;
+}
+
+.publications-page .publication-item {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+	transition:
+		border-color 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.publications-page .publication-item:hover {
+	border-color: var(--border-strong);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.publications-page .publication-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: var(--text);
+	margin-bottom: 0.5rem;
+	line-height: 1.4;
+}
+
+.publications-page .publication-authors {
+	color: var(--text-muted);
+	margin-bottom: 0.3rem;
+	font-size: 0.95rem;
+}
+
+.publications-page .publication-authors strong {
+	color: var(--text);
+}
+
+.publications-page .publication-venue {
+	color: var(--accent);
+	font-weight: 500;
+	margin-bottom: 1rem;
+	font-size: 0.95rem;
+}
+
+.publications-page .publication-actions {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.publications-page .action-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 1rem;
+	background: var(--surface-muted);
+	color: var(--text);
+	text-decoration: none;
+	border-radius: 6px;
+	border: 1px solid var(--border);
+	font-weight: 500;
+	font-size: 0.9rem;
+	transition: all 0.3s ease;
+}
+
+.publications-page .action-link:hover {
+	background: var(--accent-soft);
+	border-color: var(--border-strong);
+	color: var(--accent);
+}
+
+@media (max-width: 768px) {
+	.publications-page {
+		padding-top: 100px;
+		padding-bottom: 3rem;
+	}
+
+	.publications-page .page-title {
+		font-size: 2rem;
+	}
+
+	.publications-page .page-subtitle {
+		font-size: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.publications-page .publication-item {
+		padding: 1.25rem;
+	}
+
+	.publications-page .publication-title {
+		font-size: 1.1rem;
+	}
+
+	.publications-page .publication-actions {
+		gap: 0.5rem;
+	}
+
+	.publications-page .action-link {
+		padding: 0.4rem 0.8rem;
+		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.publications-page {
+		padding-top: 80px;
+		padding-bottom: 2rem;
+	}
+
+	.publications-page .page-title {
+		font-size: 1.75rem;
+	}
+
+	.publications-page .page-subtitle {
+		font-size: 0.95rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.publications-page .publication-item {
+		padding: 1rem;
+	}
+
+	.publications-page .publication-title {
+		font-size: 1rem;
+	}
+
+	.publications-page .publication-authors,
+	.publications-page .publication-venue {
+		font-size: 0.9rem;
+	}
+
+	.publications-page .action-link {
+		padding: 0.35rem 0.7rem;
+		font-size: 0.8rem;
+	}
+}

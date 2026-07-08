@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import { getSortedEvents } from '../data/community';
+
+const events = getSortedEvents();
+const CONTACT_EMAIL = 'yimingpengjojo@gmail.com';
+const getMaterialsRequestUrl = (title: string) =>
+	`mailto:${CONTACT_EMAIL}?subject=Materials request: ${encodeURIComponent(title)}`;
+---
+
+<BaseLayout
+	title="Community & Events — Yiming Peng"
+	description="Talks, panels, meetups, conferences, and community events by Yiming Peng."
+>
+	<Header />
+	<main class="pt-24 pb-20 max-w-[760px] mx-auto px-6">
+		<section class="space-y-12">
+			<div class="space-y-2">
+				<h1 class="text-lg font-bold text-gray-900 dark:text-[#cdd6f4]">Community &amp; Events</h1>
+				<p class="text-sm text-gray-500 dark:text-[#6c7086]">
+					Talks, panels, meetups, conferences, and the occasional social — recent first. For slides,
+					recordings, or photos, use the request link on each event.
+				</p>
+			</div>
+
+			<div class="space-y-12">
+				{
+					events.map(event => (
+						<article id={event.id} class="space-y-4 scroll-mt-24">
+							<div class="space-y-1">
+								<div class="flex items-baseline gap-3 flex-wrap">
+									<span class="text-xs text-gray-400 dark:text-[#6c7086] font-mono">
+										{event.dateDisplay}
+									</span>
+									<span class="text-xs uppercase tracking-widest text-gray-400 dark:text-[#6c7086]">
+										{event.type}
+									</span>
+								</div>
+								<h2 class="text-base font-semibold text-gray-900 dark:text-[#cdd6f4]">
+									{event.title}
+								</h2>
+								{event.organization && (
+									<p class="text-sm text-gray-500 dark:text-[#6c7086]">
+										{event.venue ? `${event.venue} · ` : ''}
+										{event.organization}
+									</p>
+								)}
+								{event.venue && !event.organization && (
+									<p class="text-sm text-gray-500 dark:text-[#6c7086]">{event.venue}</p>
+								)}
+							</div>
+
+							{event.body && (
+								<p class="text-sm text-gray-700 dark:text-[#bac2de] leading-relaxed">
+									{event.body}
+								</p>
+							)}
+
+							{event.photos && event.photos.length > 0 && (
+								<div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+									{event.photos.map(src => (
+										<img
+											src={src}
+											alt={`Photo from ${event.title}`}
+											class="rounded-md object-cover aspect-video w-full"
+											loading="lazy"
+										/>
+									))}
+								</div>
+							)}
+
+							<div class="flex flex-wrap gap-4 items-center">
+								{event.status && (
+									<span class="text-xs text-blue-400 dark:text-[#89b4fa] italic">
+										{event.status}
+									</span>
+								)}
+								{event.recording && (
+									<a
+										href={event.recording}
+										class="text-xs text-blue-600 dark:text-[#89b4fa] hover:underline"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										recording ↗
+									</a>
+								)}
+								{event.slides && (
+									<a
+										href={event.slides}
+										class="text-xs text-blue-600 dark:text-[#89b4fa] hover:underline"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										slides ↗
+									</a>
+								)}
+								{event.materials === 'request' && (
+									<a
+										href={getMaterialsRequestUrl(event.title)}
+										class="text-xs text-gray-400 dark:text-[#6c7086] hover:text-blue-600 dark:hover:text-[#89b4fa] transition-colors"
+									>
+										request slides / recording ↗
+									</a>
+								)}
+								{Array.isArray(event.materials) &&
+									event.materials.map(m => (
+										<a
+											href={m.url}
+											class="text-xs text-blue-600 dark:text-[#89b4fa] hover:underline"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											{m.label} ↗
+										</a>
+									))}
+							</div>
+
+							<hr class="border-gray-100 dark:border-[#313244]" />
+						</article>
+					))
+				}
+			</div>
+		</section>
+	</main>
+</BaseLayout>

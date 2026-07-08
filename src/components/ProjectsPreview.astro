@@ -2,7 +2,7 @@
 // Featured Projects section — curated, narrative-driven
 ---
 
-<section class="section" id="projects">
+<section class="section projects-preview" id="projects">
 	<div class="container">
 		<h2 class="section-title">$ ls ./featured-projects</h2>
 		<div class="projects-grid">
@@ -25,6 +25,11 @@
 				<p class="project-impact">
 					<span class="impact-label">Impact:</span> Eliminated recurring pipeline failures; stakeholder
 					teams now rely on it as production-critical infrastructure.
+				</p>
+				<p class="project-cta">
+					<a href="/archive#dataops-platform" class="project-cta-link">
+						Explore project archive entry →
+					</a>
 				</p>
 			</div>
 
@@ -53,6 +58,11 @@
 					>
 					<span class="placeholder-note">[PR links — add when available]</span>
 				</p>
+				<p class="project-cta">
+					<a href="/archive#apache-airflow-oss-contributions" class="project-cta-link">
+						Explore project archive entry →
+					</a>
+				</p>
 			</div>
 
 			<!-- Project 3: Data Quality Monitoring -->
@@ -73,6 +83,11 @@
 				<p class="project-impact">
 					<span class="impact-label">Impact:</span> Dramatically reduced data incidents; stakeholders
 					gained confidence to act on data without manual verification.
+				</p>
+				<p class="project-cta">
+					<a href="/archive#data-quality-observability-system" class="project-cta-link">
+						Explore project archive entry →
+					</a>
 				</p>
 			</div>
 
@@ -95,166 +110,22 @@
 					<span class="impact-label">Impact:</span> First production ML infrastructure at the organisation
 					— made model deployment a routine operation rather than a heroic effort.
 				</p>
+				<p class="project-cta">
+					<a href="/archive#kubernetes-mlops-platform" class="project-cta-link">
+						Explore project archive entry →
+					</a>
+				</p>
 			</div>
 		</div>
 		<div class="archive-cta">
 			<a href="/archive" class="archive-link">
 				View full project archive
 				<svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13">
-					<path d="M10 6v2H5v11h11v-5h2v7H3V6h7zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z" />
+					<path
+						d="M10 6v2H5v11h11v-5h2v7H3V6h7zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"
+					></path>
 				</svg>
 			</a>
 		</div>
 	</div>
 </section>
-
-<style>
-	.section {
-		padding: 4rem 0;
-	}
-
-	.container {
-		max-width: 1000px;
-		margin: 0 auto;
-		padding: 0 1.5rem;
-	}
-
-	.section-title {
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 1.4rem;
-		color: #a6e3a1;
-		font-weight: 500;
-		margin-bottom: 2.5rem;
-	}
-
-	.projects-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-		gap: 1.5rem;
-	}
-
-	.project-card {
-		background: rgba(30, 30, 46, 0.6);
-		border: 1px solid rgba(137, 180, 250, 0.15);
-		border-radius: 8px;
-		padding: 1.75rem;
-		transition: border-color 0.2s ease;
-		position: relative;
-		overflow: hidden;
-	}
-
-	.project-card::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 2px;
-		background: linear-gradient(90deg, #a6e3a1, #89b4fa);
-		opacity: 0;
-		transition: opacity 0.2s ease;
-	}
-
-	.project-card:hover {
-		border-color: rgba(137, 180, 250, 0.35);
-	}
-
-	.project-card:hover::before {
-		opacity: 1;
-	}
-
-	.project-header {
-		margin-bottom: 1rem;
-	}
-
-	.project-title {
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 1.05rem;
-		font-weight: 600;
-		color: #cdd6f4;
-		margin-bottom: 0.75rem;
-	}
-
-	.project-tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.4rem;
-	}
-
-	.tag {
-		background: rgba(137, 180, 250, 0.08);
-		color: #89b4fa;
-		padding: 0.2rem 0.55rem;
-		border-radius: 4px;
-		font-size: 0.72rem;
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		border: 1px solid rgba(137, 180, 250, 0.2);
-	}
-
-	.project-narrative {
-		color: #bac2de;
-		line-height: 1.7;
-		font-size: 0.92rem;
-		margin-bottom: 1rem;
-	}
-
-	.project-impact {
-		color: #6c7086;
-		font-size: 0.88rem;
-		line-height: 1.5;
-	}
-
-	.impact-label {
-		color: #f9e2af;
-		font-weight: 600;
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-	}
-
-	.project-link {
-		color: #89b4fa;
-		text-decoration: none;
-		margin-left: 0.5rem;
-	}
-
-	.project-link:hover {
-		color: #a6e3a1;
-	}
-
-	.placeholder-note {
-		color: #45475a;
-		font-size: 0.8rem;
-		font-style: italic;
-		margin-left: 0.5rem;
-	}
-
-	.archive-cta {
-		margin-top: 2rem;
-		padding-top: 1.5rem;
-		border-top: 1px solid rgba(69, 71, 90, 0.4);
-	}
-
-	.archive-link {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		font-family: 'JetBrains Mono', 'Fira Code', monospace;
-		font-size: 0.85rem;
-		color: #6c7086;
-		text-decoration: none;
-		transition: color 0.2s ease;
-	}
-
-	.archive-link:hover {
-		color: #a6e3a1;
-	}
-
-	@media (max-width: 768px) {
-		.projects-grid {
-			grid-template-columns: 1fr;
-		}
-
-		.section-title {
-			font-size: 1.2rem;
-		}
-	}
-</style>

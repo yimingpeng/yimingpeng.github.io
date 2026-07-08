@@ -51,8 +51,16 @@ export default [
 		}
 	},
 
+	// Astro template indentation is handled by prettier-plugin-astro.
+	{
+		files: ['**/*.astro', '**/*.astro/*.js', '**/*.astro/*.ts'],
+		rules: {
+			indent: 'off'
+		}
+	},
+
 	// Ignore patterns
 	{
-		ignores: ['dist/**', 'node_modules/**', '.astro/**']
+		ignores: ['dist/**', 'node_modules/**', '.astro/**', 'figma-export/**']
 	}
 ];

@@ -1,81 +1,104 @@
-# Yiming's Personal Portfolio Website
+# Yiming Peng Portfolio
 
-Hello, welcome to my personal portfolio website repository!
+Personal portfolio website for [Yiming Peng](https://www.linkedin.com/in/yiming-nz/), built with
+[Astro](https://astro.build/) and deployed to GitHub Pages.
 
-I am [Yiming](https://www.linkedin.com/in/yiming-nz/), currently working as a senior software engineer at WetaFx Ltd.
-
-You might have seen my old home page built about 7 years ago, which is clearly much outdated, so I am currently working on rebuilding this new page with modern web technologies.
+The site presents professional experience, selected projects, publications, community and speaking
+activity, certifications, and contact links.
 
 ## Tech Stack
 
-- **[Astro](https://astro.new/latest/)** - Modern static site generator for fast, content-focused websites
-- **GitHub Actions** - Automated deployment and CI/CD pipeline
-- **TypeScript** - Type-safe JavaScript development
+- **Astro 5** - Static site generator and component framework
+- **TypeScript** - Typed data and project configuration
+- **Tailwind CSS v4** - Utility-first styling through `@tailwindcss/vite`
+- **ESLint + Prettier** - Linting and formatting, including Astro support
+- **GitHub Actions** - Automatic build and deployment to GitHub Pages
 
 ## Development
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
+- Node.js 20 
 - npm
 
 ### Getting Started
 
-1. Clone the repository
-2. Install dependencies:
+```bash
+npm install
+npm run dev
+```
 
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-4. Open [http://localhost:4321](http://localhost:4321) in your browser
+The development server runs at [http://localhost:4321](http://localhost:4321) by default.
 
 ### Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
+```bash
+npm run dev           # Start the Astro development server
+npm run build         # Build the static production site
+npm run preview       # Preview the production build locally
+npm run lint          # Check JavaScript, TypeScript, and Astro files with ESLint
+npm run lint:fix      # Apply auto-fixable ESLint changes
+npm run format        # Format the repository with Prettier
+npm run format:check  # Check Prettier formatting without writing changes
+```
 
 ## Project Structure
 
 ```text
-/
-├── public/          # Static assets (images, favicon, etc.)
+.
+├── public/
+│   ├── files/                 # Static downloadable assets and certification images
+│   ├── favicon.svg
+│   ├── portrait.jpg
+│   └── yiming_cv.pdf
 ├── src/
-│   └── pages/       # Astro pages (routes)
-│       └── index.astro
+│   ├── components/            # Reusable Astro UI components
+│   ├── data/                  # Typed content data for pages and preview sections
+│   ├── layouts/               # Shared page layouts
+│   ├── pages/                 # Route-based Astro pages
+│   └── styles/                # Global, page, and component CSS
+├── astro.config.mjs
+├── eslint.config.js
 ├── package.json
-└── astro.config.mjs
+└── tsconfig.json
 ```
+
+## Routes
+
+- `/` - Home page with profile summary, recent activity, selected projects, publications, writing,
+  archive links, and contact links
+- `/publications` - Full publications page backed by `src/data/publications.ts`
+- `/community` - Community, speaking, and events page backed by `src/data/community.ts`
+- `/archive` - Extended archive of projects, writing, certifications, and professional activity
+
+## Architecture Notes
+
+- `src/layouts/BaseLayout.astro` provides the shared HTML shell, metadata, global stylesheet import,
+  and persisted light/dark theme initialization.
+- `src/components/Header.astro` owns the main navigation, mobile menu, and theme toggle.
+- Content-heavy sections are split into focused components such as `CommunityPreview.astro`,
+  `Publications.astro`, `Experience.astro`, `Writing.astro`, and `Contact.astro`.
+- Shared content data lives in `src/data/` so list-style pages and preview components can use typed
+  source data instead of duplicating markup.
+- Styling combines Tailwind utilities with CSS files in `src/styles/`, including page-specific styles
+  for publications, archive, home sections, and the header.
 
 ## Deployment
 
-This site is configured to deploy automatically to GitHub Pages using GitHub Actions when changes are pushed to the master branch.
+The site deploys automatically to GitHub Pages from the `master` branch.
 
-### GitHub Pages Setup
+- Workflow: `.github/workflows/deploy.yml`
+- Build action: `withastro/action@v2`
+- Node version in CI: `20`
+- Deployment action: `actions/deploy-pages@v4`
+- Production URL: [https://yimingpeng.github.io](https://yimingpeng.github.io)
 
-1. **Repository Settings**: In your GitHub repository, go to Settings → Pages
-2. **Source**: Select "GitHub Actions" as the source (NOT "Deploy from a branch")
-3. **Branch**: The workflow will automatically deploy from the `master` branch
-4. **URL**: Your site will be available at `https://yimingpeng.github.io`
+To configure GitHub Pages for this repository, set **Settings -> Pages -> Source** to
+**GitHub Actions**.
 
-### Automatic Deployment
+Manual deployments can be triggered from the GitHub Actions tab via the `workflow_dispatch` event.
 
-The site will automatically build and deploy when you:
+## Development Disclosure
 
-- Push changes to the `master` branch
-- The GitHub Actions workflow (`.github/workflows/deploy.yml`) will handle the build and deployment process
-
-### Manual Deployment
-
-You can also trigger a manual deployment from the GitHub Actions tab in your repository.
-
-## Project Status
-
-🚧 **Currently under construction** - This is an active rebuild of my personal portfolio website using modern web technologies.
+This site has been built with AI-assisted development workflows. I use Claude Code with Opus 4.8 as
+an advisor, Codex for implementation work, and Kilo for quick edits.
