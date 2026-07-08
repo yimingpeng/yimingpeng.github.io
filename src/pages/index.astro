@@ -16,7 +16,9 @@ const peerReviewedPublications = publications.filter(publication =>
 	['journal', 'conference'].includes(publication.type)
 );
 const peerReviewedCount = peerReviewedPublications.length;
-const peerReviewedYears = peerReviewedPublications.map(publication => publication.year);
+const peerReviewedYears = peerReviewedPublications
+	.map(publication => publication.year)
+	.filter((y): y is number => y != null);
 const peerReviewedYearSpan = `${Math.min(...peerReviewedYears)}-${Math.max(...peerReviewedYears)}`;
 ---
 

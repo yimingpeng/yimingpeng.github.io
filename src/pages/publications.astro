@@ -12,7 +12,9 @@ const publications = getSortedPublications();
 const peerReviewedCount = publications.filter(publication =>
 	['journal', 'conference'].includes(publication.type)
 ).length;
-const years = publications.map(publication => publication.year);
+const years = publications
+	.map(publication => publication.year)
+	.filter((y): y is number => y != null);
 const yearSpan = `${Math.min(...years)}-${Math.max(...years)}`;
 
 const renderAuthors = (authors: string) =>
@@ -66,7 +68,7 @@ const renderAuthors = (authors: string) =>
 						<article class="space-y-2">
 							<div class="flex items-baseline gap-3 flex-wrap">
 								<span class="text-xs text-gray-400 dark:text-[#6c7086] font-mono">
-									{publication.year}
+									{publication.year ?? 'TBD'}
 								</span>
 								<span class="text-xs uppercase tracking-widest text-gray-400 dark:text-[#6c7086]">
 									{publication.type}

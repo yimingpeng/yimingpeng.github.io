@@ -9,7 +9,7 @@ export interface Publication {
 	title: string;
 	authors: string;
 	venue: string;
-	year: number;
+	year?: number;
 	type: PublicationType;
 	links?: PublicationLink[];
 }
@@ -29,14 +29,10 @@ export const publications: Publication[] = [
 		venue: 'Memetic Computing',
 		year: 2024,
 		type: 'journal',
-		links: [{ label: 'Code', href: 'https://github.com/yimingpeng/cmaes_baselines' }]
-	},
-	{
-		title: 'Dynamic multi-modal multi-objective optimization: a preliminary study',
-		authors: 'Y Peng, H Ishibuchi',
-		venue: 'Parallel Problem Solving from Nature (PPSN)',
-		year: 2022,
-		type: 'conference'
+		links: [
+			{ label: 'Code', href: 'https://github.com/yimingpeng/cmaes_baselines' },
+			{ label: 'DOI', href: 'https://doi.org/10.1007/s12293-024-00419-1' }
+		]
 	},
 	{
 		title: 'Effective linear policy gradient search through primal-dual approximation',
@@ -54,30 +50,7 @@ export const publications: Publication[] = [
 		type: 'thesis'
 	},
 	{
-		title:
-			'Off-policy actor-critic in an ensemble: achieving maximum general entropy and effective environment exploration in deep reinforcement learning',
-		authors: 'G Chen, Y Peng',
-		venue: 'arXiv preprint',
-		year: 2019,
-		type: 'preprint'
-	},
-	{
-		title:
-			'NEAT for large-scale reinforcement learning through evolutionary feature learning and policy gradient search',
-		authors: 'Y Peng, G Chen, H Singh, M Zhang',
-		venue: 'Genetic and Evolutionary Computation Conference (GECCO)',
-		year: 2018,
-		type: 'conference',
-		links: [
-			{
-				label: 'Download',
-				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-6/c-paper-6.pdf`
-			},
-			{ label: 'DOI', href: 'https://doi.org/10.1145/3205455.3205536' }
-		]
-	},
-	{
-		title: 'Constrained expectation-maximization methods for effective reinforcement learning',
+		title: 'Constrained Expectation-Maximization Methods for Effective Reinforcement Learning',
 		authors: 'G Chen, Y Peng, M Zhang',
 		venue: 'Int. Joint Conf. on Neural Networks (IJCNN)',
 		year: 2018,
@@ -91,7 +64,22 @@ export const publications: Publication[] = [
 		]
 	},
 	{
-		title: 'An adaptive clipping approach for proximal policy optimization',
+		title:
+			'NEAT for Large-Scale Reinforcement Learning through Evolutionary Feature Learning and Policy Gradient Search',
+		authors: 'Y Peng, G Chen, H Singh, M Zhang',
+		venue: 'Genetic and Evolutionary Computation Conference (GECCO)',
+		year: 2018,
+		type: 'conference',
+		links: [
+			{
+				label: 'Download',
+				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-6/c-paper-6.pdf`
+			},
+			{ label: 'DOI', href: 'https://doi.org/10.1145/3205455.3205536' }
+		]
+	},
+	{
+		title: 'An Adaptive Clipping Approach for Proximal Policy Optimization',
 		authors: 'G Chen, Y Peng, M Zhang',
 		venue: 'arXiv preprint',
 		year: 2018,
@@ -103,7 +91,7 @@ export const publications: Publication[] = [
 	},
 	{
 		title:
-			'Effective exploration for deep reinforcement learning via bootstrapped Q-ensembles under Tsallis entropy regularization',
+			'Effective Exploration for Deep Reinforcement Learning via Bootstrapped Q-Ensembles with Tsallis Entropy Regularization',
 		authors: 'G Chen, Y Peng, M Zhang',
 		venue: 'arXiv preprint',
 		year: 2018,
@@ -114,22 +102,8 @@ export const publications: Publication[] = [
 		]
 	},
 	{
-		title: 'A sandpile model for reliable actor-critic reinforcement learning',
-		authors: 'Y Peng, G Chen, M Zhang, S Pang',
-		venue: 'Int. Joint Conf. on Neural Networks (IJCNN)',
-		year: 2017,
-		type: 'conference',
-		links: [
-			{
-				label: 'Download',
-				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-5/c-paper-5.pdf`
-			},
-			{ label: 'Publisher', href: 'https://ieeexplore.ieee.org/document/7966362' }
-		]
-	},
-	{
 		title:
-			'Effective policy gradient search for reinforcement learning through NEAT based feature extraction',
+			'Effective Policy Gradient Search for Reinforcement Learning through NEAT based Feature Extraction',
 		authors: 'Y Peng, G Chen, M Zhang, Y Mei',
 		venue: 'Simulated Evolution and Learning (SEAL)',
 		year: 2017,
@@ -143,22 +117,21 @@ export const publications: Publication[] = [
 		]
 	},
 	{
-		title:
-			'Evolving transferable artificial neural networks for gameplay tasks via NEAT with phased searching',
-		authors: 'W Hardwick-Smith, Y Peng, G Chen, Y Mei, M Zhang',
-		venue: 'Australasian Joint Conf. on AI (AJCAI)',
+		title: 'A Sandpile Model for Reliable Actor-Critic Reinforcement Learning',
+		authors: 'Y Peng, G Chen, M Zhang, S Pang',
+		venue: 'Int. Joint Conf. on Neural Networks (IJCNN)',
 		year: 2017,
 		type: 'conference',
 		links: [
 			{
 				label: 'Download',
-				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-8/c-paper-8.pdf`
+				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-5/c-paper-5.pdf`
 			},
-			{ label: 'DOI', href: 'https://doi.org/10.1007/978-3-319-63004-5_4' }
+			{ label: 'Publisher', href: 'https://ieeexplore.ieee.org/document/7966362' }
 		]
 	},
 	{
-		title: 'Automated state feature learning for actor-critic reinforcement learning through NEAT',
+		title: 'Automated State Feature Learning for Actor-Critic Reinforcement Learning through NEAT',
 		authors: 'Y Peng, G Chen, S Holdaway, Y Mei, M Zhang',
 		venue: 'GECCO Companion',
 		year: 2017,
@@ -172,14 +145,29 @@ export const publications: Publication[] = [
 		]
 	},
 	{
-		title: 'Generalized compatible function approximation for policy gradient search',
+		title:
+			'Evolving Transferable Artificial Neural Networks for Gameplay Tasks via NEAT with Phased Searching',
+		authors: 'W Hardwick-Smith, Y Peng, G Chen, Y Mei, M Zhang',
+		venue: 'Australasian Joint Conf. on AI (AJCAI)',
+		year: 2017,
+		type: 'conference',
+		links: [
+			{
+				label: 'Download',
+				href: `${LEGACY_PUBLICATION_BASE}/conference/c-paper-8/c-paper-8.pdf`
+			},
+			{ label: 'DOI', href: 'https://doi.org/10.1007/978-3-319-63004-5_4' }
+		]
+	},
+	{
+		title: 'Generalized Compatible Function Approximation for Policy Gradient Search',
 		authors: 'Y Peng, G Chen, M Zhang, S Pang',
 		venue: 'Int. Conf. on Neural Information Processing (ICONIP)',
 		year: 2016,
 		type: 'conference'
 	},
 	{
-		title: 'A federated network online network traffics analysis engine for cybersecurity',
+		title: 'A Federated Online Network Traffic Analysis Engine for Cybersecurity',
 		authors: 'S Pang, Y Peng, T Ban, D Inoue, A Sarrafzadeh',
 		venue: 'Int. Joint Conf. on Neural Networks (IJCNN)',
 		year: 2015,
@@ -193,8 +181,7 @@ export const publications: Publication[] = [
 		type: 'conference'
 	},
 	{
-		title:
-			'Exploring crude oil impacts to oil stocks through graphical computational correlation analysis',
+		title: 'Exploring Crude Oil Impacts to Oil Stocks through Graphical Computational Correlation Analysis',
 		authors: 'A Lai, L Song, Y Peng, P Zhang, Q Wang, S Pang',
 		venue: 'Int. Conf. on Neural Information Processing (ICONIP)',
 		year: 2012,
@@ -210,5 +197,5 @@ export const publications: Publication[] = [
 ];
 
 export function getSortedPublications(): Publication[] {
-	return [...publications].sort((a, b) => b.year - a.year);
+	return [...publications].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
 }
