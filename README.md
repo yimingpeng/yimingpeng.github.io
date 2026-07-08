@@ -18,7 +18,7 @@ activity, certifications, and contact links.
 
 ### Prerequisites
 
-- Node.js 20 
+- Node.js 24
 - npm
 
 ### Getting Started
@@ -89,7 +89,7 @@ The site deploys automatically to GitHub Pages from the `master` branch.
 
 - Workflow: `.github/workflows/deploy.yml`
 - Build action: `withastro/action@v2`
-- Node version in CI: `20`
+- Node version in CI: `24`
 - Deployment action: `actions/deploy-pages@v4`
 - Production URL: [https://yimingpeng.github.io](https://yimingpeng.github.io)
 
@@ -97,6 +97,8 @@ To configure GitHub Pages for this repository, set **Settings -> Pages -> Source
 **GitHub Actions**.
 
 Manual deployments can be triggered from the GitHub Actions tab via the `workflow_dispatch` event.
+The workflow uses Node.js 24 for the Astro build to avoid GitHub Actions warnings about the
+deprecated Node.js 20 runtime.
 
 ## Development Disclosure
 
