@@ -98,7 +98,7 @@ To configure GitHub Pages for this repository, set **Settings -> Pages -> Source
 
 Manual deployments can be triggered from the GitHub Actions tab via the `workflow_dispatch` event.
 
-## Repository Guidance
+## Development Disclosure
 
-Implementation notes for coding agents live in [AGENTS.md](./AGENTS.md). `CLAUDE.md` imports that
-file, so keep repository-specific agent instructions in `AGENTS.md`.
+This site has been built with AI-assisted development workflows. I use Claude Code with Opus 4.8 as
+an advisor, Codex for implementation work, and Kilo for quick edits.
