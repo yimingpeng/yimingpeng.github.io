@@ -26,28 +26,28 @@ export interface CommunityEvent {
 
 export const communityEvents: CommunityEvent[] = [
 	{
-		id: 'academia-to-industry-aug-2026',
-		date: '2026-08',
-		dateDisplay: 'Aug 2026',
-		title: 'From Academia to Industry',
-		type: 'talk',
-		description:
-			'Career transition talk for graduates — sharing experience moving from academia to industry.',
-		body: 'A talk aimed at PhD students and recent graduates navigating the transition from academic research to industry roles. Covered practical advice on translating research skills, navigating job searches, and building a professional identity beyond academia.',
-		status: 'recording coming',
-		materials: 'request'
-	},
-	{
-		id: 'ieee-nz-panel-may-2026',
+		id: 'ieee-yp-study-research-to-industry-may-2026',
 		date: '2026-05',
 		dateDisplay: 'May 2026',
-		title: 'Industry Panel',
-		organization: 'IEEE NZ Young Professionals Society',
+		title: 'From Study/Research to Industry',
+		venue: 'Victoria University of Wellington',
+		organization: 'IEEE Young Professionals, NZ Central Section',
 		type: 'panel',
-		description: 'Industry panel — IEEE NZ Young Professionals Society.',
-		body: 'Panelist at the IEEE NZ Young Professionals Society event, discussing career paths in data engineering and AI, the evolving role of data infrastructure, and advice for early-career engineers.',
-		status: 'recording coming',
-		materials: 'request'
+		description:
+			'IEEE Young Professionals panel on transitioning from study and research into industry careers.',
+		body: 'Hosted by IEEE Young Professionals at Victoria University of Wellington, this panel brought together students, researchers, and industry professionals to discuss career pathways, workplace expectations, and the practical skills needed to move from academia into industry. Yiming joined Dr. Harisu Abdullahi Shehu, Dr. Kaan Demir, and Dr. Shima Afzaali as panelists, with support from IEEE NZ Central Section and CDSAI.',
+		photos: [
+			'/events/ieee-yp-panel-2026/panel-01.jpeg',
+			'/events/ieee-yp-panel-2026/panel-02.jpeg',
+			'/events/ieee-yp-panel-2026/panel-03.jpeg',
+			'/events/ieee-yp-panel-2026/panel-04.jpeg'
+		],
+		materials: [
+			{
+				label: 'LinkedIn recap',
+				url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7462268368436400128/'
+			}
+		]
 	}
 ];
 
