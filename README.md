@@ -11,6 +11,7 @@ activity, certifications, and contact links.
 - **Astro 5** - Static site generator and component framework
 - **TypeScript** - Typed data and project configuration
 - **Tailwind CSS v4** - Utility-first styling through `@tailwindcss/vite`
+- **Cloudflare Workers AI** - Serverless backend for the public portfolio assistant
 - **ESLint + Prettier** - Linting and formatting, including Astro support
 - **GitHub Actions** - Automatic build and deployment to GitHub Pages
 
@@ -40,6 +41,9 @@ npm run lint          # Check JavaScript, TypeScript, and Astro files with ESLin
 npm run lint:fix      # Apply auto-fixable ESLint changes
 npm run format        # Format the repository with Prettier
 npm run format:check  # Check Prettier formatting without writing changes
+npm run worker:dev    # Run the Cloudflare Worker assistant API locally
+npm run worker:deploy # Deploy the Cloudflare Worker assistant API
+npm run worker:typecheck # Type-check Worker source
 ```
 
 ## Project Structure
@@ -57,9 +61,11 @@ npm run format:check  # Check Prettier formatting without writing changes
 │   ├── layouts/               # Shared page layouts
 │   ├── pages/                 # Route-based Astro pages
 │   └── styles/                # Global, page, and component CSS
+├── worker/                    # Cloudflare Worker assistant API and knowledge file
 ├── astro.config.mjs
 ├── eslint.config.js
 ├── package.json
+├── wrangler.toml
 └── tsconfig.json
 ```
 
@@ -70,6 +76,31 @@ npm run format:check  # Check Prettier formatting without writing changes
 - `/publications` - Full publications page backed by `src/data/publications.ts`
 - `/community` - Community, speaking, and events page backed by `src/data/community.ts`
 - `/archive` - Extended archive of projects, writing, certifications, and professional activity
+
+## AI Assistant
+
+The site includes a public “Ask Yiming” assistant. The frontend remains static on GitHub Pages and
+calls a Cloudflare Worker API, which keeps model access server-side and applies request limits.
+
+Local setup:
+
+```bash
+cp .env.example .env
+npm run worker:dev
+npm run dev
+```
+
+Cloudflare setup still requires account-owned steps:
+
+```bash
+npx wrangler login
+npx wrangler kv namespace create RATE_LIMITS
+npx wrangler kv namespace create RATE_LIMITS --preview
+```
+
+After creating the KV namespaces, replace the placeholder IDs in `wrangler.toml`, deploy with
+`npm run worker:deploy`, and set `PUBLIC_AI_CHAT_API_URL` to the deployed Worker `/chat` URL for the
+GitHub Pages build. See `docs/ai-assistant.md` for full setup and verification notes.
 
 ## Architecture Notes
 
@@ -82,6 +113,8 @@ npm run format:check  # Check Prettier formatting without writing changes
   source data instead of duplicating markup.
 - Styling combines Tailwind utilities with CSS files in `src/styles/`, including page-specific styles
   for publications, archive, home sections, and the header.
+- `src/components/AIChat.astro` owns the chat UI; `worker/` owns the Cloudflare Worker API and
+  portfolio knowledge used by the assistant.
 
 ## Deployment
 

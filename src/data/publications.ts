@@ -181,7 +181,8 @@ export const publications: Publication[] = [
 		type: 'conference'
 	},
 	{
-		title: 'Exploring Crude Oil Impacts to Oil Stocks through Graphical Computational Correlation Analysis',
+		title:
+			'Exploring Crude Oil Impacts to Oil Stocks through Graphical Computational Correlation Analysis',
 		authors: 'A Lai, L Song, Y Peng, P Zhang, Q Wang, S Pang',
 		venue: 'Int. Conf. on Neural Information Processing (ICONIP)',
 		year: 2012,

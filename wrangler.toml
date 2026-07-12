@@ -1,0 +1,16 @@
+name = "yiming-portfolio-ai-assistant"
+main = "worker/src/index.ts"
+compatibility_date = "2026-07-08"
+workers_dev = true
+
+[ai]
+binding = "AI"
+
+[[kv_namespaces]]
+binding = "RATE_LIMITS"
+preview_id = "9ba80d1ccba14a979a26c15793918833"
+id = "5c690d6a4efd49e6aa27996945f15bee"
+
+[vars]
+ALLOWED_ORIGINS = "https://yimingpeng.github.io,http://localhost:4321,http://127.0.0.1:4321"
+ASSISTANT_MODEL = "@cf/meta/llama-3.1-8b-instruct-fast"

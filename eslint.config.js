@@ -59,6 +59,24 @@ export default [
 		}
 	},
 
+	// Cloudflare Worker runtime globals.
+	{
+		files: ['worker/**/*.ts'],
+		languageOptions: {
+			globals: {
+				Ai: 'readonly',
+				crypto: 'readonly',
+				ExportedHandler: 'readonly',
+				HeadersInit: 'readonly',
+				KVNamespace: 'readonly',
+				Request: 'readonly',
+				Response: 'readonly',
+				TextEncoder: 'readonly',
+				URL: 'readonly'
+			}
+		}
+	},
+
 	// Ignore patterns
 	{
 		ignores: ['dist/**', 'node_modules/**', '.astro/**', 'figma-export/**']
