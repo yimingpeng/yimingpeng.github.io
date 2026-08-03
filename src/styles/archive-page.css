@@ -80,6 +80,7 @@
 
 .archive-page .projects-table tbody tr {
 	border-bottom: 1px solid var(--border);
+	scroll-margin-top: 5rem;
 	transition: background 0.15s ease;
 }
 
@@ -131,6 +132,22 @@
 	color: var(--text-muted);
 	line-height: 1.55;
 	transition: color 0.15s ease;
+}
+
+.archive-page .project-writeup-link {
+	font-size: 0.78rem;
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.archive-page .project-writeup-link:hover {
+	text-decoration: underline;
+}
+
+.archive-page .project-writeup-note {
+	font-size: 0.78rem;
+	color: var(--text-subtle);
+	font-style: italic;
 }
 
 .archive-page .made-at {

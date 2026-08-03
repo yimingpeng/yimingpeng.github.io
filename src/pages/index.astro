@@ -10,8 +10,10 @@ import {
 	SCHOLAR_URL,
 	TOTAL_CITATIONS
 } from '../data/publications';
+import { getFeaturedProjects } from '../data/projects';
 
 const publications = getSortedPublications();
+const featuredProjects = getFeaturedProjects();
 const peerReviewedPublications = publications.filter(publication =>
 	['journal', 'conference'].includes(publication.type)
 );
@@ -368,106 +370,54 @@ const CREDLY_PROFILE_URL = 'https://www.credly.com/users/yiming-peng.87fe02c4';
 				Selected Projects
 			</h2>
 			<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-				<a
-					href="/archive"
-					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
-				>
-					<div class="flex-1 space-y-4">
-						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
-							Eliminated recurring pipeline failures; production-critical at Wētā FX.
-						</p>
-						<div>
-							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
-								DataOps Platform @ Wētā FX
-							</h3>
-							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
-								On-premises data platform powering BI and ML workflows. Built with Airflow,
-								ClickHouse, and Ansible across a complex production environment.
-							</p>
+				{
+					featuredProjects.map(project => (
+						<div class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full">
+							<div class="flex-1 space-y-4">
+								<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">{project.impact}</p>
+								<div>
+									<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
+										<a
+											href={`/archive#${project.id}`}
+											class="hover:text-blue-600 dark:hover:text-[#89b4fa] transition-colors"
+										>
+											{project.name}
+										</a>
+									</h3>
+									<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
+										{project.narrative}
+									</p>
+								</div>
+							</div>
+							<div class="mt-8 flex justify-between items-end gap-3">
+								<div class="space-y-1.5">
+									<p class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
+										{project.tech.join(' · ')}
+									</p>
+									{project.writeup ? (
+										<a
+											href={project.writeup.url}
+											class="block text-xs text-blue-600 dark:text-[#89b4fa] hover:underline"
+										>
+											{project.writeup.label ?? 'Read the write-up'} →
+										</a>
+									) : (
+										<span class="block text-xs text-gray-400 dark:text-[#6c7086] italic">
+											deep dive coming
+										</span>
+									)}
+								</div>
+								<a
+									href={`/archive#${project.id}`}
+									class="shrink-0 text-blue-600 dark:text-[#89b4fa] text-lg"
+									aria-label={`View ${project.name} in the project archive`}
+								>
+									→
+								</a>
+							</div>
 						</div>
-					</div>
-					<div class="mt-8 flex justify-between items-end">
-						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
-							Python · Airflow · ClickHouse · Ansible
-						</span>
-						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
-					</div>
-				</a>
-				<a
-					href="/archive"
-					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
-				>
-					<div class="flex-1 space-y-4">
-						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
-							Open source work focused on practical, production-informed improvements.
-						</p>
-						<div>
-							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
-								Open Source Contributions — Apache Airflow
-							</h3>
-							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
-								Contributed around 4-5 pull requests and issue fixes to Apache Airflow, focused on
-								reliability and developer experience improvements.
-							</p>
-						</div>
-					</div>
-					<div class="mt-8 flex justify-between items-end">
-						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
-							Python · Apache Airflow · Open Source
-						</span>
-						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
-					</div>
-				</a>
-				<a
-					href="/archive"
-					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
-				>
-					<div class="flex-1 space-y-4">
-						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
-							Dramatically reduced data incidents; stakeholders now trust the data.
-						</p>
-						<div>
-							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
-								Data Quality &amp; Observability System
-							</h3>
-							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
-								Platform-wide data quality framework using Great Expectations, with GitLab CI
-								integration for automated validation on every pipeline run.
-							</p>
-						</div>
-					</div>
-					<div class="mt-8 flex justify-between items-end">
-						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
-							Great Expectations · Python · GitLab CI
-						</span>
-						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
-					</div>
-				</a>
-				<a
-					href="/archive"
-					class="group flex flex-col p-6 border border-gray-200 dark:border-[#313244] hover:border-blue-600 dark:hover:border-[#89b4fa] rounded-xl bg-white dark:bg-[#181825] transition-colors h-full"
-				>
-					<div class="flex-1 space-y-4">
-						<p class="font-bold text-gray-900 dark:text-[#cdd6f4]">
-							Made ML model deployment routine rather than heroic at Chorus NZ.
-						</p>
-						<div>
-							<h3 class="font-medium text-gray-900 dark:text-[#bac2de]">
-								Kubernetes MLOps Platform
-							</h3>
-							<p class="text-sm text-gray-600 dark:text-[#a6adc8] leading-relaxed mt-2">
-								Kubernetes-based MLOps platform to close the gap between experimentation and
-								production. First production ML infrastructure at the organisation.
-							</p>
-						</div>
-					</div>
-					<div class="mt-8 flex justify-between items-end">
-						<span class="text-xs text-gray-500 dark:text-[#6c7086] font-mono tracking-wide">
-							Kubernetes · Kubeflow · AWS EKS
-						</span>
-						<span class="text-blue-600 dark:text-[#89b4fa] text-lg">→</span>
-					</div>
-				</a>
+					))
+				}
 			</div>
 			<a href="/archive" class="text-sm text-blue-600 dark:text-[#89b4fa] hover:underline">
 				View full project archive →

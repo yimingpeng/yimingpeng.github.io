@@ -71,11 +71,11 @@ npm run worker:typecheck # Type-check Worker source
 
 ## Routes
 
-- `/` - Home page with profile summary, recent activity, selected projects, publications, writing,
-  archive links, and contact links
+- `/` - Home page with profile summary, recent activity, selected projects, experience, and
+  publications, backed by `src/data/projects.ts` and `src/data/publications.ts`
 - `/publications` - Full publications page backed by `src/data/publications.ts`
 - `/community` - Community, speaking, and events page backed by `src/data/community.ts`
-- `/archive` - Extended archive of projects, writing, certifications, and professional activity
+- `/archive` - Full project archive table backed by `src/data/projects.ts`
 
 ## AI Assistant
 
@@ -107,12 +107,12 @@ GitHub Pages build. See `docs/ai-assistant.md` for full setup and verification n
 - `src/layouts/BaseLayout.astro` provides the shared HTML shell, metadata, global stylesheet import,
   and persisted light/dark theme initialization.
 - `src/components/Header.astro` owns the main navigation, mobile menu, and theme toggle.
-- Content-heavy sections are split into focused components such as `CommunityPreview.astro`,
-  `Publications.astro`, `Experience.astro`, `Writing.astro`, and `Contact.astro`.
-- Shared content data lives in `src/data/` so list-style pages and preview components can use typed
-  source data instead of duplicating markup.
+- Content-heavy sections are split into focused components such as `CommunityPreview.astro` and
+  `TerminalCLI.astro`.
+- Shared content data lives in `src/data/` (`community.ts`, `publications.ts`, `projects.ts`) so
+  list-style pages and preview components use typed source data instead of duplicating markup.
 - Styling combines Tailwind utilities with CSS files in `src/styles/`, including page-specific styles
-  for publications, archive, home sections, and the header.
+  for publications, archive, and the header.
 - `src/components/AIChat.astro` owns the chat UI; `worker/` owns the Cloudflare Worker API and
   portfolio knowledge used by the assistant.
 

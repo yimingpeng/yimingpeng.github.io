@@ -9,6 +9,12 @@ Quick notes for future improvements that should not show on the live site until 
   collection.
 - If using Obsidian, define the publish workflow before adding placeholder copy back to the homepage.
 
+## Projects
+
+- Fill in `writeup` on each entry in `src/data/projects.ts` once the Obsidian blog branch lands —
+  currently unset, so cards and archive rows show a muted "deep dive coming" note instead of a
+  broken link.
+
 ## Content
 
 - Keep the CV update month in sync with the actual PDF.

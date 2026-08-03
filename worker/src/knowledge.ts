@@ -1,4 +1,15 @@
+import { getFeaturedProjects, getSortedProjects } from '../../src/data/projects';
+
 export const sourceLabels = ['portfolio', 'publications', 'community', 'cv-summary'] as const;
+
+const featuredProjectsSection = getFeaturedProjects()
+	.map(p => `- ${p.name} (${p.madeAt}): ${p.tech.join(', ')}. ${p.narrative ?? p.summary}`)
+	.join('\n');
+
+const archivedProjectNames = getSortedProjects()
+	.filter(p => !p.featured)
+	.map(p => p.name)
+	.join(', ');
 
 export const portfolioKnowledge = `
 PROFILE
@@ -28,19 +39,8 @@ EXPERIENCE
 - Unitec: Research & Teaching Assistant, Jun 2012 to Jun 2015.
 
 FEATURED PROJECTS
-- DataOps Platform at Weta FX: Python, Airflow, ClickHouse, Ansible. Production on-premises
-  platform powering BI and ML workflows. Built and maintains 25+ ETL pipelines and eliminated
-  recurring data failures.
-- Apache Airflow OSS Contributions: Python, Open Source, Apache Airflow. Contributions focus on
-  stability, usability, and operator improvements from production experience.
-- Data Quality & Observability System: Great Expectations, Python, GitLab CI. Platform-wide data
-  quality framework with CI/CD checks and proactive anomaly detection.
-- Kubernetes MLOps Platform at Chorus NZ: Kubernetes, Kubeflow, AWS EKS. First production ML
-  infrastructure at the organisation, making deployment repeatable.
-- Other archived work includes crew scheduling at Weta FX, RTO compliance analytics, MBIE
-  OpenShift migration, IHC AWS ECS data tooling, Snowflake ETL pipelines, Chorus Redshift
-  migration, KPMG Azure analytics and transaction-monitoring systems, conference websites, and
-  reinforcement learning research systems.
+${featuredProjectsSection}
+- Other archived work includes: ${archivedProjectNames}.
 
 PUBLICATIONS
 - Total citations shown on the site: 165.

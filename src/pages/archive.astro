@@ -4,211 +4,9 @@ import Header from '../components/Header.astro';
 import '../styles/global.css';
 import '../styles/header.css';
 import '../styles/archive-page.css';
+import { getSortedProjects } from '../data/projects';
 
-const toAnchorId = (name: string): string =>
-	name
-		.toLowerCase()
-		.replace(/[^a-z0-9]+/g, '-')
-		.replace(/^-+|-+$/g, '');
-
-const projects = [
-	// Wētā FX
-	{
-		year: 2024,
-		name: 'DataOps Platform',
-		madeAt: 'Wētā FX',
-		tech: ['Python', 'Airflow', 'ClickHouse', 'Ansible'],
-		description:
-			'Built and owns 25+ ETL pipelines on-prem; eliminated recurring data failures and ' +
-			'made the platform production-critical for BI and ML teams.'
-	},
-	{
-		year: 2024,
-		name: 'Apache Airflow OSS Contributions',
-		madeAt: 'Apache Airflow Community',
-		tech: ['Python', 'Open Source', 'Apache Airflow'],
-		description:
-			'Contributed production-informed fixes and enhancements to Airflow operators and ' +
-			'platform stability, improving reliability and usability for wider community adoption.'
-	},
-	{
-		year: 2024,
-		name: 'Data Quality & Observability System',
-		madeAt: 'Wētā FX',
-		tech: ['Great Expectations', 'Python', 'GitLab CI'],
-		description:
-			'Designed platform-wide quality framework from scratch; moved the team from ' +
-			'reactive firefighting to proactive anomaly detection.'
-	},
-	{
-		year: 2024,
-		name: 'Resource Planning & Crew Scheduling Tool',
-		madeAt: 'Wētā FX',
-		tech: ['Python', 'ReactJS', 'PostgreSQL'],
-		description:
-			'Built the first in-house capacity planning tool for managing and optimising ' +
-			'crew workload scheduling across the studio.'
-	},
-	{
-		year: 2023,
-		name: 'RTO Compliance Analytics',
-		madeAt: 'Wētā FX',
-		tech: ['Python', 'SQL', 'Tableau'],
-		description:
-			'Delivered real-time dashboards enabling Talent & Culture to track Return to ' +
-			'Office policy implementation and measure organisational compliance.'
-	},
-	// MBIE / Emergence
-	{
-		year: 2023,
-		name: 'ETL Cloud Migration (Docker → OpenShift)',
-		madeAt: 'MBIE',
-		tech: ['Airflow', 'DBT', 'OpenShift', 'Azure Pipelines'],
-		description:
-			'Migrated 8 production pipelines from Docker-compose to OpenShift with zero ' +
-			'downtime; improved observability via Dynatrace and dbt-elementary.'
-	},
-	{
-		year: 2022,
-		name: 'Modern DataOps Platform Design',
-		madeAt: 'MBIE',
-		tech: ['Airflow', 'DBT', 'Dynatrace'],
-		description:
-			'Architected a comprehensive platform design covering observability, data catalog, ' +
-			'lineage, governance, and strategy — forming the foundation for future data work.'
-	},
-	// IHC New Zealand
-	{
-		year: 2022,
-		name: 'AWS ECS Data Platform',
-		madeAt: 'IHC New Zealand',
-		tech: ['AWS CloudFormation', 'Docker', 'Airflow'],
-		description:
-			'Stood up a containerised data tooling environment (Retool, N8N, Airflow) on AWS ' +
-			'ECS; gave analysts self-service access to data for the first time.'
-	},
-	{
-		year: 2022,
-		name: 'Enterprise ETL Pipeline Suite (→ Snowflake)',
-		madeAt: 'IHC New Zealand',
-		tech: ['Airflow', 'DBT', 'Snowflake', 'Python'],
-		description:
-			'Built 9 Snowflake pipelines from 5 source systems; powered 33 Power BI reports ' +
-			'used org-wide for workforce and financial analytics.'
-	},
-	{
-		year: 2021,
-		name: 'User Provisioning Automation',
-		madeAt: 'IHC New Zealand',
-		tech: ['Python', 'Airflow', 'Snowflake', 'Azure AD'],
-		description:
-			'Automated ServiceNow/Payglobal → Azure AD user provisioning via Airflow; ' +
-			'eliminated manual IT overhead and onboarding errors.'
-	},
-	// Chorus New Zealand
-	{
-		year: 2021,
-		name: 'Kubernetes MLOps Platform',
-		madeAt: 'Chorus NZ',
-		tech: ['Kubernetes', 'Kubeflow', 'AWS EKS'],
-		description:
-			`Co-built the organisation's first ML infrastructure on EKS with Kubeflow; ` +
-			'made model deployment a repeatable, automated operation.'
-	},
-	{
-		year: 2020,
-		name: 'Oracle DW → AWS Redshift Migration',
-		madeAt: 'Chorus NZ',
-		tech: ['Python', 'PySpark', 'Airflow', 'Redshift'],
-		description:
-			'Designed and built a replication system migrating the legacy Oracle DW to AWS ' +
-			'Redshift via PySpark; unblocked cloud-native analytics adoption.'
-	},
-	{
-		year: 2020,
-		name: 'Financial Data Analytics System',
-		madeAt: 'Chorus NZ',
-		tech: ['Python', 'SAP Hana', 'Tableau'],
-		description:
-			'Built an internal financial analytics system integrating SAP Hana data; ' +
-			'delivered Tableau dashboards for the finance team.'
-	},
-	// KPMG
-	{
-		year: 2019,
-		name: 'Azure National Data Platform',
-		madeAt: 'KPMG NZ',
-		tech: ['Azure', 'NodeJS', 'SQL'],
-		description:
-			'Co-built a high-profile national-scale Azure analytics platform for a government ' +
-			'agency; deployed for ongoing operations across the country.'
-	},
-	{
-		year: 2019,
-		name: 'Suspicious Transaction & Geo-Location Analysis',
-		madeAt: 'KPMG NZ',
-		tech: ['Python', 'R', 'SQL'],
-		description:
-			'Delivered transaction monitoring and geo-location analysis systems across ' +
-			'four government and private sector clients.'
-	},
-	// VUW / Research
-	{
-		year: 2019,
-		name: 'CEC 2019 Conference Website',
-		madeAt: 'Victoria University',
-		tech: ['Bootstrap', 'HTML', 'CSS', 'JavaScript'],
-		description:
-			'Built the IEEE Congress on Evolutionary Computation 2019 website and managed ' +
-			'four social media channels for international conference publicity.'
-	},
-	{
-		year: 2018,
-		name: 'AI 2018 Conference Website',
-		madeAt: 'Victoria University',
-		tech: ['Bootstrap', 'HTML', 'CSS', 'JavaScript'],
-		description:
-			'Developed the full conference website for the 31st Australasian Joint ' +
-			'Conference on Artificial Intelligence.'
-	},
-	{
-		year: 2018,
-		name: 'Reinforcement Learning Systems (15+)',
-		madeAt: 'Victoria University',
-		tech: ['Python', 'TensorFlow', 'PyTorch', 'Theano'],
-		description:
-			'Implemented 15+ novel deep RL systems (100k+ lines) as the core research ' +
-			'contribution of a PhD in Machine Learning.'
-	},
-	{
-		year: 2017,
-		name: 'CNN Ensemble Image Classification System',
-		madeAt: 'Victoria University',
-		tech: ['Python', 'TensorFlow', 'Keras', 'Scikit-Learn'],
-		description:
-			'Built a deep learning ensemble for image classification published as a ' +
-			'conference paper in evolutionary computation.'
-	},
-	// Unitec
-	{
-		year: 2014,
-		name: 'Decentralised Network Traffic Monitoring System',
-		madeAt: 'Unitec',
-		tech: ['Java', 'JADE', 'Unity3D', 'MySQL'],
-		description:
-			'Led a team to build a real-time decentralised monitoring system (150k+ lines) ' +
-			'still in use at Unitec; contributed to a $10.6M MBIE-funded cyber-security project.'
-	},
-	{
-		year: 2013,
-		name: 'Financial Forecast Systems (Stock & Crude Oil)',
-		madeAt: 'Unitec',
-		tech: ['MATLAB'],
-		description:
-			'Implemented stock market and crude oil price trend prediction systems ' +
-			'using neural network approaches in MATLAB.'
-	}
-];
+const projects = getSortedProjects();
 ---
 
 <BaseLayout
@@ -237,11 +35,18 @@ const projects = [
 					<tbody>
 						{
 							projects.map(p => (
-								<tr id={toAnchorId(p.name)}>
+								<tr id={p.id}>
 									<td class="year">{p.year}</td>
 									<td class="project-cell">
 										<span class="project-name">{p.name}</span>
-										<span class="project-desc">{p.description}</span>
+										<span class="project-desc">{p.summary}</span>
+										{p.writeup ? (
+											<a href={p.writeup.url} class="project-writeup-link">
+												{p.writeup.label ?? 'Read the write-up'} →
+											</a>
+										) : (
+											<span class="project-writeup-note">deep dive coming</span>
+										)}
 									</td>
 									<td class="made-at">{p.madeAt}</td>
 									<td class="tech-list">
