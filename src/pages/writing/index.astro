@@ -1,0 +1,55 @@
+---
+import Header from '../../components/Header.astro';
+import { formatWritingDate, getWritingArticles } from '../../lib/writing';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/global.css';
+import '../../styles/writing.css';
+
+const articles = await getWritingArticles();
+
+if (articles.length === 0) {
+	return Astro.redirect('/');
+}
+---
+
+<BaseLayout
+	title="Writing — Yiming Peng"
+	description="Articles by Yiming Peng about data engineering, platform design, AI systems, and lessons from building software."
+	canonicalPath="/writing"
+>
+	<Header />
+	<main class="writing-index">
+		<header class="writing-index-header">
+			<h1>Writing</h1>
+			<p>Practical notes on engineering decisions, failures, and what I learned from them.</p>
+		</header>
+
+		<div class="writing-list">
+			{
+				articles.map(article => (
+					<article>
+						<div class="writing-list-meta">
+							<time datetime={article.data.publishedAt.toISOString()}>
+								{formatWritingDate(article.data.publishedAt)}
+							</time>
+							{article.data.series && (
+								<span>
+									{article.data.series.title} · Part {article.data.series.order}
+								</span>
+							)}
+						</div>
+						<h2>
+							<a href={`/writing/${article.data.slug}`}>{article.data.title}</a>
+						</h2>
+						<p>{article.data.description}</p>
+						<div class="writing-tags">
+							{article.data.tags.map(tag => (
+								<span>{tag}</span>
+							))}
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</main>
+</BaseLayout>

@@ -13,11 +13,15 @@
 		"format:check": "prettier --check .",
 		"worker:dev": "wrangler dev --local --port 8787",
 		"worker:deploy": "wrangler deploy",
-		"worker:typecheck": "tsc -p worker/tsconfig.json --noEmit"
+		"worker:typecheck": "tsc -p worker/tsconfig.json --noEmit",
+		"writing:publish": "node --env-file-if-exists=.env scripts/publish-writing.mjs",
+		"writing:test": "node --test scripts/lib/*.test.mjs"
 	},
 	"dependencies": {
+		"@astrojs/rss": "^4.0.19",
 		"@tailwindcss/vite": "^4.2.4",
 		"astro": "^5.13.2",
+		"gray-matter": "^4.0.3",
 		"tailwindcss": "^4.2.4"
 	},
 	"devDependencies": {

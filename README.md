@@ -57,10 +57,12 @@ npm run worker:typecheck # Type-check Worker source
 │   └── yiming_cv.pdf
 ├── src/
 │   ├── components/            # Reusable Astro UI components
+│   ├── content/               # Generated public writing snapshots
 │   ├── data/                  # Typed content data for pages and preview sections
 │   ├── layouts/               # Shared page layouts
 │   ├── pages/                 # Route-based Astro pages
 │   └── styles/                # Global, page, and component CSS
+├── scripts/                   # Obsidian-to-Astro publishing tools and tests
 ├── worker/                    # Cloudflare Worker assistant API and knowledge file
 ├── astro.config.mjs
 ├── eslint.config.js
@@ -76,6 +78,23 @@ npm run worker:typecheck # Type-check Worker source
 - `/publications` - Full publications page backed by `src/data/publications.ts`
 - `/community` - Community, speaking, and events page backed by `src/data/community.ts`
 - `/archive` - Full project archive table backed by `src/data/projects.ts`
+- `/writing` - Canonical technical articles exported from private Obsidian sources
+
+## Writing
+
+Article drafts stay private in Obsidian. A local export command validates an approved source note,
+converts supported wikilinks and image embeds, and writes a reviewed Markdown snapshot into Astro's
+typed content collection.
+
+```bash
+npm run writing:test
+npm run writing:publish -- --note "020 - Projects/path/to/Article.md" --dry-run
+npm run writing:publish -- --note "020 - Projects/path/to/Article.md"
+```
+
+The portfolio copy is canonical. After it is deployed, the public URL can be imported into Medium as
+a cross-post. See [docs/writing.md](docs/writing.md) for frontmatter, supported syntax, and the full
+publication checklist.
 
 ## AI Assistant
 
@@ -115,6 +134,8 @@ GitHub Pages build. See `docs/ai-assistant.md` for full setup and verification n
   for publications, archive, and the header.
 - `src/components/AIChat.astro` owns the chat UI; `worker/` owns the Cloudflare Worker API and
   portfolio knowledge used by the assistant.
+- `src/content/writing/` contains generated publication snapshots; private drafts remain in the
+  Obsidian vault.
 
 ## Deployment
 

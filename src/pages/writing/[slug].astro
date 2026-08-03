@@ -1,0 +1,26 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+
+import { estimateReadingMinutes, getWritingArticles } from '../../lib/writing';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+	const articles = await getWritingArticles();
+	return articles.map(article => ({
+		params: { slug: article.data.slug },
+		props: { article }
+	}));
+}
+
+interface Props {
+	article: CollectionEntry<'writing'>;
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+const readingMinutes = estimateReadingMinutes(article.body);
+---
+
+<ArticleLayout article={article} readingMinutes={readingMinutes}>
+	<Content />
+</ArticleLayout>

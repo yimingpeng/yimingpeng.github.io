@@ -1,0 +1,90 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import Header from '../components/Header.astro';
+import { formatWritingDate } from '../lib/writing';
+import BaseLayout from './BaseLayout.astro';
+import '../styles/global.css';
+import '../styles/writing.css';
+
+interface Props {
+	article: CollectionEntry<'writing'>;
+	readingMinutes: number;
+}
+
+const { article, readingMinutes } = Astro.props;
+const canonicalPath = `/writing/${article.data.slug}`;
+const canonicalUrl = new URL(canonicalPath, Astro.site ?? Astro.url);
+const structuredData = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	headline: article.data.title,
+	description: article.data.description,
+	datePublished: article.data.publishedAt.toISOString(),
+	dateModified: (article.data.updatedAt ?? article.data.publishedAt).toISOString(),
+	author: {
+		'@type': 'Person',
+		name: 'Yiming Peng',
+		url: 'https://yimingpeng.github.io'
+	},
+	mainEntityOfPage: canonicalUrl.toString()
+});
+---
+
+<BaseLayout
+	title={`${article.data.title} — Yiming Peng`}
+	description={article.data.description}
+	canonicalPath={canonicalPath}
+	ogType="article"
+	publishedAt={article.data.publishedAt}
+	updatedAt={article.data.updatedAt}
+>
+	<Header />
+	<main class="article-page">
+		<article>
+			<header class="article-header">
+				<a href="/writing" class="article-back-link">← Writing</a>
+				{
+					article.data.series && (
+						<p class="article-series">
+							{article.data.series.title} · Part {article.data.series.order}
+						</p>
+					)
+				}
+				<h1>{article.data.title}</h1>
+				<p class="article-description">{article.data.description}</p>
+				<div class="article-meta">
+					<time datetime={article.data.publishedAt.toISOString()}>
+						{formatWritingDate(article.data.publishedAt)}
+					</time>
+					<span>·</span>
+					<span>{readingMinutes} min read</span>
+					{
+						article.data.updatedAt && (
+							<>
+								<span>·</span>
+								<span>Updated {formatWritingDate(article.data.updatedAt)}</span>
+							</>
+						)
+					}
+				</div>
+			</header>
+
+			<div class="article-prose">
+				<slot />
+			</div>
+
+			<footer class="article-footer">
+				<p>Written by Yiming Peng with AI-assisted development and editing.</p>
+				{
+					article.data.mediumUrl && (
+						<a href={article.data.mediumUrl} target="_blank" rel="noopener noreferrer">
+							Read the Medium cross-post ↗
+						</a>
+					)
+				}
+			</footer>
+		</article>
+		<script type="application/ld+json" set:html={structuredData} />
+	</main>
+</BaseLayout>

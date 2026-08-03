@@ -4,10 +4,10 @@ Quick notes for future improvements that should not show on the live site until 
 
 ## Writing
 
-- Add the writing/blog section back only after there are real posts to link to.
-- Decide whether posts should live on Medium, Obsidian-exported Markdown, or a native Astro content
-  collection.
-- If using Obsidian, define the publish workflow before adding placeholder copy back to the homepage.
+- Review and publish the first `Portfolio as Product` article from the private Obsidian project.
+- Import each live portfolio article into Medium and verify its canonical link.
+- Consider tag pages, search, pagination, and generated social images after enough articles exist to
+  justify them.
 
 ## Projects
 
