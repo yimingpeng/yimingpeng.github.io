@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site ?? Astro.url);
-const socialImageURL = new URL(image, Astro.site);
+const socialImageURL = new URL(image, Astro.site ?? Astro.url);
 
 import '../styles/tailwind.css';
 ---
