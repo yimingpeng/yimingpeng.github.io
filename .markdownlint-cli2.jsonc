@@ -1,0 +1,9 @@
+{
+	"config": {
+		"default": true,
+		// Prose here isn't hard-wrapped (Prettier's proseWrap defaults to "preserve"), and
+		// table rows can't reasonably fit any fixed width, so line-length is noise.
+		"MD013": false
+	},
+	"ignores": ["**/node_modules/**", ".astro/**", "dist/**"]
+}
