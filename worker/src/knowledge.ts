@@ -54,6 +54,11 @@ PUBLICATIONS
 - Selected venues: Memetic Computing, IJCNN, GECCO, SEAL, ICONIP, AJCAI.
 
 COMMUNITY
+- Sept 24, 2026 (upcoming): speaking at an IEEE Young Professionals seminar, "The Future of AI
+  Careers: From Technical Skills to Real-World Impact," at Victoria University of Wellington.
+  Talk title: "Become Experienced Before Anyone Hires You" (subtitle: "How to build real industry
+  experience before you have an industry job"), drawing on experience at Weta FX, KPMG, and other
+  industry roles. Photos and slides to follow after the event.
 - May 2026: "From Study/Research to Industry" panel at Victoria University of Wellington.
 - Organization: IEEE Young Professionals, NZ Central Section.
 - Topic: transitioning from study and research into industry careers, workplace expectations, and
@@ -65,7 +70,8 @@ CERTIFICATIONS
 - CKAD - Certified Kubernetes Application Developer, Linux Foundation, 2025.
 - Tableau Server Admin.
 - Astronomer certifications for Apache Airflow 2 fundamentals and DAG authoring.
-- KCNA is listed as in progress with target Aug 2026.
+- Astronomer Certified for AI Orchestration Fundamentals, Sept 2026.
+- KCNA is listed as in progress with target Oct 2026.
 
 CV SUMMARY
 - The downloadable CV is available at /yiming_cv.pdf.

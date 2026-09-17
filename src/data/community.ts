@@ -26,6 +26,19 @@ export interface CommunityEvent {
 
 export const communityEvents: CommunityEvent[] = [
 	{
+		id: 'ieee-yp-future-of-ai-careers-sept-2026',
+		date: '2026-09',
+		dateDisplay: 'Sept 2026',
+		title: 'The Future of AI Careers: From Technical Skills to Real-World Impact',
+		venue: 'Victoria University of Wellington',
+		organization: 'IEEE Young Professionals, NZ Central Section',
+		type: 'talk',
+		description:
+			'Speaking on "Become Experienced Before Anyone Hires You" at an IEEE Young Professionals seminar on the future of AI careers.',
+		body: 'IEEE Young Professionals seminar on 24 September 2026, bringing together AI professionals from different industries to share how AI roles are evolving, the skills becoming important, and how AI is applied in real-world settings. Yiming\'s talk, "Become Experienced Before Anyone Hires You: How to build real industry experience before you have an industry job," draws on his experience at Wētā FX, KPMG, and other industry roles. Format: 20-minute talks from invited speakers, 5-minute Q&A, and networking over refreshments.',
+		status: 'upcoming · photos & slides to follow after the event'
+	},
+	{
 		id: 'ieee-yp-study-research-to-industry-may-2026',
 		date: '2026-05',
 		dateDisplay: 'May 2026',
