@@ -34,9 +34,24 @@ export const communityEvents: CommunityEvent[] = [
 		organization: 'IEEE Young Professionals, NZ Central Section',
 		type: 'talk',
 		description:
-			'Speaking on "Become Experienced Before Anyone Hires You" at an IEEE Young Professionals seminar on the future of AI careers.',
-		body: 'IEEE Young Professionals seminar on 24 September 2026, bringing together AI professionals from different industries to share how AI roles are evolving, the skills becoming important, and how AI is applied in real-world settings. Yiming\'s talk, "Become Experienced Before Anyone Hires You: How to build real industry experience before you have an industry job," draws on his experience at Wētā FX, KPMG, and other industry roles. Format: 20-minute talks from invited speakers, 5-minute Q&A, and networking over refreshments.',
-		status: 'upcoming · photos & slides to follow after the event'
+			'Talk on "Become Experienced Before Anyone Hires You" at an IEEE Young Professionals seminar on the future of AI careers.',
+		body: "I spoke at this IEEE Young Professionals seminar at Victoria University of Wellington, alongside Asad Moin (Bastion Security) and Dr. Kaan Demir (Accenture). I opened with joining Wētā FX as a rookie who knew nothing about VFX: I started small, reading alerts, fixing what I could, and asking a lot of questions. The core message: a job isn't the only place to get experience. Find a real problem, keep asking why until you truly understand it, and put your work where people can see it. Find one thing. Do it well. Do it publicly.",
+		photos: [
+			'/events/ieee-yp-talk-2026/talk-01.jpg',
+			'/events/ieee-yp-talk-2026/talk-02.jpg',
+			'/events/ieee-yp-talk-2026/talk-03.jpg',
+			'/events/ieee-yp-talk-2026/talk-04.jpg'
+		],
+		materials: [
+			{
+				label: 'LinkedIn recap',
+				url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7513480327382769666/'
+			},
+			{
+				label: 'IEEE YP event post',
+				url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7513341266575802369/'
+			}
+		]
 	},
 	{
 		id: 'ieee-yp-study-research-to-industry-may-2026',
@@ -48,7 +63,7 @@ export const communityEvents: CommunityEvent[] = [
 		type: 'panel',
 		description:
 			'IEEE Young Professionals panel on transitioning from study and research into industry careers.',
-		body: 'Hosted by IEEE Young Professionals at Victoria University of Wellington, this panel brought together students, researchers, and industry professionals to discuss career pathways, workplace expectations, and the practical skills needed to move from academia into industry. Yiming joined Dr. Harisu Abdullahi Shehu, Dr. Kaan Demir, and Dr. Shima Afzaali as panelists, with support from IEEE NZ Central Section and CDSAI.',
+		body: 'Hosted by IEEE Young Professionals at Victoria University of Wellington, this panel brought together students, researchers, and industry professionals to discuss career pathways, workplace expectations, and the practical skills needed to move from academia into industry. I joined Dr. Harisu Abdullahi Shehu, Dr. Kaan Demir, and Dr. Shima Afzaali as panelists, with support from IEEE NZ Central Section and CDSAI.',
 		photos: [
 			'/events/ieee-yp-panel-2026/panel-01.jpeg',
 			'/events/ieee-yp-panel-2026/panel-02.jpeg',

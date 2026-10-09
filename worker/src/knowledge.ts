@@ -54,11 +54,13 @@ PUBLICATIONS
 - Selected venues: Memetic Computing, IJCNN, GECCO, SEAL, ICONIP, AJCAI.
 
 COMMUNITY
-- Sept 24, 2026 (upcoming): speaking at an IEEE Young Professionals seminar, "The Future of AI
-  Careers: From Technical Skills to Real-World Impact," at Victoria University of Wellington.
-  Talk title: "Become Experienced Before Anyone Hires You" (subtitle: "How to build real industry
-  experience before you have an industry job"), drawing on experience at Weta FX, KPMG, and other
-  industry roles. Photos and slides to follow after the event.
+- Sept 24, 2026: spoke at an IEEE Young Professionals seminar, "The Future of AI Careers: From
+  Technical Skills to Real-World Impact," at Victoria University of Wellington, alongside Asad Moin
+  (Bastion Security) and Dr. Kaan Demir (Accenture). Talk title: "Become Experienced Before Anyone
+  Hires You." Story: joining Weta FX as a rookie in VFX and learning by starting small, reading
+  alerts, fixing what he could, and asking questions. Message: a job isn't the only place to get
+  experience; find a real problem, keep asking why, and put your work where people can see it.
+  "Find one thing. Do it well. Do it publicly."
 - May 2026: "From Study/Research to Industry" panel at Victoria University of Wellington.
 - Organization: IEEE Young Professionals, NZ Central Section.
 - Topic: transitioning from study and research into industry careers, workplace expectations, and
