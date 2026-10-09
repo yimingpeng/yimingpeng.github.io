@@ -54,6 +54,11 @@ PUBLICATIONS
 - Selected venues: Memetic Computing, IJCNN, GECCO, SEAL, ICONIP, AJCAI.
 
 COMMUNITY
+- Oct 29, 2026 (upcoming): co-hosting the first Wellington Apache Airflow Meetup at Victoria
+  University of Wellington (Te Toki a Rata Building), 5:00-8:30pm. Talks from Kieran Hume (Chorus)
+  on "Why I don't think about Airflow" and Yan Dai (Deloitte) on orchestrating a document AI
+  pipeline with Airflow. Meetup page:
+  https://www.meetup.com/new-zealand-apache-airflow-meetup/events/316200984/
 - Sept 24, 2026: spoke at an IEEE Young Professionals seminar, "The Future of AI Careers: From
   Technical Skills to Real-World Impact," at Victoria University of Wellington, alongside Asad Moin
   (Bastion Security) and Dr. Kaan Demir (Accenture). Talk title: "Become Experienced Before Anyone
