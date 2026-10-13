@@ -19,7 +19,6 @@ Quick notes for future improvements that should not show on the live site until 
 
 - Keep the CV update month in sync with the actual PDF.
 - Review the certification list after each new Credly badge is earned.
-- Add KCNA badge details once the certificate is completed.
 
 ## Design
 

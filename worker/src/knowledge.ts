@@ -78,7 +78,7 @@ CERTIFICATIONS
 - Tableau Server Admin.
 - Astronomer certifications for Apache Airflow 2 fundamentals and DAG authoring.
 - Astronomer Certified for AI Orchestration Fundamentals, Sept 2026.
-- KCNA is listed as in progress with target Oct 2026.
+- KCNA - Kubernetes and Cloud Native Associate, Linux Foundation, Oct 2026.
 
 CV SUMMARY
 - The downloadable CV is available at /yiming_cv.pdf.
