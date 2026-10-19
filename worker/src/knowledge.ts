@@ -78,6 +78,7 @@ CERTIFICATIONS
 - Tableau Server Admin.
 - Astronomer certifications for Apache Airflow 2 fundamentals and DAG authoring.
 - Astronomer Certified for AI Orchestration Fundamentals, Sept 2026.
+- KCSA - Kubernetes and Cloud Native Security Associate, Linux Foundation, Oct 2026.
 - KCNA - Kubernetes and Cloud Native Associate, Linux Foundation, Oct 2026.
 
 CV SUMMARY
