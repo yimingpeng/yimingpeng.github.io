@@ -34,9 +34,8 @@ export const communityEvents: CommunityEvent[] = [
 		organization: 'New Zealand Apache Airflow Meetup',
 		type: 'meetup',
 		description:
-			'Co-hosting the first Apache Airflow meetup in Wellington, with talks from Chorus and Deloitte.',
-		body: 'I\'m co-hosting the first Wellington Apache Airflow meetup on 29 October 2026, an evening of talks and networking for Airflow users and data engineers. Kieran Hume (Chorus) will speak on "Why I don\'t think about Airflow," and Yan Dai (Deloitte) will walk through orchestrating a document AI pipeline with Airflow, from raw files to validated knowledge.',
-		status: 'upcoming · 29 Oct 2026, 5:00-8:30pm',
+			'Co-hosted the first Apache Airflow meetup in Wellington, with talks from Chorus and Deloitte.',
+		body: 'I co-hosted the first Wellington Apache Airflow meetup on 29 October 2026, an evening of talks and networking for Airflow users and data engineers. Kieran Hume (Chorus) spoke on "Why I don\'t think about Airflow," and Yan Dai (Deloitte) walked through orchestrating a document AI pipeline with Airflow, from raw files to validated knowledge.',
 		materials: [
 			{
 				label: 'Meetup page',

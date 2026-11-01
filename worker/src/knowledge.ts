@@ -15,8 +15,10 @@ export const portfolioKnowledge = `
 PROFILE
 - Name: Yiming Peng.
 - Pronunciation hint on site: /i' ming/.
-- Public positioning: Senior Data Engineer; PhD in Reinforcement Learning.
-- Current role: Senior Software Engineer - Data at Weta FX, Oct 2023 to present.
+- Public positioning: Lead Analytics Engineer; PhD in Reinforcement Learning.
+- Current role: Lead Analytics Engineer at TSB New Zealand, Oct 2026 to present. Helps the bank
+  build its own data platform: data modelling, the transformation layer, data quality, and data
+  governance architecture. More analytics engineering than a typical data engineering role.
 - Core summary: designs data systems and fixes unreliable data pipelines.
 - Experience: 10+ years building DataOps and MLOps platforms across New Zealand and global
   production environments.
@@ -29,7 +31,8 @@ PROFILE
   https://medium.com/@yimingpeng.
 
 EXPERIENCE
-- Weta FX: Senior Software Engineer - Data, Oct 2023 to present.
+- TSB New Zealand: Lead Analytics Engineer, Oct 2026 to present.
+- Weta FX: Senior Software Engineer - Data, Oct 2023 to Oct 2026.
 - MBIE via Emergence CLI: Data Architect, Jul 2022 to Jul 2023.
 - IHC New Zealand: Principal Data & Integration Architect, Jul 2021 to Jul 2022.
 - Chorus New Zealand: Senior Data Engineer, Dec 2019 to Jun 2021.
@@ -54,7 +57,7 @@ PUBLICATIONS
 - Selected venues: Memetic Computing, IJCNN, GECCO, SEAL, ICONIP, AJCAI.
 
 COMMUNITY
-- Oct 29, 2026 (upcoming): co-hosting the first Wellington Apache Airflow Meetup at Victoria
+- Oct 29, 2026: co-hosted the first Wellington Apache Airflow Meetup at Victoria
   University of Wellington (Te Toki a Rata Building), 5:00-8:30pm. Talks from Kieran Hume (Chorus)
   on "Why I don't think about Airflow" and Yan Dai (Deloitte) on orchestrating a document AI
   pipeline with Airflow. Meetup page:
@@ -83,7 +86,7 @@ CERTIFICATIONS
 
 CV SUMMARY
 - The downloadable CV is available at /yiming_cv.pdf.
-- The site describes Yiming as a senior data engineer with a PhD in reinforcement learning,
+- The site describes Yiming as a lead analytics engineer with a PhD in reinforcement learning,
   strong data platform, MLOps, Kubernetes, Airflow, Python, SQL, cloud, and observability
   experience.
 `;
