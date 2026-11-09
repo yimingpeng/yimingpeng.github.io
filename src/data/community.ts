@@ -35,11 +35,22 @@ export const communityEvents: CommunityEvent[] = [
 		type: 'meetup',
 		description:
 			'Co-hosted the first Apache Airflow meetup in Wellington, with talks from Chorus and Deloitte.',
-		body: 'I co-hosted the first Wellington Apache Airflow meetup on 29 October 2026, an evening of talks and networking for Airflow users and data engineers. Kieran Hume (Chorus) spoke on "Why I don\'t think about Airflow," and Yan Dai (Deloitte) walked through orchestrating a document AI pipeline with Airflow, from raw files to validated knowledge.',
+		body: 'I co-hosted the first Wellington Apache Airflow meetup on 29 October 2026 at Victoria University of Wellington. A full room came for an evening of talks, discussion and networking for Airflow users and data engineers, and the conversations ran past 9pm. Kieran Hume (Chorus) spoke on "Why I don\'t think about Airflow," and Yan Dai (Deloitte) walked through orchestrating a document AI pipeline with Airflow, from raw files to validated knowledge. Discussion covered why teams stay on Airflow rather than switching orchestrators, how atomic a task in a DAG should be, and how to build human-in-the-loop AI workflows with Airflow. Thanks to Astronomer, the Apache Airflow community, and the Centre for Data Science and Artificial Intelligence at Victoria University of Wellington for the food, drinks, swag, volunteers and venue. The next meetup is already being planned.',
+		photos: [
+			'/events/airflow-meetup-oct-2026/meetup-01.jpg',
+			'/events/airflow-meetup-oct-2026/meetup-02.jpg',
+			'/events/airflow-meetup-oct-2026/meetup-03.jpg',
+			'/events/airflow-meetup-oct-2026/meetup-04.jpg',
+			'/events/airflow-meetup-oct-2026/meetup-05.jpg'
+		],
 		materials: [
 			{
 				label: 'Meetup page',
 				url: 'https://www.meetup.com/new-zealand-apache-airflow-meetup/events/316200984/'
+			},
+			{
+				label: 'LinkedIn recap',
+				url: 'https://www.linkedin.com/posts/yiming-nz_apacheairflow-dataengineering-wellington-ugcPost-7522931362279055362-cFLu/'
 			}
 		]
 	},
